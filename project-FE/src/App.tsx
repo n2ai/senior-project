@@ -1,4 +1,5 @@
-import { createBrowserRouter, Route, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./routes/Home"
 const router = createBrowserRouter([
   {
