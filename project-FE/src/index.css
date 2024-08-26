@@ -9,6 +9,9 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    
+    font-family: 'Montserrat', sans-serif;   
+}
+
+.caligraphy{
+    font-family: "Dancing Script", cursive;
 }
