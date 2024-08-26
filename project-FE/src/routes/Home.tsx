@@ -10,6 +10,8 @@ import { useState, useEffect } from "react";
 import Carousel from 'react-bootstrap/Carousel';
 const Home = ()=>{
 
+    const [navOpen, setNavOpen] = useState<boolean>(false);
+
     const images:string[] = [
         bridgeImg,
         haLongImg,
@@ -50,11 +52,15 @@ const Home = ()=>{
 
     const navBarItems = navBarLink.map((item)=>{
         return(
-            <a href={item.href} id={item.id}>
+            <a className="block max-sm:mt-3 sm:inline" href={item.href} id={item.id}>
               {item.name}  
             </a>
         )
     })
+
+    const hamburgerOnClick = ():void=>{
+        setNavOpen((prev)=>!prev)
+    }
 
     return(
 
@@ -68,15 +74,34 @@ const Home = ()=>{
                         </div>
 
                         {/**Nav Bar */}
-                        <div className="flex w-full h-full items-center gap-6 justify-center">
+                        <div className="sm:flex w-full h-full items-center gap-6 justify-center hidden">
                             {navBarItems}
+                        </div>
+
+                        {/**Hamburger Nav Bar */}
+                        <div className="flex sm:hidden items-center relative">
+                            <button onClick={hamburgerOnClick} type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                </svg>
+                            </button>
+
+                            <div
+                                className={`absolute top-[40px] right-[2px] w-[200px] h-[200px] backdrop-blur-sm transition-opacity duration-300 ${navOpen ? "opacity-100" : "opacity-0"}`}    
+                            >
+                                <div className="w-full h-full gap-3 flex-col p-3 items-center text-center">
+                                    {navBarItems}
+                                </div>
+                                
+                            </div>
+
                         </div>
 
                     </div>
 
                     {/**Description */}
 
-                    <div className="w-full mt-[100px] h-[300px]">
+                    <div className="w-full mt-[100px] h-[300px] ">
                         <p className=" text-2xl">
                             Join the virtual experience
                         </p>
@@ -100,8 +125,11 @@ const Home = ()=>{
                 </div>
             </div>
 
+            {/**Info section */}
             <div>
+                <div>
 
+                </div>
             </div>
         </div>
     )
