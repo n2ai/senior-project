@@ -126,9 +126,16 @@ const Home = ()=>{
             </div>
 
             {/**Info section */}
-            <div>
-                <div>
+            <div className="w-full h-screen">
+                <div className="container pt-5">
+                    <h1>Tour Guide</h1>
+                    <div className= "mt-2">
+                        <div>
+                            <h1 className="text-3xl">General Information</h1>
+                        </div>
 
+                        
+                    </div>
                 </div>
             </div>
         </div>
