@@ -222,7 +222,7 @@ const Home = ()=>{
 
 
                             {/**Information */}
-                            <div className="w-full pt-4">
+                            <div className="w-full pt-4 flex justify-center">
                                 {guideInfoArray[guideInfoIndex].information()}    
                             </div>
                         </div>     

@@ -1,7 +1,7 @@
 const GoalInfo = ()=>{
     return (
-        <div>
-            This Is Goal Info
+        <div className="flex flex-wrap gap-5 justify-center w-[80%]">
+            
         </div>
     )
 }

@@ -26,7 +26,7 @@ const GeneralInfo = ()=>{
     })
 
     return(
-        <div className="flex flex-wrap justify-between">
+        <div className="flex flex-wrap gap-5 justify-center w-[80%]">
             {GeneralInfoCardArray}
         </div>
     )
