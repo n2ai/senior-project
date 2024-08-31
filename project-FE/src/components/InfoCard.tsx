@@ -7,7 +7,7 @@ interface IInfoCard{
 
 const InfoCard:React.FC<IInfoCard> = ({imgUrl, title, description})=>{
     return (
-        <Card className="w-[18rem]">
+        <Card className="w-[18rem] h-[25rem]">
             <Card.Img variant="top" src={imgUrl}>
 
             </Card.Img>

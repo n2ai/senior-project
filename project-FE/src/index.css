@@ -15,3 +15,8 @@ body {
 .caligraphy{
     font-family: "Dancing Script", cursive;
 }
+.typewriter{
+    @apply relative w-[max-content] font-mono
+    before:absolute before:inset-0 before:bg-white
+    before:animate-typewriter;
+}

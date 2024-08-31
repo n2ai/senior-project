@@ -4,8 +4,9 @@ import oldWomanImg from "../images/ha-long-bay-2404431_1920.jpg";
 import riceFiledImg from "../images/rice-field-7218033_1920.jpg";
 import saigonRiverImg from "../images/saigon-river-4593234_1920.jpg";
 import streetVendorImg from "../images/street-vendor-4176310_1920.jpg";
-import nightImg from "../images/night-4639069_1920.jpg"
+import Typewriter from 'typewriter-effect';
 import { useState, useEffect, ReactElement, JSXElementConstructor } from "react";
+import footerVideo from "../videos/14385-256955049_small.mp4";
 
 //Import React Component
 import GeneralInfo from "../components/GeneralInfo";
@@ -42,15 +43,15 @@ const Home = ()=>{
     }[] = [
         {
             id:'home',
-            href:'/home',
+            href:'#',
             name:'Home'
         },{
             id:'aboutUs',
-            href:'/aboutUs',
+            href:'#aboutUs',
             name:'About Us'
         },{
             id:'contact',
-            href:'/contact',
+            href:'#contactUs',
             name:'Contact'
         }
     ]
@@ -180,25 +181,22 @@ const Home = ()=>{
             </div>
 
             {/**Info section */}
-            <div className="w-full h-screen">
-                <div className="container pt-5">
+            <div className="w-full">
+                <div className="container pt-5 flex flex-col h-auto">
                     <h1>Tour Guide</h1>
-                    <div className= "mt-2">
+                    <div className="mt-2 flex flex-col">
                         <div>
                             <h1 className="text-3xl">General Information</h1>
                         </div>
                         
-                        
-                        <div className="mt-4">
-
-                            {/**Mobile*/}
-                            {/**Banner Button */}
-                            <div className="w-full flex items-center justify-between sm:hidden" >
+                        <div className="mt-4 flex flex-col">
+                            {/* Mobile */}
+                            {/* Banner Button */}
+                            <div className="w-full flex items-center justify-between sm:hidden">
                                 <button onClick={leftButtonGuideInfo}>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                                     </svg>
-                                        
                                 </button>
 
                                 <div className="w-[12.5rem] h-[2.5rem] text-white font-bold bg-red-400 rounded-full items-center flex justify-center">
@@ -215,19 +213,92 @@ const Home = ()=>{
                                 </button>
                             </div>
 
-                            {/**Desktop */}
-                            <div className=" w-full max-sm:hidden flex justify-around">
+                            {/* Desktop */}
+                            <div className="w-full max-sm:hidden flex justify-around">
                                 {guideInfoButtonArray}
                             </div>
 
-
-                            {/**Information */}
+                            {/* Information */}
                             <div className="w-full pt-4 flex justify-center">
                                 {guideInfoArray[guideInfoIndex].information()}    
                             </div>
                         </div>     
                     </div>
                 </div>
+            </div>
+            {/**About US Section */}
+            <div className="w-full" id="aboutUs">
+                <div className="container pt-5 flex flex-col h-auto">
+                    <h1>About Us</h1>
+                    <div className="mt-2 flex flex-col">
+                        <div>
+                            <h1 className="text-3xl">A Letter from the Developer</h1>
+                        </div>
+
+                        <div className="mt-4 flex flex-col items-center">
+                            <div className="w-[80%]">
+                            <Typewriter
+                                onInit={(typewriter) => {
+                                    typewriter.typeString('Hai Trinh letter')
+                                    .callFunction(() => {
+                                        console.log('String typed out!');
+                                    })
+                                    .start();
+                                }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/**Contact Us Section*/}
+            <div className="w-full" id="contactUs">
+                <div className="container pt-5 flex flex-col h-auto">
+                    <h1>Contact Us</h1>
+                    <div className="flex flex-col">
+                        <div>
+                            <h1 className="text-3xl">Get in Touch</h1>
+                        </div>
+                        
+                        {/** Container*/}
+                        <div className="w-full flex flex-col items-center">
+                            <div className="p-4  flex flex-col items-center">
+
+                                <div className="flex flex-col gap-3 w-[80%] mt-5">
+                                    
+                                    <h1 className=" text-gray-400">Fill out the form below and we'll get back to you as soon as possible.</h1>
+
+                                    <label className="flex flex-col">
+                                        <span className="font-bold">Full Name</span>
+                                        <input className="border rounded-sm p-2" placeholder="Enter your full name"></input>
+                                    </label>
+
+                                    <label className="flex flex-col">
+                                        <span className="font-bold">Email Address</span>
+                                        <input className="border rounded-sm p-2" placeholder="Enter your Email"></input>
+                                    </label>
+
+                                    <label className="flex flex-col">
+                                        <span className="font-bold">Message</span>
+                                        <textarea className="border rounded-sm p-2" placeholder="Tell us how we can help you"></textarea>
+                                    </label>
+
+                                    <div className="flex flex-col">
+                                        <button className="border rounded-full p-2 bg-red-400 font-bold text-white">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            {/**Footer */}
+            <div className="w-full h-[10rem]">
+                <video autoPlay muted loop>
+                    <source src={footerVideo} type="video/mp4"/>
+                </video>
             </div>
         </div>
     )
