@@ -1,3 +1,4 @@
+import InfoCard from "./InfoCard";
 
 const TopicInfo = ()=>{
     //Cuisine
