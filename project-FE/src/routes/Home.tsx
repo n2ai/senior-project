@@ -4,16 +4,34 @@ import oldWomanImg from "../images/ha-long-bay-2404431_1920.jpg";
 import riceFiledImg from "../images/rice-field-7218033_1920.jpg";
 import saigonRiverImg from "../images/saigon-river-4593234_1920.jpg";
 import streetVendorImg from "../images/street-vendor-4176310_1920.jpg";
-import Typewriter from 'typewriter-effect';
-import { useState, useEffect, ReactElement, JSXElementConstructor } from "react";
+import { useState, ReactElement, ChangeEvent } from "react";
 import footerVideo from "../videos/14385-256955049_small.mp4";
+import LetterComponent from "../components/LetterComponent";
 
 //Import React Component
 import GeneralInfo from "../components/GeneralInfo";
 import GoalInfo from "../components/GoalInfo";
 import TopicInfo from "../components/TopicInfo";
 
+interface EmailState {
+    name: string;
+    email: string;
+    message: string;
+  }
+
 const Home = ()=>{
+    const [emailState, setEmailState] = useState<EmailState>({
+        name:'',
+        email:'',
+        message:''
+    })
+
+    const handleFormChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>)=>{
+        const {name, value} = e.target;
+        setEmailState((prev)=>{
+            return {...prev, [name]:value}
+        })
+    }
 
     const [navOpen, setNavOpen] = useState<boolean>(false);
     const [guideInfoIndex, setGuideInfoIndex] = useState<number>(0);
@@ -227,8 +245,8 @@ const Home = ()=>{
                 </div>
             </div>
             {/**About US Section */}
-            <div className="w-full" id="aboutUs">
-                <div className="container pt-5 flex flex-col h-auto">
+            <div className="w-full">
+                <div id="aboutUs" className="container pt-5 flex flex-col h-auto">
                     <h1>About Us</h1>
                     <div className="mt-2 flex flex-col">
                         <div>
@@ -237,15 +255,7 @@ const Home = ()=>{
 
                         <div className="mt-4 flex flex-col items-center">
                             <div className="w-[80%]">
-                            <Typewriter
-                                onInit={(typewriter) => {
-                                    typewriter.typeString('Hai Trinh letter')
-                                    .callFunction(() => {
-                                        console.log('String typed out!');
-                                    })
-                                    .start();
-                                }}
-                                />
+                                <LetterComponent/>
                             </div>
                         </div>
                     </div>
@@ -271,17 +281,17 @@ const Home = ()=>{
 
                                     <label className="flex flex-col">
                                         <span className="font-bold">Full Name</span>
-                                        <input className="border rounded-sm p-2" placeholder="Enter your full name"></input>
+                                        <input onChange={handleFormChange} name="name" className="border rounded-sm p-2" placeholder="Enter your full name"></input>
                                     </label>
 
                                     <label className="flex flex-col">
                                         <span className="font-bold">Email Address</span>
-                                        <input className="border rounded-sm p-2" placeholder="Enter your Email"></input>
+                                        <input onChange={handleFormChange} name="email" className="border rounded-sm p-2" placeholder="Enter your Email"></input>
                                     </label>
 
                                     <label className="flex flex-col">
                                         <span className="font-bold">Message</span>
-                                        <textarea className="border rounded-sm p-2" placeholder="Tell us how we can help you"></textarea>
+                                        <textarea onChange={handleFormChange} name="message" className="border rounded-sm p-2" placeholder="Tell us how we can help you"></textarea>
                                     </label>
 
                                     <div className="flex flex-col">
@@ -295,10 +305,18 @@ const Home = ()=>{
             </div>
             
             {/**Footer */}
-            <div className="w-full h-[10rem]">
-                <video autoPlay muted loop>
+            <div className="w-full h-[6rem] relative z-10 text-white text-center overflow-hidden">
+                <video autoPlay muted loop className="absolute top-0 left-0 w-full h-full object-center object-cover z-0">
                     <source src={footerVideo} type="video/mp4"/>
                 </video>
+
+                <div className="relative z-10 flex items-center justify-center h-full">
+                    <p className="text-3xl caligraphy">Enjoy !</p>
+                </div>
+
+                <div>
+                    
+                </div>
             </div>
         </div>
     )
