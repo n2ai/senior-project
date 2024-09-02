@@ -1,14 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./routes/Home"
+import Credentials from "./routes/Credentials";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home/>
   },{
-    path:"/login",
+    path:"/credentials",
     //Temporary set up
-    element: <Home/>
+    element: <Credentials/>
   }
 ])
 

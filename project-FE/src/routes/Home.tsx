@@ -1,36 +1,25 @@
-import bridgeImg from "../images/bridge-7438161_1920.jpg";
-import haLongImg from "../images/ha-long-bay-2404431_1920.jpg";
 import oldWomanImg from "../images/ha-long-bay-2404431_1920.jpg";
-import riceFiledImg from "../images/rice-field-7218033_1920.jpg";
-import saigonRiverImg from "../images/saigon-river-4593234_1920.jpg";
-import streetVendorImg from "../images/street-vendor-4176310_1920.jpg";
-import { useState, ReactElement, ChangeEvent, useRef, FormEvent } from "react";
+import { useState, ReactElement, useRef, FormEvent } from "react";
 import footerVideo from "../videos/14385-256955049_small.mp4";
 import LetterComponent from "../components/LetterComponent";
 import emailJS from "@emailjs/browser"
+import { useNavigate } from "react-router-dom";
 
 //Import React Component
 import GeneralInfo from "../components/GeneralInfo";
 import GoalInfo from "../components/GoalInfo";
 import TopicInfo from "../components/TopicInfo";
 
-interface EmailState {
-    name: string;
-    email: string;
-    message: string;
-  }
-
 const Home = ()=>{
     const form = useRef<HTMLFormElement>(null);
     const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
     const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const navigate = useNavigate()
 
-    const [emailState, setEmailState] = useState<EmailState>({
-        name:'',
-        email:'',
-        message:''
-    })
+    const switchToLoginPage = ()=>{
+        navigate("/credentials")
+    }
 
     const sendEmail = (e:FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
@@ -51,24 +40,9 @@ const Home = ()=>{
         form.current!.reset()
     }
 
-    const handleFormChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>)=>{
-        const {name, value} = e.target;
-        setEmailState((prev)=>{
-            return {...prev, [name]:value}
-        })
-    }
 
     const [navOpen, setNavOpen] = useState<boolean>(false);
     const [guideInfoIndex, setGuideInfoIndex] = useState<number>(0);
-
-    const images:string[] = [
-        bridgeImg,
-        haLongImg,
-        oldWomanImg,
-        riceFiledImg,
-        saigonRiverImg,
-        streetVendorImg
-    ]
 
     //header Style
     const headerStyle = {
@@ -212,7 +186,7 @@ const Home = ()=>{
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit temporibus id eveniet, sapiente eligendi iusto. Doloremque nisi facere ea voluptatum commodi omnis facilis aspernatur, itaque perferendis quas rerum similique tempora.
                         </p>
 
-                        <button type="button" className="font-bold flex items-center justify-center gap-x-2  mt-4  rounded-lg w-[150px] bg-red-400 p-2">
+                        <button onClick={switchToLoginPage} type="button" className="font-bold flex items-center justify-center gap-x-2  mt-4  rounded-lg w-[150px] bg-red-400 p-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
                             </svg>
@@ -306,17 +280,17 @@ const Home = ()=>{
 
                                     <label className="flex flex-col">
                                         <span className="font-bold">Full Name</span>
-                                        <input onChange={handleFormChange} name="name" className="border rounded-sm p-2" placeholder="Enter your full name"></input>
+                                        <input name="name" className="border rounded-sm p-2" placeholder="Enter your full name"></input>
                                     </label>
 
                                     <label className="flex flex-col">
                                         <span className="font-bold">Email Address</span>
-                                        <input onChange={handleFormChange} name="email" className="border rounded-sm p-2" placeholder="Enter your Email"></input>
+                                        <input name="email" className="border rounded-sm p-2" placeholder="Enter your Email"></input>
                                     </label>
 
                                     <label className="flex flex-col">
                                         <span className="font-bold">Message</span>
-                                        <textarea onChange={handleFormChange} name="message" className="border rounded-sm p-2" placeholder="Tell us how we can help you"></textarea>
+                                        <textarea name="message" className="border rounded-sm p-2" placeholder="Tell us how we can help you"></textarea>
                                     </label>
 
                                     <div className="flex flex-col">
