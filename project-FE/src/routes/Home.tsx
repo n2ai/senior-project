@@ -4,9 +4,10 @@ import oldWomanImg from "../images/ha-long-bay-2404431_1920.jpg";
 import riceFiledImg from "../images/rice-field-7218033_1920.jpg";
 import saigonRiverImg from "../images/saigon-river-4593234_1920.jpg";
 import streetVendorImg from "../images/street-vendor-4176310_1920.jpg";
-import { useState, ReactElement, ChangeEvent } from "react";
+import { useState, ReactElement, ChangeEvent, useRef, FormEvent } from "react";
 import footerVideo from "../videos/14385-256955049_small.mp4";
 import LetterComponent from "../components/LetterComponent";
+import emailJS from "@emailjs/browser"
 
 //Import React Component
 import GeneralInfo from "../components/GeneralInfo";
@@ -20,11 +21,35 @@ interface EmailState {
   }
 
 const Home = ()=>{
+    const form = useRef<HTMLFormElement>(null);
+    const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
     const [emailState, setEmailState] = useState<EmailState>({
         name:'',
         email:'',
         message:''
     })
+
+    const sendEmail = (e:FormEvent<HTMLFormElement>)=>{
+        e.preventDefault()
+
+        emailJS
+        .sendForm(emailServiceId, emailTemplateId, form.current!,{
+            publicKey:emailPublicKey
+        })
+        .then(
+            ()=>{
+                console.log("Success")
+            },
+            (error)=>{
+                console.log("Failed...", error.text)
+            }
+        )
+
+        form.current!.reset()
+    }
 
     const handleFormChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>)=>{
         const {name, value} = e.target;
@@ -272,7 +297,7 @@ const Home = ()=>{
                         </div>
                         
                         {/** Container*/}
-                        <div className="w-full flex flex-col items-center">
+                        <form ref={form} className="w-full flex flex-col items-center" onSubmit={(e)=>sendEmail(e)}>
                             <div className="p-4  flex flex-col items-center">
 
                                 <div className="flex flex-col gap-3 w-[80%] mt-5">
@@ -295,11 +320,11 @@ const Home = ()=>{
                                     </label>
 
                                     <div className="flex flex-col">
-                                        <button className="border rounded-full p-2 bg-red-400 font-bold text-white">Send</button>
+                                        <button type="submit" className="border rounded-full p-2 bg-red-400 font-bold text-white">Send</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -312,10 +337,6 @@ const Home = ()=>{
 
                 <div className="relative z-10 flex items-center justify-center h-full">
                     <p className="text-3xl caligraphy">Enjoy !</p>
-                </div>
-
-                <div>
-                    
                 </div>
             </div>
         </div>
