@@ -1,7 +1,7 @@
 import mountainUrl from "../videos/59291-492700392_small.mp4"
 import LoginForm from "../components/LoginForm";
 import RegisterForm from "../components/RegisterForm";
-import { ReactNode, useState } from "react";
+import {useState } from "react";
 
 const Credentials = ()=>{
 
@@ -23,9 +23,7 @@ const Credentials = ()=>{
             </video>
 
             <div className="relative z-10 backdrop-blur-md items-center flex-col flex p-8 rounded-lg shadow-lg max-w-md w-full">
-                <div className="flex flex-col gap-3 w-[80%] mt-5">
-                    {displayForm()}
-                </div>
+                {displayForm()}
             </div>
         </div>
     )
