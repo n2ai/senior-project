@@ -1,7 +1,9 @@
-const router = require("express").Router();
-const {handleCredentials} = require("../controllers/credentialsController")
-//This section wil add controller
+import { Router } from 'express';
+import { handleCredentials } from '../controllers/credentialsController.js'; // Ensure .js extension
 
-router.post("/",handleCredentials);
+const router = Router();  // Create a new router instance
 
-module.exports = router;
+// Define routes
+router.post("/", handleCredentials);
+
+export default router;

@@ -1,40 +1,40 @@
-const express = require('express');
+import express from "express";
+import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import credentialsRouter from "./routes/credentialsRoutes.js";  // Ensure .js extension for local file
+import {connect} from "./database/database.js";  // Ensure .js extension for local file
+import dotenv from 'dotenv';
+
+// Load environment variables
+dotenv.config();
+
 const app = express();
-const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
-const cors = require("cors");
-const credentialsRouter = require("./routes/credentialsRoutes");
-const connect = require("./database/database");
+const PORT = process.env.PORT || 3000;  // Use default port if env variable is undefined
 
-//Allow to 
-require('dotenv').config();
-
-const PORT = process.env.PORT;
-
-
-//config cors
+// Configure CORS
 const corsOptions = {
-    origin : ['http://localhost:5173'],
-    credentials:true,
+    origin: ['http://localhost:5173'],
+    credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-}
+};
 
-//config express
+// Middleware
 app.use(cookieParser());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
 
-//use router
-app.use('/credentials', credentialsRouter)
+// Use router
+app.use('/credentials', credentialsRouter);
 
-//end use router
-
+// Test route
 app.get('/', (req, res) => {
-    res.send('Get Request Successfull');
+    res.send('Get Request Successful');
 });
- 
+
+// Start the server
 app.listen(PORT, () => {
-    connect()
-    console.log(`Server is established at port -> ${PORT}`);
+    connect();  // Connect to MongoDB
+    console.log(`Server is running at port -> ${PORT}`);
 });

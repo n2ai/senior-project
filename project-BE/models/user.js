@@ -1,11 +1,16 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
+import { nanoid } from 'nanoid';  // Import nanoid correctly
 
 const userSchema = new mongoose.Schema({
-    fullName:String,
-    email:String,
-    passowrd:String,
-})
+    _id: {
+        type: String,
+        default: () => nanoid(12)
+    },
+    fullName: String,
+    email: String,
+    password: String,  // Fixed typo here
+});
 
 const User = mongoose.model('User', userSchema);
 
-module.exports = User;
+export default User;  // Use export default to export User
