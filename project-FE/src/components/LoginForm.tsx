@@ -46,7 +46,7 @@ const LoginForm:React.FC<ILoginFormProps> = ({setState})=>{
 
 
     return(
-        <form className="flex flex-col gap-3 w-[80%] mt-5">
+        <form onSubmit={formik.handleSubmit} className="flex flex-col gap-3 w-[80%] mt-5">
             <h1 className="text-3xl font-bold">Log In</h1>
 
                 <label className="flex flex-col">

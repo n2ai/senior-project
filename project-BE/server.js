@@ -3,6 +3,8 @@ const app = express();
 const PORT = 3000;
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
+const credentialsRouter = require("./routes/credentialsRoutes");
 
 //config cors
 const corsOptions = {
@@ -18,7 +20,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors(corsOptions));
 
 //use router
-
+app.use('/credentials', credentialsRouter)
 
 //end use router
 

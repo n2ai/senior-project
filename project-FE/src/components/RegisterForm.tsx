@@ -40,6 +40,10 @@ const validate = (values:validateValues)=>{
 
 const RegisterForm:React.FC<IRegisterFormProps> = ({setState})=>{
 
+    const fetchData = ()=>{
+        
+    }
+
     const formik = useFormik({
         initialValues:{
             fullName:'',
@@ -48,8 +52,8 @@ const RegisterForm:React.FC<IRegisterFormProps> = ({setState})=>{
             reEnterPassword:''
         },
         validate,
-        onSubmit: values=>{
-            alert(JSON.stringify(values, null,2))
+        onSubmit: (values)=>{
+            
         }
     })
 
@@ -58,7 +62,7 @@ const RegisterForm:React.FC<IRegisterFormProps> = ({setState})=>{
     }
 
     return(
-        <form className="flex flex-col gap-3 w-[80%] mt-5">
+        <form onSubmit={formik.handleSubmit} className="flex flex-col gap-3 w-[80%] mt-5">
             <h1 className="text-3xl font-bold">Register</h1>
 
             <label className="flex flex-col">
