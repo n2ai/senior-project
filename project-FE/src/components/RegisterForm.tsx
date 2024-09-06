@@ -1,4 +1,5 @@
 import { Formik, useFormik } from "formik"
+import axios from "axios";
 
 interface IRegisterFormProps{
     setState: React.Dispatch<React.SetStateAction<string>>
@@ -40,10 +41,6 @@ const validate = (values:validateValues)=>{
 
 const RegisterForm:React.FC<IRegisterFormProps> = ({setState})=>{
 
-    const fetchData = ()=>{
-        
-    }
-
     const formik = useFormik({
         initialValues:{
             fullName:'',
@@ -52,7 +49,26 @@ const RegisterForm:React.FC<IRegisterFormProps> = ({setState})=>{
             reEnterPassword:''
         },
         validate,
-        onSubmit: (values)=>{
+        onSubmit: async (values)=>{
+            //Notice what kind of data is this
+            
+            const registerForm = {
+                fullName: values.fullName,
+                email: values.email,
+                password: values.password
+            }
+
+            const sendData = {
+                type:"register",
+                data:registerForm
+            }
+
+            try{
+                const response = axios.post("http://localhost:3000/credentials", sendData);
+                console.log((await response).data);
+            }catch(error){
+                console.log(error);
+            }
             
         }
     })

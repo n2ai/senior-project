@@ -1,10 +1,16 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const credentialsRouter = require("./routes/credentialsRoutes");
+const connect = require("./database/database");
+
+//Allow to 
+require('dotenv').config();
+
+const PORT = process.env.PORT;
+
 
 //config cors
 const corsOptions = {
@@ -29,5 +35,6 @@ app.get('/', (req, res) => {
 });
  
 app.listen(PORT, () => {
+    connect()
     console.log(`Server is established at port -> ${PORT}`);
 });
