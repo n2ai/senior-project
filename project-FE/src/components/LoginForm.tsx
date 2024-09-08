@@ -1,4 +1,5 @@
-import { useFormik } from "formik"
+import { useFormik } from "formik";
+import axios from "axios";
 
 interface ILoginFormProps{
     setState: React.Dispatch<React.SetStateAction<string>>
@@ -35,8 +36,26 @@ const LoginForm:React.FC<ILoginFormProps> = ({setState})=>{
             password:''
         },
         validate,
-        onSubmit:(values)=>{
-            alert(JSON.stringify(values, null,2))
+        onSubmit:async (values)=>{
+            //Notice what kind of data is this
+            
+            const loginForm = {
+                email: values.email,
+                password: values.password
+            }
+
+            const sendData = {
+                type:"login",
+                data:loginForm
+            }
+
+            try{
+                const response = axios.post("http://localhost:3000/credentials", sendData);
+                console.log((await response).data);
+            }catch(error){
+                console.log(error);
+            }
+            
         }
     })
 
