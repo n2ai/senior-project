@@ -1,5 +1,8 @@
 import { useFormik } from "formik";
 import axios from "axios";
+import {Modal } from "react-bootstrap";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface ILoginFormProps{
     setState: React.Dispatch<React.SetStateAction<string>>
@@ -30,6 +33,13 @@ const validate = (values:validateValues)=>{
 
 const LoginForm:React.FC<ILoginFormProps> = ({setState})=>{
 
+    const [show, setShow] = useState<boolean>(false);
+    const [modalContent, setModalContent] = useState<string>("");
+
+    const handleClose = ()=>{
+        setShow(false);
+    }
+
     const formik = useFormik({
         initialValues:{
             email:'',
@@ -50,9 +60,17 @@ const LoginForm:React.FC<ILoginFormProps> = ({setState})=>{
             }
 
             try{
-                const response = axios.post("http://localhost:3000/credentials", sendData);
-                console.log((await response).data);
+                const response = await axios.post("http://localhost:3000/credentials", sendData);
+
+                if(response.status === 200){
+                    const accessToken = response.data.data.accessToken;
+                    const userId = response.data.data._id;
+                    console.log(userId); 
+                }
+                
             }catch(error){
+                setShow(true);
+                setModalContent("Invalid Credentials");
                 console.log(error);
             }
             
@@ -65,31 +83,41 @@ const LoginForm:React.FC<ILoginFormProps> = ({setState})=>{
 
 
     return(
-        <form onSubmit={formik.handleSubmit} className="flex flex-col gap-3 w-[80%] mt-5">
-            <h1 className="text-3xl font-bold">Log In</h1>
+        <>  
+            <form onSubmit={formik.handleSubmit} className="flex flex-col gap-3 w-[80%] mt-5">
+                <h1 className="text-3xl font-bold">Log In</h1>
 
-                <label className="flex flex-col">
-                    <span className="font-bold">Email</span>
-                    <input onChange={formik.handleChange} value={formik.values.email} name="email" className="border rounded-lg p-2" placeholder="Enter your email"></input>
-                    {formik.errors.email ? <div className="text-red-400">{formik.errors.email}</div> : null}
-                </label>
+                    <label className="flex flex-col">
+                        <span className="font-bold">Email</span>
+                        <input onChange={formik.handleChange} value={formik.values.email} name="email" className="border rounded-lg p-2" placeholder="Enter your email"></input>
+                        {formik.errors.email ? <div className="text-red-400">{formik.errors.email}</div> : null}
+                    </label>
 
-                <label className="flex flex-col">
-                    <span className="font-bold">Password</span>
-                    <input onChange={formik.handleChange} value={formik.values.password} type="password" name="password" className="border rounded-lg p-2" placeholder="Enter your password"></input>
-                    {formik.errors.password ? <div className="text-red-400">{formik.errors.password}</div> : null}
-                </label>
+                    <label className="flex flex-col">
+                        <span className="font-bold">Password</span>
+                        <input onChange={formik.handleChange} value={formik.values.password} type="password" name="password" className="border rounded-lg p-2" placeholder="Enter your password"></input>
+                        {formik.errors.password ? <div className="text-red-400">{formik.errors.password}</div> : null}
+                    </label>
 
-                <div className="flex flex-col">
-                    <a onClick={onClickDoNotHaveAccount} className="text-white cursor-pointer">Do not have an account?</a>
-                    <a href="/" className="text-white">Forgot Password?</a>
+                    <div className="flex flex-col">
+                        <a onClick={onClickDoNotHaveAccount} className="text-white cursor-pointer">Do not have an account?</a>
+                        <a href="/" className="text-white">Forgot Password?</a>
 
-                </div>
+                    </div>
 
-                <div className="flex flex-col">
-                    <button type="submit" className="border rounded-full p-2 bg-red-400 font-bold text-white">Log In</button>
-                </div>
-        </form>
+                    <div className="flex flex-col">
+                        <button type="submit" className="border rounded-full p-2 bg-red-400 font-bold text-white">Log In</button>
+                    </div>
+            </form>
+
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                
+                </Modal.Header>
+                <Modal.Body className="text-center">{modalContent}</Modal.Body>
+                
+            </Modal>
+        </>
     )
 }
 

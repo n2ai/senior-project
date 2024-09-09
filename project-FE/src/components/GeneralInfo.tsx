@@ -19,9 +19,9 @@ const GeneralInfo = ()=>{
         description:"My Love"
     }] 
 
-    const GeneralInfoCardArray = cardInfomation.map((item)=>{
+    const GeneralInfoCardArray = cardInfomation.map((item, index)=>{
         return(
-            <InfoCard imgUrl={item.imgUrl} title={item.title} description={item.description}></InfoCard>
+            <InfoCard key={index} imgUrl={item.imgUrl} title={item.title} description={item.description}></InfoCard>
         )
     })
 

@@ -6,6 +6,7 @@ import {useState } from "react";
 const Credentials = ()=>{
 
     const [credentialsState, setCredentialsState] = useState<string>("logIn");
+    
 
     const displayForm = ()=>{
         if(credentialsState === "logIn"){

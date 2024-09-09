@@ -10,6 +10,9 @@ const router = createBrowserRouter([
     path:"/credentials",
     //Temporary set up
     element: <Credentials/>
+  },{
+    path:"/profile/:id",
+    
   }
 ])
 

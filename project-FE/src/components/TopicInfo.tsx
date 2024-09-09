@@ -23,9 +23,9 @@ const TopicInfo = ()=>{
     }]
 
 
-    const GeneralInfoCardArray = topicInfoArray.map((item)=>{
+    const GeneralInfoCardArray = topicInfoArray.map((item, index)=>{
         return(
-            <InfoCard imgUrl={item.imgUrl} title={item.title} description={item.description}></InfoCard>
+            <InfoCard key={index} imgUrl={item.imgUrl} title={item.title} description={item.description}></InfoCard>
         )
     }) 
 

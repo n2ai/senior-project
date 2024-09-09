@@ -73,9 +73,9 @@ const Home = ()=>{
         }
     ]
 
-    const navBarItems = navBarLink.map((item)=>{
+    const navBarItems = navBarLink.map((item, index)=>{
         return(
-            <a className="block max-sm:mt-3 sm:inline" href={item.href} id={item.id}>
+            <a key={index} className="block max-sm:mt-3 sm:inline" href={item.href} id={item.id}>
               {item.name}  
             </a>
         )
@@ -109,8 +109,8 @@ const Home = ()=>{
         setGuideInfoIndex(index)
     }
 
-    const guideInfoButtonArray = guideInfoArray.map((item)=>{
-        return (<button className={`${guideInfoIndex === item.id && ("bg-red-400 text-white")} w-[12.5rem] h-[2.5rem] hover:text-white font-bold hover:bg-red-300 rounded-full items-center flex justify-center`} id={String(item.id)} onClick={()=>guideInfoButtonClickHandler(item.id)}>
+    const guideInfoButtonArray = guideInfoArray.map((item, index)=>{
+        return (<button key={index} className={`${guideInfoIndex === item.id && ("bg-red-400 text-white")} w-[12.5rem] h-[2.5rem] hover:text-white font-bold hover:bg-red-300 rounded-full items-center flex justify-center`} id={String(item.id)} onClick={()=>guideInfoButtonClickHandler(item.id)}>
             <span className="flex items-center space-x-2">
                 {item.icon}
                 <p className="m-0">{item.buttonName}</p>

@@ -18,9 +18,9 @@ const GoalInfo = ()=>{
         imgUrl: statueImg
     }]
 
-    const goalInfoCardArray = goalInfoArray.map((item)=>{
+    const goalInfoCardArray = goalInfoArray.map((item, index)=>{
         return(
-            <InfoCard imgUrl={item.imgUrl} title={item.title} description={item.description}></InfoCard>
+            <InfoCard key={index} imgUrl={item.imgUrl} title={item.title} description={item.description}></InfoCard>
         )
     })
 
