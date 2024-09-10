@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import credentialsRouter from "./routes/credentialsRoutes.js";  // Ensure .js extension for local file
+import authRouter from "./routes/authRoutes.js";
 import {connect} from "./database/database.js";  // Ensure .js extension for local file
 import dotenv from 'dotenv';
 
@@ -27,6 +28,7 @@ app.use(cors(corsOptions));
 
 // Use router
 app.use('/credentials', credentialsRouter);
+app.use('/profile', authRouter);
 
 // Test route
 app.get('/', (req, res) => {
