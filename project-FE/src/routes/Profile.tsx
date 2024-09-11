@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import ProfileHeader from "../components/ProfileHeader";
-import ProfileBody from "../components/ProfileBody";
+import ProfileLevels from "../components/ProfileLevels";
 import axios from "axios";
 const Profile = ()=>{
 
@@ -37,7 +37,7 @@ const Profile = ()=>{
         verification &&
         <div className="container">
             <ProfileHeader fullName="Hai" levels={3}></ProfileHeader>
-            <ProfileBody></ProfileBody>
+            <ProfileLevels></ProfileLevels>
         </div>
     )
 }
