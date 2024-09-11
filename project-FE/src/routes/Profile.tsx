@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import ProfileHeader from "../components/ProfileHeader";
 import ProfileLevels from "../components/ProfileLevels";
 import axios from "axios";
+import ProfileRoadMap from "../components/ProfileRoadMap";
+import ProfileTrophies from "../components/ProfileTrophies";
 const Profile = ()=>{
 
     const {id} = useParams();
@@ -38,6 +40,8 @@ const Profile = ()=>{
         <div className="container">
             <ProfileHeader fullName="Hai" levels={3}></ProfileHeader>
             <ProfileLevels></ProfileLevels>
+            <ProfileRoadMap></ProfileRoadMap>
+            <ProfileTrophies></ProfileTrophies>
         </div>
     )
 }
