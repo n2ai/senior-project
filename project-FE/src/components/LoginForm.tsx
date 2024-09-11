@@ -3,6 +3,7 @@ import axios from "axios";
 import {Modal } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 interface ILoginFormProps{
     setState: React.Dispatch<React.SetStateAction<string>>
@@ -35,7 +36,8 @@ const LoginForm:React.FC<ILoginFormProps> = ({setState})=>{
 
     const [show, setShow] = useState<boolean>(false);
     const [modalContent, setModalContent] = useState<string>("");
-
+    const [cookies, setCookies] = useCookies(['accessToken']);
+    const navigate = useNavigate();
     const handleClose = ()=>{
         setShow(false);
     }
@@ -52,12 +54,12 @@ const LoginForm:React.FC<ILoginFormProps> = ({setState})=>{
             const loginForm = {
                 email: values.email,
                 password: values.password
-            }
+            };
 
             const sendData = {
                 type:"login",
                 data:loginForm
-            }
+            };
 
             try{
                 const response = await axios.post("http://localhost:3000/credentials", sendData);
@@ -65,22 +67,22 @@ const LoginForm:React.FC<ILoginFormProps> = ({setState})=>{
                 if(response.status === 200){
                     const accessToken = response.data.data.accessToken;
                     const userId = response.data.data._id;
-                    console.log(userId); 
+                    setCookies('accessToken', accessToken, {path:'/'});
+                    navigate(`/profile/${userId}`);
                 }
                 
             }catch(error){
                 setShow(true);
                 setModalContent("Invalid Credentials");
                 console.log(error);
-            }
+            };
             
         }
     })
 
     const onClickDoNotHaveAccount = ()=>{
         setState("register");
-    }
-
+    };
 
     return(
         <>  
@@ -112,10 +114,8 @@ const LoginForm:React.FC<ILoginFormProps> = ({setState})=>{
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                
                 </Modal.Header>
                 <Modal.Body className="text-center">{modalContent}</Modal.Body>
-                
             </Modal>
         </>
     )

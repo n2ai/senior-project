@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./routes/Home"
 import Credentials from "./routes/Credentials";
+import Profile from "./routes/Profile";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
     element: <Credentials/>
   },{
     path:"/profile/:id",
-    
+    element: <Profile/>
   }
 ])
 
