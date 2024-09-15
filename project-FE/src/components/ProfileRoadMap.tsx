@@ -18,20 +18,34 @@ const CustomNode = ({ nodeDatum }: any) => (
             x="-75"
             y="-40"
             fill="white"
-            stroke="black"
+            stroke="#4A5568"
             strokeWidth="2"
-            rx="10"
-            ry="10"
+            rx="12"
+            ry="12"
+            className="shadow-lg"
         />
         {/* Title text */}
-        <text fill="black" x="0" y="-15" textAnchor="middle" fontSize="15">
+        <text fill="#2D3748" x="0" y="-15" textAnchor="middle" fontSize="15" fontWeight="bold">
             {nodeDatum.name}
         </text>
         {/* Progress bar container */}
         <foreignObject x="-65" y="0" width="130" height="50">
             <div xmlns="http://www.w3.org/1999/xhtml" style={{ width: '100%', height: '100%' }}>
-                <ProgressBar now={nodeDatum.progress} className="h-2" variant="black" />
-                <p style={{ textAlign: 'center', fontSize: '12px', marginTop: '5px', marginBottom: '0' }}>
+                <ProgressBar 
+                    now={nodeDatum.progress} 
+                    className="h-2 rounded-lg bg-gray-300"
+                    style={{ borderRadius: '8px' }}
+                    variant="success"
+                />
+                <p 
+                    style={{ 
+                        textAlign: 'center', 
+                        fontSize: '12px', 
+                        marginTop: '5px', 
+                        color: '#4A5568', 
+                        marginBottom: '0', 
+                        fontWeight: '500' 
+                    }}>
                     {nodeDatum.progress}%
                 </p>
             </div>
@@ -84,27 +98,30 @@ export const ProfileRoadMap: React.FC = () => {
     }, []);
 
     return (
-        <div className="flex flex-col mt-4 h-auto">
+        <div className="flex flex-col mt-6 h-auto px-6">
             {/* Road Map Title */}
-            <div className="mb-4 flex items-start">
-                <h1 className="font-bold text-3xl">Road Map</h1>
+            <div className="mb-6 flex items-start">
+                <h1 className="font-bold text-4xl text-gray-800">Profile Road Map</h1>
             </div>
 
             {/* Tree Component Container */}
             <div className="flex justify-center w-full">
-              <div
-                  ref={treeContainerRef}
-                  className="flex w-[80%] h-[80vh] border border-gray-300 justify-center items-center relative"
+                <div
+                    ref={treeContainerRef}
+                    className="flex w-full max-w-[80%] h-[80vh] border border-gray-300 rounded-lg shadow-lg justify-center items-center bg-gray-50"
                 >
-                  <Tree
-                      orientation="vertical"
-                      data={levelChart}
-                      nodeSize={{ x: 200, y: 150 }} // Adjust as necessary
-                      separation={{ siblings: 1, nonSiblings: 2 }}
-                      translate={translate} // Center the tree
-                      renderCustomNodeElement={CustomNode}
-                  />
-              </div>
+                    <Tree
+                        orientation="vertical"
+                        data={levelChart}
+                        nodeSize={{ x: 200, y: 150 }} // Adjust as necessary
+                        separation={{ siblings: 1, nonSiblings: 2 }}
+                        translate={translate} // Center the tree
+                        renderCustomNodeElement={CustomNode}
+                        transitionDuration={500} // Smooth transition
+                        zoomable={true} // Allow zoom
+                        initialDepth={2} // Expand the tree up to a certain depth
+                    />
+                </div>
             </div>
         </div>
     );

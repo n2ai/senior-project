@@ -37,12 +37,15 @@ const Profile = ()=>{
 
     return (
         verification &&
-        <div className="container">
-            <ProfileHeader fullName="Hai" levels={3}></ProfileHeader>
-            <ProfileLevels></ProfileLevels>
-            <ProfileRoadMap></ProfileRoadMap>
-            <ProfileTrophies></ProfileTrophies>
+        <div className="bg-black">
+            <div className="container">
+                <ProfileHeader fullName="Hai" levels={3}></ProfileHeader>
+                <ProfileLevels></ProfileLevels>
+                {/* <ProfileRoadMap></ProfileRoadMap> */}
+                <ProfileTrophies></ProfileTrophies>
+            </div>
         </div>
+        
     )
 }
 

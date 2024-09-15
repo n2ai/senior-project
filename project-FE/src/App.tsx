@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./routes/Home"
 import Credentials from "./routes/Credentials";
 import Profile from "./routes/Profile";
+import GamePlay from "./routes/GamePlay";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -14,6 +15,9 @@ const router = createBrowserRouter([
   },{
     path:"/profile/:id",
     element: <Profile/>
+  },{
+    path:"/test",
+    element: <GamePlay />
   }
 ])
 
