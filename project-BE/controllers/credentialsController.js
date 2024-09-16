@@ -1,4 +1,5 @@
-import User from '../models/user.js';  // Ensure .js extension for local files
+import {User} from '../models/user.js';  // Ensure .js extension for local files
+import { UserCities } from '../models/userCities.js';
 import mongoose from 'mongoose';
 import {createJWT} from '../middleware/JWTActions.js'
 import bcrypt from "bcrypt";
@@ -64,6 +65,8 @@ const handleRegister = async (data, res) => {
         const user = new User({ fullName, email, password: hashedPassword });
         await user.save();
 
+        const userCities = new UserCities({_id:user._id, cityId:"TTR",finishedQuiz:[], finished:false})
+        await userCities.save()
         res.status(200).json({ message: "User Created" });
     } catch (error) {
         res.status(500).json({ message: error.message });
