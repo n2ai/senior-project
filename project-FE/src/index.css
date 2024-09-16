@@ -19,5 +19,9 @@ body {
     @apply relative w-[max-content] font-mono
     before:absolute before:inset-0 before:bg-white
     before:animate-typewriter;
-}
+};
 
+.link {
+    stroke: blue; /* Set the desired color */
+    stroke-width: 2px; /* Adjust the thickness */
+}

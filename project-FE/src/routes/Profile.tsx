@@ -37,11 +37,11 @@ const Profile = ()=>{
 
     return (
         verification &&
-        <div className="bg-black">
+        <div className="bg-black w-full">
             <div className="container">
                 <ProfileHeader fullName="Hai" levels={3}></ProfileHeader>
                 <ProfileLevels></ProfileLevels>
-                {/* <ProfileRoadMap></ProfileRoadMap> */}
+                <ProfileRoadMap></ProfileRoadMap>
                 <ProfileTrophies></ProfileTrophies>
             </div>
         </div>

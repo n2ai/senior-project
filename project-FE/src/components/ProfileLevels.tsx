@@ -5,9 +5,10 @@ import 'leaflet/dist/leaflet.css';
 import { useState } from "react";
 import hanoiImgURL from "../images/hanoi-3609871_1920.jpg";
 import hochiminhImgURL from "../images/saigon-6670045_1920.jpg";
+import { ProgressBar } from "react-bootstrap";
+import Typewriter from 'typewriter-effect';
 
-
-const citiesList = [
+export const citiesList = [
     {
         name:"Hanoi",
         region:"Northern",
@@ -55,6 +56,10 @@ const citiesList = [
 //Three main Regions
 const ProfileLevels: React.FC = () => {
     const [currentRegion, setCurrentRegion] = useState<string>("Northern")
+
+    const [currentIndex, setCurrentIndex] = useState(2); // Start with the middle card highlighted
+
+
     // Define regions with proper LatLngBoundsExpression format
     const regions = [
         {
@@ -91,11 +96,7 @@ const ProfileLevels: React.FC = () => {
         [8.5, 110.0]   // North-East corner (approximate bottom of Vietnam)
     );
 
-    const handleSetRegion = (regionName:string)=>{
-        setCurrentRegion(regionName)
-    } 
-
-    const displayedCities = ()=>{
+    const displayedCities = () => {
 
         const displayedCities = citiesList
             .filter((item) => item.region === currentRegion)
@@ -114,14 +115,36 @@ const ProfileLevels: React.FC = () => {
     }
 
     return (
-        <div className="flex flex-col mt-4 items-center">
-            <div className="mb-4">
-                <h1 className="font-bold text-3xl">
-                    Learning Levels
-                </h1>
-            </div>
+        <div className="flex flex-col mt-4 items-center text-white">
+            <div className="mb-4 w-full flex flex-col">
+    
+                {/**Start section */}
+                <div>
+                    <h1 className="text-3xl font-bold">
+                        Start Your Journey Here
+                    </h1>
+                </div>
 
+                <div className="mt-2">
+                    <Typewriter
+                        options={{
+                        delay: 20, // Fastest delay to simulate typing
+                        }}
+                        onInit={(typewriter) => {
+                        typewriter
+                            .typeString("Choose the area in the map to start the virtual experience!")
+                            .callFunction(() => {
+                            console.log('Letter typed out!');
+                            })
+                            .start();
+                        }}
+                    />
+                </div>
+
+            </div>
+            
             <MapContainer
+                className="border-2 rounded-lg border-red-400"
                 bounds={vietnamBounds}
                 style={{ height: '100vh', width: '50%' }} // Makes the map take full screen height
             >
@@ -145,6 +168,9 @@ const ProfileLevels: React.FC = () => {
                         <Tooltip>
                             <div>
                                 <h3>{region.name}</h3>
+                                <ProgressBar className="h-2" variant="black" now={region.progress}>
+
+                                </ProgressBar>
                                 <p>Game Progress: {region.progress}%</p>
                             </div>
                         </Tooltip>
@@ -152,8 +178,19 @@ const ProfileLevels: React.FC = () => {
                 ))}
             </MapContainer>
         
-            <div className="w-full pt-4 flex flex-wrap gap-5 justify-center">
-                {displayedCities()}
+            <div className="w-full pt-4 flex flex-col flex-wrap gap-5 justify-center">
+                <div>
+
+                    <h1 className="text-2xl font-bold">
+                        Your Current Level
+                    </h1>
+
+                </div>
+
+                <div className="flex flex-wrap gap-5 justify-center">
+                    {displayedCities()}
+                </div>
+                
             </div>
         </div>
     )
