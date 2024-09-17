@@ -11,6 +11,6 @@ const userSchema = new mongoose.Schema({
     password: String,  // Fixed typo here
 });
 
-export const User = mongoose.model('User', userSchema);
+export const Users = mongoose.model('Users', userSchema, 'users');
 
 

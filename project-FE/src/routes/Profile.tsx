@@ -27,6 +27,12 @@ const Profile = ()=>{
         }        
     }
 
+    // const fetchUserData = async ()=>{
+    //     try{
+    //         await axios.get(`http://localhost:3000`)
+    //     }
+    // }
+
     useEffect(()=>{
         fetchJWTVerify()
     })

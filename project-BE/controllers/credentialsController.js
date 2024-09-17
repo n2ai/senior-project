@@ -1,4 +1,4 @@
-import {User} from '../models/user.js';  // Ensure .js extension for local files
+import {Users} from '../models/users.js';  // Ensure .js extension for local files
 import { UserCities } from '../models/userCities.js';
 import mongoose from 'mongoose';
 import {createJWT} from '../middleware/JWTActions.js'
@@ -18,7 +18,7 @@ export const handleCredentials = async (req, res) => {
 const handleLogin = async (data, res) => {
     const { email, password } = data;
     try {
-        const existingUser = await User.findOne({ email });
+        const existingUser = await Users.findOne({ email });
         if (!existingUser) {
             return res.status(400).json({ message: "Account does not exist" });
         }
@@ -53,7 +53,7 @@ const handleRegister = async (data, res) => {
     const { fullName, email, password } = data;
 
     try {
-        const existingUser = await User.findOne({ email });
+        const existingUser = await Users.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ message: "Account already exists" });
         }
@@ -62,7 +62,7 @@ const handleRegister = async (data, res) => {
         const hashedPassword = await bcrypt.hash(password, salt);
 
         // Make sure you pass `password` with the hashed value
-        const user = new User({ fullName, email, password: hashedPassword });
+        const user = new Users({ fullName, email, password: hashedPassword });
         await user.save();
 
         const userCities = new UserCities({_id:user._id, cityId:"TTR",finishedQuiz:[], finished:false})
