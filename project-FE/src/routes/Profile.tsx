@@ -8,6 +8,7 @@ import ProfileLevels from "../components/ProfileLevels";
 import axios from "axios";
 import ProfileRoadMap from "../components/ProfileRoadMap";
 import ProfileTrophies from "../components/ProfileTrophies";
+import ProfileRegions from "../components/ProfileRegions";
 const Profile = ()=>{
 
     const {id} = useParams();
@@ -43,13 +44,16 @@ const Profile = ()=>{
 
     return (
         verification &&
-        <div className="bg-black w-full">
+        <div className= "w-full">
+
             <div className="container">
-                <ProfileHeader fullName="Hai" levels={3}></ProfileHeader>
+                {/* <ProfileHeader fullName="Hai" levels={3}></ProfileHeader>
                 <ProfileLevels></ProfileLevels>
                 <ProfileRoadMap></ProfileRoadMap>
-                <ProfileTrophies></ProfileTrophies>
+                <ProfileTrophies></ProfileTrophies> */}
+                <ProfileRegions></ProfileRegions>
             </div>
+
         </div>
         
     )
