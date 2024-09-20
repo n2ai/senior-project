@@ -1,4 +1,4 @@
-import LevelCard from "./LevelCard";
+import LevelCard from "../LevelCard";
 import { MapContainer, TileLayer, Tooltip, Rectangle } from 'react-leaflet';
 import { LatLngBounds } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
