@@ -97,7 +97,5 @@ export const handleGetUserDataController = async (req,res)=>{
         });
     }
 
-    console.log(userCityData)
-
-    res.status(200).json({message:"hello"})
+    res.status(200).json({userCityData:userCityData})
 };

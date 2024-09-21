@@ -8,12 +8,34 @@ import ProfileRegions from "../components/profile/ProfileRegions";
 import ProfileNorthern from "../components/profile/ProfileNorthern"
 import ProfileCentral from "../components/profile/ProfileCentral";
 import ProfileSouthern from "../components/profile/ProfileSouthern";
+
+type userCityDataType  = {
+    cityCondition:string,
+    cityCurrentProgress:string [],
+    cityId:string,
+    cityName:string,
+    cityProgress:number,
+    cityRegion:string,
+    finished:boolean
+}
+
 const Profile = ()=>{
 
     const {id} = useParams();
     const [cookies, setCookies] = useCookies(['accessToken']);
     const [verification, setVerification] = useState<boolean>(false);
+    const [dataIsLoaded,setDataIsloaded] = useState<boolean>(false);
     const [currentPage, setCurrentPage] = useState<string>("regions")
+    const [userCityData, setUserCityData] = useState<userCityDataType []>([
+        {   cityCondition:"",
+            cityCurrentProgress: [""],
+            cityId: "",
+            cityName: "",
+            cityProgress: 0,
+            cityRegion: "",
+            finished: false
+        }
+    ])
 
     const accessToken = cookies.accessToken;
     const navigate = useNavigate()
@@ -21,11 +43,21 @@ const Profile = ()=>{
     const fetchJWTVerify = async ()=>{
         try{
             await axios.post(`http://localhost:3000/profile/${id}`,{accessToken:accessToken})
-            setVerification(true);
         }catch(error){
             console.log(error);
             navigate("/");
         }        
+    }
+
+    const fetchUserCityData = async () =>{
+        try{
+            const response = await axios.get(`http://localhost:3000/profile/${id}`)
+            const data = response.data.userCityData;
+            setUserCityData(data);
+            setDataIsloaded(data);
+        }catch(error){
+            console.log(error)
+        }
     }
 
     const pageFlowRendering = ()=>{
@@ -47,22 +79,29 @@ const Profile = ()=>{
     // }
 
     useEffect(()=>{
-        fetchJWTVerify()
-    })
+        const fetchData = async () =>{
+            await fetchJWTVerify();
+            await fetchUserCityData();
+            setVerification(true);
+        }
+        fetchData();
+    },[])
 
-    useEffect(()=>{
-
-    })
-
+    
     return (
-        verification &&
-        <div className= "w-full bg-[#FADADD]">
+        verification && dataIsLoaded ? (
+        <div className= "w-full h-full bg-[#FADADD]">
             
-            <div className="pt-4 container-sm mx-auto  w-full h-screen" >
+            <div className="pt-4 container-sm mx-auto w-full h-full" >
                 {pageFlowRendering()}
             </div>
 
-        </div>
+        </div>)
+        : (
+            <div>
+                loading...
+            </div>
+        )
         
     )
 }
