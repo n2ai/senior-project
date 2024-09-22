@@ -3,26 +3,6 @@ import { Cities } from "../models/cities.js";
 import { Regions } from "../models/regions.js";
 import { UserCities } from "../models/userCities.js";
 
-//Return Structure will be sth like this:
-/**cities = [{
-    cityId:string,
-    cityName:string,
-    cityCurrentProgress,
-    cityCondition:Locked or Unlocked
-    cityProgress:number,
-    cityRegion:string
-}] 
-    
-    citiesRequirements = [{
-        city:[requirements]
-    }]
-
-    calculatedRegionProgess = [{
-        city:string,
-        progess:number
-    }]
-*/
-
 export const handleAuthController = async (req,res)=>{
     //Data form request body
     const data = req.body;
@@ -98,8 +78,5 @@ export const handleGetUserDataController = async (req,res)=>{
             cityDescription:cityDescription
         });
     }
-
-    console.log(userCityData)
-
     res.status(200).json({userCityData:userCityData})
 };

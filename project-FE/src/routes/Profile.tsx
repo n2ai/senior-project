@@ -9,7 +9,7 @@ import ProfileNorthern from "../components/profile/ProfileNorthern"
 import ProfileCentral from "../components/profile/ProfileCentral";
 import ProfileSouthern from "../components/profile/ProfileSouthern";
 
-type userCityDataType  = {
+export type userCityDataType  = {
     cityCondition:string,
     cityCurrentProgress:string [],
     cityId:string,
