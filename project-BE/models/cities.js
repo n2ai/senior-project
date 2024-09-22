@@ -8,7 +8,8 @@ const citiesSchema = new mongoose.Schema({
     cityCuisine:String,
     cityPeople:String,
     cityName:String,
-    cityRegion:String
+    cityRegion:String,
+    cityDescription:String
 })
 
-export const Cities = mongoose.model("Cities",citiesSchema, "cities")
+export const Cities = mongoose.model("Cities",citiesSchema, "cities");

@@ -16,7 +16,8 @@ type userCityDataType  = {
     cityName:string,
     cityProgress:number,
     cityRegion:string,
-    finished:boolean
+    finished:boolean,
+    cityDescription:string
 }
 
 const Profile = ()=>{
@@ -33,7 +34,8 @@ const Profile = ()=>{
             cityName: "",
             cityProgress: 0,
             cityRegion: "",
-            finished: false
+            finished: false,
+            cityDescription:""
         }
     ])
 
@@ -87,7 +89,8 @@ const Profile = ()=>{
         fetchData();
     },[])
 
-    
+    console.log(userCityData);
+
     return (
         verification && dataIsLoaded ? (
         <div className= "w-full h-full bg-[#FADADD]">

@@ -58,11 +58,12 @@ export const handleGetUserDataController = async (req,res)=>{
         cityCondition:"unlocked",
         cityRegion:"tutorial",
         finished:tutorialQuery.finished,
-        cityProgress:(tutorialQuery.finishedQuiz.length / 4) * 100
+        cityProgress:(tutorialQuery.finishedQuiz.length / 4) * 100,
+        cityDescription:"Welcome to Vietnam"
     })
 
     for(let city of cities){
-        let {cityId, cityName, cityRegion} = city;
+        let {cityId, cityName, cityRegion, cityDescription} = city;
         let cityCondition = "locked";
         let cityCurrentProgress = [];
         let cityProgress = 0;
@@ -93,9 +94,12 @@ export const handleGetUserDataController = async (req,res)=>{
             cityCondition:cityCondition,
             cityProgress:cityProgress,
             cityRegion:cityRegion,
-            finished: finished
+            finished: finished,
+            cityDescription:cityDescription
         });
     }
+
+    console.log(userCityData)
 
     res.status(200).json({userCityData:userCityData})
 };
