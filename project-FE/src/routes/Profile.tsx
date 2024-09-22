@@ -5,10 +5,7 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import ProfileRegions from "../components/profile/ProfileRegions";
-import ProfileNorthern from "../components/profile/ProfileNorthern"
-import ProfileCentral from "../components/profile/ProfileCentral";
-import ProfileSouthern from "../components/profile/ProfileSouthern";
-
+import ProfileRegionInfo from "../components/profile/ProfileRegionInfo";
 export type userCityDataType  = {
     cityCondition:string,
     cityCurrentProgress:string [],
@@ -66,19 +63,22 @@ const Profile = ()=>{
         if(currentPage === "regions"){
             return <ProfileRegions setCurrentPage={setCurrentPage}></ProfileRegions>
         }else if(currentPage === "northern"){
-            return <ProfileNorthern setCurrentPage={setCurrentPage}></ProfileNorthern>
+
+            const northernCities = userCityData.filter(item=>item.cityRegion === "northern")
+
+            return <ProfileRegionInfo setCurrentPage={setCurrentPage} region="northern" cities={northernCities} ></ProfileRegionInfo>
         }else if(currentPage === "central"){
-            return <ProfileCentral setCurrentPage={setCurrentPage}></ProfileCentral>
+            
+            const centralCities = userCityData.filter(item=>item.cityRegion === "central")
+
+            return <ProfileRegionInfo setCurrentPage={setCurrentPage} region="central" cities={centralCities}></ProfileRegionInfo>
         }else if(currentPage === "southern"){
-            return <ProfileSouthern setCurrentPage={setCurrentPage}></ProfileSouthern>
+
+            const southernCities = userCityData.filter(item=>item.cityRegion === "southern")
+
+            return <ProfileRegionInfo setCurrentPage={setCurrentPage} region="southern" cities={southernCities}></ProfileRegionInfo>
         }
     }
-
-    // const fetchUserData = async ()=>{
-    //     try{
-    //         await axios.get(`http://localhost:3000`)
-    //     }
-    // }
 
     useEffect(()=>{
         const fetchData = async () =>{

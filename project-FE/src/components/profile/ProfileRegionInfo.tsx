@@ -9,12 +9,15 @@ interface IProfileRegionInfo{
 
 const ProfileRegionInfo:React.FC<IProfileRegionInfo> = ({region, cities, setCurrentPage})=>{
 
-    //Doan Nay se tim cach render cities
-    
+    const [dataIsLoaded, setDataIsloaded] = useState<boolean>(false);
 
+
+
+    //Doan Nay se tim cach render cities
+    console.log(cities)
     return (
-        <div className="container mx-auto">
-            <button onClick={()=>setCurrentPage(region)}>
+        <div>
+            <button onClick={()=>setCurrentPage("regions")}>
                 setCurrentPage
             </button>
         </div>
