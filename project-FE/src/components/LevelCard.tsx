@@ -11,7 +11,7 @@ interface ILevelCard{
 
 const LevelCard:React.FC<ILevelCard> = ({title, description, progress, unlock, imgUrl})=>{
     return(
-        <Card className={`duration-500 ease-in-out transform hover:scale-110 w-[25rem] shadow-lg border-none relative ${!unlock && "opacity-50 pointer-events-none"}`} 
+        <Card className={`duration-500 ease-in-out transform hover:scale-110 w-[25rem] border relative ${!unlock && "opacity-50 pointer-events-none"}`} 
             style={{ backgroundImage: `url(${imgUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         >
             {/* Optional overlay for better text visibility */}
@@ -37,7 +37,7 @@ const LevelCard:React.FC<ILevelCard> = ({title, description, progress, unlock, i
                 </div>
                 
                 <div className="mt-4">
-                    <button className="bg-white text-black w-full p-2 rounded-lg font-semibold">Start Level</button>
+                    <button className="bg-red-400 text-white w-full p-2 rounded-lg font-semibold">Start Level</button>
                 </div>
             </Card.Body>
         </Card>

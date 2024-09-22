@@ -39,7 +39,7 @@ export const handleGetUserDataController = async (req,res)=>{
         cityRegion:"tutorial",
         finished:tutorialQuery.finished,
         cityProgress:(tutorialQuery.finishedQuiz.length / 4) * 100,
-        cityDescription:"Welcome to Vietnam"
+        cityDescription:"Welcome to Vietnam!"
     })
 
     for(let city of cities){
