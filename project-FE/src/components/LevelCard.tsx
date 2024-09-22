@@ -2,7 +2,7 @@ import { Card, ProgressBar } from "react-bootstrap";
 
 interface ILevelCard{
     title:string,
-    description:string,
+    description?:string,
     progress:number,
     unlock:boolean,
     imgUrl:string,
@@ -19,7 +19,7 @@ const LevelCard:React.FC<ILevelCard> = ({title, description, progress, unlock, i
 
             <Card.Body className="relative z-10">
                 <Card.Title className="font-bold text-white">{title}</Card.Title>
-                <Card.Subtitle className="text-gray-200">{description}</Card.Subtitle>
+                {/* <Card.Subtitle className="text-gray-200">{description}</Card.Subtitle> */}
 
                 { unlock ? 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" 

@@ -7,7 +7,7 @@ import './index.css';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <CookiesProvider>
-      <App />
+      <App/>
     </CookiesProvider>
   </StrictMode>,
 )

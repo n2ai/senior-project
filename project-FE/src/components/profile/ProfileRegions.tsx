@@ -9,13 +9,13 @@ interface IProfileRegions{
 
 const ProfileRegions:React.FC<IProfileRegions> = ({setCurrentPage})=>{
     return(
-        <div>
+        <div className="w-full h-screen">
             <div className="flex-col gap-3">
                 <h1 className="text-3xl text-gray-700 font-bold">Welcome Back Hai </h1>
                 <p className="text-2xl text-gray-700">Choose the below area to start your journey !</p>
             </div>
 
-            <div className=" mt-4 w-full h-full flex flex-col items-center gap-5">
+            <div className=" pt-4 w-full h-full flex flex-col items-center gap-5">
                 {/**Northern */} 
                 <div className="relative max-w-[700px] flex bg-cover bg-center rounded-lg flex-col w-full h-56 group"
                 style={{ backgroundImage: `url(${northImgURL})` }}>

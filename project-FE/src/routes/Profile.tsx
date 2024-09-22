@@ -64,17 +64,17 @@ const Profile = ()=>{
             return <ProfileRegions setCurrentPage={setCurrentPage}></ProfileRegions>
         }else if(currentPage === "northern"){
 
-            const northernCities = userCityData.filter(item=>item.cityRegion === "northern")
+            const northernCities = userCityData.filter(item=>item.cityRegion === "northern" || item.cityRegion === "tutorial" )
 
             return <ProfileRegionInfo setCurrentPage={setCurrentPage} region="northern" cities={northernCities} ></ProfileRegionInfo>
         }else if(currentPage === "central"){
             
-            const centralCities = userCityData.filter(item=>item.cityRegion === "central")
+            const centralCities = userCityData.filter(item=>item.cityRegion === "central" || item.cityRegion === "tutorial")
 
             return <ProfileRegionInfo setCurrentPage={setCurrentPage} region="central" cities={centralCities}></ProfileRegionInfo>
         }else if(currentPage === "southern"){
 
-            const southernCities = userCityData.filter(item=>item.cityRegion === "southern")
+            const southernCities = userCityData.filter(item=>item.cityRegion === "southern" || item.cityRegion === "tutorial")
 
             return <ProfileRegionInfo setCurrentPage={setCurrentPage} region="southern" cities={southernCities}></ProfileRegionInfo>
         }
@@ -89,11 +89,9 @@ const Profile = ()=>{
         fetchData();
     },[])
 
-    console.log(userCityData);
-
     return (
         verification && dataIsLoaded ? (
-        <div className= "w-full h-full bg-[#FADADD]">
+        <div className= "w-full h-full flex bg-[#FADADD]">
             
             <div className="pt-4 container-sm mx-auto w-full h-full" >
                 {pageFlowRendering()}

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { userCityDataType } from "../../routes/Profile";
+import hanoiImgUrl from "../../images/hanoi-3609871_1920.jpg"
+import LevelCard from "../LevelCard";
 
 interface IProfileRegionInfo{
     region: string,
@@ -11,15 +13,54 @@ const ProfileRegionInfo:React.FC<IProfileRegionInfo> = ({region, cities, setCurr
 
     const [dataIsLoaded, setDataIsloaded] = useState<boolean>(false);
 
+    const citiesRows = cities.map((city,index)=>{
+        return(  
+            <div key={index} className={`flex flex-col ${index % 2 == 0 ? "md:flex-row-reverse" : "md:flex-row"}  items-center md:space-x-8 mb-8`}>
+                <div className="description md:w-1/2 text-center flex justify-center">
+                    <p className="schoolbell-regular text-2xl font-bold ">{city.cityDescription}</p>
+                </div>
 
+                <div className=" flex items-center justify-center bg-none md:w-1/2">
+                    <LevelCard title={city.cityName} progress={city.cityProgress} unlock={city.cityCondition === "unlocked" ? true : false} imgUrl={hanoiImgUrl}></LevelCard>
+                </div>
+            </div>
+        )
+    })
+
+    const regionDescription = ()=>{
+        if(region === "northern"){
+            return "Northern Vietnam: A Land of Majestic Peaks and Timeless Traditions"
+        }else if(region === "central"){
+            return "Central Vietnam: Where Heritage Meets Coastal Beauty"
+        }else if(region === "southern"){
+            return "Southern Vietnam: A Vibrant Tapestry of Culture and Nature"
+        }
+    }
+
+    
 
     //Doan Nay se tim cach render cities
     console.log(cities)
     return (
-        <div>
-            <button onClick={()=>setCurrentPage("regions")}>
-                setCurrentPage
+        <div className="w-full">
+            <button className="flex items-center justify-center text-xl border-bottom border-black animate-bounce" onClick={()=>setCurrentPage("regions")}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                </svg>
+                <p>Back to Regions </p>
             </button>
+
+
+            {/**Header*/}
+            <div className="w-full flex gap-3 flex-col items-center">
+                <h1 className="caligraphy text-6xl font-bold">{region.charAt(0).toUpperCase() + region.slice(1).toLowerCase()}</h1>
+                <p className="text-2xl font-monospace">{regionDescription()}</p>
+            </div>
+
+            {/**Display */}
+            <div className="container mx-auto mt-6">
+                {citiesRows}
+            </div>
         </div>
     )
 }
