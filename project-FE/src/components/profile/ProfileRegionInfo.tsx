@@ -12,8 +12,16 @@ interface IProfileRegionInfo{
 const ProfileRegionInfo:React.FC<IProfileRegionInfo> = ({region, cities, setCurrentPage})=>{
 
     const [dataIsLoaded, setDataIsloaded] = useState<boolean>(false);
+    const cloudinaryName = import.meta.env.VITE_CLOUDINARY_NAME;
 
     const citiesRows = cities.map((city,index)=>{
+
+        
+        const standardizeCityName = city.cityName.toLocaleLowerCase().split(" ").join("");
+
+        const imgUrl = `https://res.cloudinary.com/${cloudinaryName}/image/upload/${standardizeCityName}LevelImg.jpg`
+
+
         return(  
             <div key={index} className={`flex flex-col ${index % 2 == 0 ? "md:flex-row-reverse" : "md:flex-row"}  items-center md:space-x-8 mb-8`}>
                 <div className="description md:w-1/2 text-center flex justify-center">
@@ -21,7 +29,7 @@ const ProfileRegionInfo:React.FC<IProfileRegionInfo> = ({region, cities, setCurr
                 </div>
 
                 <div className=" flex items-center justify-center bg-none md:w-1/2">
-                    <LevelCard title={city.cityName} progress={city.cityProgress} unlock={city.cityCondition === "unlocked" ? true : false} imgUrl={hanoiImgUrl}></LevelCard>
+                    <LevelCard title={city.cityName} progress={city.cityProgress} unlock={city.cityCondition === "unlocked" ? true : false} imgUrl={imgUrl}></LevelCard>
                 </div>
 
             </div>
