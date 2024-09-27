@@ -3,6 +3,10 @@ import cuisineImgUrl from "../../images/hanoiStageImages/pho-ha-noi-banner.jpg";
 import peopleImgUrl from "../../images/hanoiStageImages/pexels-huy-phan-316220-1437618.jpg";
 import quizImgUrl from "../../images/hanoiStageImages/pexels-boser-dam-1598322793-28494588.jpg";
 
+/**Test import contents */
+import TutorialPeople from "./tutorial/tutorialPeople";
+import TutorialCulture from "./tutorial/TutorialCulture"
+import TutorialCuisine from "./tutorial/TutorialCuisine";
 interface IProfileStageChoosing{
     title?:string,
     subtitle?:string
@@ -49,11 +53,6 @@ const ProfileStageChoosing:React.FC<IProfileStageChoosing> = ({title, subtitle})
     return(
         <div className="flex flex-col items-center w-full h-full">
             
-            {/**Header */}
-            <div className="flex flex-col items-center gap-4">
-                <h1 className="text-7xl font-bold">Ha Noi</h1>
-                <p className="text-2xl">Ha Noi do niem tin yeu hi vong</p>
-            </div>
 
             {/**Stage Choosing */}
             <div className="flex w-full h-full">
@@ -61,14 +60,15 @@ const ProfileStageChoosing:React.FC<IProfileStageChoosing> = ({title, subtitle})
             </div>
             
             {/**Content */}
-            <div>
-                
+            {/**h-screen for temporary */}
+            <div className="w-full">
+                <TutorialCuisine></TutorialCuisine>
             </div>
 
-            {/**Quiz*/}
+            {/* *Quiz
             <div>
 
-            </div>
+            </div> */}
         </div>
     )
 }

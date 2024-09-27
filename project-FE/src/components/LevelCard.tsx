@@ -1,16 +1,25 @@
 import { Card, ProgressBar } from "react-bootstrap";
-
+import { useNavigate, useParams } from "react-router-dom";
 interface ILevelCard{
     title:string,
     description?:string,
     progress:number,
     unlock:boolean,
     imgUrl:string,
-    region?:string
+    region?:string,
+    cityName:string
 }
 
-const LevelCard:React.FC<ILevelCard> = ({title, description, progress, unlock, imgUrl})=>{
+const LevelCard:React.FC<ILevelCard> = ({title, cityName , progress, unlock, imgUrl})=>{
+    const {id} = useParams();
+    const navigate = useNavigate();
+
+    const buttonHandleOnClick = ()=>{
+        navigate(`/profile/${id}/city/${cityName}`)
+    }
+    
     return(
+        
         <Card className={`duration-500 ease-in-out transform hover:scale-110 w-[25rem] border relative ${!unlock && "opacity-50 pointer-events-none"}`} 
             style={{ backgroundImage: `url(${imgUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         >
@@ -37,7 +46,7 @@ const LevelCard:React.FC<ILevelCard> = ({title, description, progress, unlock, i
                 </div>
                 
                 <div className="mt-4">
-                    <button className="bg-red-400 text-white w-full p-2 rounded-lg font-semibold">Start Level</button>
+                    <button type="button" onClick={buttonHandleOnClick} className="bg-red-400 text-white w-full p-2 rounded-lg font-semibold">Start Level</button>
                 </div>
             </Card.Body>
         </Card>
