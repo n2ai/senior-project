@@ -7,13 +7,15 @@ import TutorialCuisine from "./TutorialCuisine";
 import TutorialCulture from "./TutorialCulture";
 import TutorialPeople from "./tutorialPeople";
 import TutorialQuiz from "./TutorialQuiz";
+import { quizContents } from "../../../routes/ProfileCity";
+import { userQuizContents } from "../../../routes/ProfileCity";
 
-interface IProfileStageChoosing{
-    title?:string,
-    subtitle?:string
+interface ITutorialLevel{
+    quizContents:quizContents[],
+    userQuizContents: userQuizContents
 }
 
-const TutorialLevel:React.FC<IProfileStageChoosing> = ({title, subtitle}) =>{
+const TutorialLevel:React.FC<ITutorialLevel> = ({quizContents, userQuizContents}) =>{
 
     const [currentStage, setCurrentStage] = useState<string>("culture")
     
@@ -25,7 +27,7 @@ const TutorialLevel:React.FC<IProfileStageChoosing> = ({title, subtitle}) =>{
         }else if(currentStage === "people"){
             return <TutorialPeople></TutorialPeople>
         }else if(currentStage === "quiz"){
-            return <TutorialQuiz></TutorialQuiz>
+            return <TutorialQuiz userQuizContents={userQuizContents} quizContents={quizContents}></TutorialQuiz>
         }
     }
 
