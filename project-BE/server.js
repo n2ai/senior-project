@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import credentialsRouter from "./routes/credentialsRoutes.js";  // Ensure .js extension for local file
 import profileRouter from "./routes/profileRoutes.js";
+import userCityRouter from "./routes/userCityRoutes.js"
 import {connect} from "./database/database.js";  // Ensure .js extension for local file
 import dotenv from 'dotenv';
 
@@ -30,11 +31,13 @@ app.use(cors());
 // Use router
 app.use('/credentials', credentialsRouter);
 app.use('/profile', profileRouter);
+app.use('/userCity', userCityRouter);
 
 // Test route
 app.get('/', (req, res) => {
     res.send('Get Request Successful');
 });
+
 
 // Start the server
 app.listen(PORT, () => {

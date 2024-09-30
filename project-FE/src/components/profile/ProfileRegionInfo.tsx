@@ -29,7 +29,7 @@ const ProfileRegionInfo:React.FC<IProfileRegionInfo> = ({region, cities, setCurr
                 </div>
 
                 <div className=" flex items-center justify-center bg-none md:w-1/2">
-                    <LevelCard cityName={standardizeCityName} title={city.cityName} progress={city.cityProgress} unlock={city.cityCondition === "unlocked" ? true : false} imgUrl={imgUrl}></LevelCard>
+                    <LevelCard cityId={city.cityId} cityName={standardizeCityName} title={city.cityName} progress={city.cityProgress} unlock={city.cityCondition === "unlocked" ? true : false} imgUrl={imgUrl}></LevelCard>
                 </div>
 
             </div>

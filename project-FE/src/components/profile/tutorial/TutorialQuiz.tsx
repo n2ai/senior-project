@@ -20,7 +20,7 @@ const TutorialQuiz = () =>{
     //Will Set Up the logic for this state controller later
     const [currentProgress, setCurrentProgress] = useState<number>(0);
     const [currentQuestion, setCurrentQuestion] = useState<number>(0);
-    const [selectedValue, setSelectedValue] = useState<string>("");
+    const [questionList, setQuestionlist] = useState<IQuizQuestions[]>([]);
     const [userAnswers, setUserAnswers] = useState<IUserAnswer[]>([{
         questionName:"question0",
         questionAnswer:""
@@ -33,7 +33,7 @@ const TutorialQuiz = () =>{
     },{
         questionName:"question3",
         questionAnswer:""
-    }])
+    }]);
 
     const handleOnChangeRadio = (e:React.ChangeEvent<HTMLInputElement>) =>{
         setUserAnswers((answers)=>{
@@ -92,7 +92,7 @@ const TutorialQuiz = () =>{
     const questionForm = questions[currentQuestion].options.map((item, index)=>{
         return(
             <div key={index} className="space-x-3 flex items-center">
-                <input value={item} onChange={handleOnChangeRadio} checked = {item == userAnswers[currentQuestion].questionAnswer}type="radio" id={String(index)} name={questions[currentQuestion].questionName} ></input>
+                <input  value={item} onChange={handleOnChangeRadio} checked = {item == userAnswers[currentQuestion].questionAnswer}type="radio" id={String(index)} name={questions[currentQuestion].questionName} ></input>
                 <label htmlFor= {String(index)}>{item}</label>
             </div>
         )
@@ -126,7 +126,7 @@ const TutorialQuiz = () =>{
                 </form>
 
                 <div className="w-full flex justify-between mt-6">
-                    <button name="prev" type="button" onClick={(e)=>handleOnClickButton(e)} className="bg-slate-400 h-[2.5rem] w-[8rem] rounded-lg text-white">Prev</button>
+                    <button name="prev" type="button" onClick={(e)=>handleOnClickButton(e)} className={`bg-slate-400 h-[2.5rem] w-[8rem] rounded-lg text-white ${currentQuestion === 0 && "hidden right-0"}`}>Prev</button>
 
                     <button name="next" type="button" onClick={(e)=>handleOnClickButton(e)} className="bg-red-400 h-[2.5rem] w-[8rem] rounded-lg text-white">Next</button>
                 </div>

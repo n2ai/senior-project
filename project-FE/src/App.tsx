@@ -18,14 +18,9 @@ const router = createBrowserRouter([
     path:"/profile/:id",
     element: <Profile/>,
   },{
-    path:"/profile/:id/city/",
+    path:"/profile/:id/city/:cityId",
     element:<ProfileCity/>,
-    children:[
-      {
-        path:"tutorial",
-        element: <TutorialLevel/>
-      }
-    ]
+    
   },
   {
     path:"/test",
