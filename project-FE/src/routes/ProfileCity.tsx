@@ -3,10 +3,14 @@ import { Outlet, useNavigate, useParams } from "react-router-dom"
 import { useCookies } from "react-cookie";
 import TutorialLevel from "../components/profile/tutorial/TutorialLevel";
 import axios from "axios";
+
+
 const ProfileCity = ()=>{
     const {id, cityId} = useParams();
     const [cookies, setCookies] = useCookies(['accessToken']);
     const [isVerified, setIsVerified] = useState<boolean>(false);
+    const [quizContents, setQuizContents] = useState<boolean>([]);
+    const [userQuizContents, setQuizContents] = useState<boolean>([]);
     const navigate = useNavigate();
 
     const accessToken = cookies.accessToken;
@@ -24,6 +28,8 @@ const ProfileCity = ()=>{
     const fetchUserCityData = async ()=>{
         try{
             const response = await axios.get(`http://localhost:3000/userCity/${id}/${cityId}`);
+            const responseData = await response.data;
+
         }catch(error){
             console.log(error);
         }
@@ -36,16 +42,21 @@ const ProfileCity = ()=>{
     }
 
 
-    useEffect(()=>{
-        const fetchData = async ()=>{
-            await fetchJWTVerify();
-            await fetchUserCityData();
-            setIsVerified(true);
-            
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                await fetchJWTVerify();
+                await fetchUserCityData();
+                setIsVerified(true);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+    
+        if (!isVerified) {
+            fetchData();
         }
-
-        fetchData()
-    })
+    }, [isVerified]);
 
     return(
         isVerified ? (

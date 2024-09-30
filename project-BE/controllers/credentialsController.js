@@ -1,5 +1,6 @@
 import {Users} from '../models/users.js';  // Ensure .js extension for local files
 import { UserCities } from '../models/userCities.js';
+import { UserQuizes } from '../models/userQuizes.js';
 import mongoose from 'mongoose';
 import {createJWT} from '../middleware/JWTActions.js'
 import bcrypt from "bcrypt";
@@ -65,8 +66,26 @@ const handleRegister = async (data, res) => {
         const user = new Users({ fullName, email, password: hashedPassword });
         await user.save();
 
-        const userCities = new UserCities({_id:user._id, cityId:"TTR",finishedQuiz:[], finished:false})
-        await userCities.save()
+        //
+        // const userCities = new UserCities({_id:user._id, cityId:"TTR",finishedQuiz:[], finished:false})
+        // await userCities.save()
+
+        //Make the Quiz for the tutorial
+        const userQuizes = new UserQuizes({_id:user._id, cityId:"TTR",userAnswers:[{
+            questionName:"question0",
+            questionAnswer:""
+        },{
+            questionName:"question1",
+            questionAnswer:""
+        },{
+            questionName:"question2",
+            questionAnswer:""
+        },{
+            questionName:"question3",
+            questionAnswer:""
+        }], currentProgress:0, currentQuestion: 0});
+        await userQuizes.save();
+
         res.status(200).json({ message: "User Created" });
     } catch (error) {
         res.status(500).json({ message: error.message });

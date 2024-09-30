@@ -2,6 +2,7 @@ import { verifyToken } from "../middleware/JWTActions.js";
 import { Cities } from "../models/cities.js";
 import { Regions } from "../models/regions.js";
 import { UserCities } from "../models/userCities.js";
+import { UserQuizes } from "../models/userQuizes.js";
 
 export const handleAuthController = async (req,res)=>{
     //Data form request body
@@ -24,21 +25,76 @@ export const handleAuthController = async (req,res)=>{
 
 export const handleGetUserDataController = async (req,res)=>{
 
+    // const _id = req.params.id;
+    // //Query Citites:
+    // const cities = await Cities.find({})
+    // const userCityData = []
+    
+    // const tutorialQuery = await UserCities.findOne({_id:_id, cityId:"TTR"})
+
+    // userCityData.push({
+    //     cityId:"TTR",
+    //     cityName:"Tutorial",
+    //     cityCurrentProgress:tutorialQuery.finishedQuiz ? tutorialQuery.finishedQuiz : [],
+    //     cityCondition:"unlocked",
+    //     cityRegion:"tutorial",
+    //     finished:tutorialQuery.finished,
+    //     cityProgress:(tutorialQuery.finishedQuiz.length / 4) * 100,
+    //     cityDescription:"Welcome to Vietnam!"
+    // })
+
+    // for(let city of cities){
+    //     let {cityId, cityName, cityRegion, cityDescription} = city;
+    //     let cityCondition = "locked";
+    //     let cityCurrentProgress = [];
+    //     let cityProgress = 0;
+    //     let finished = false
+    //     try{
+    //         const userCitiesQuery = await UserCities.findOne({_id:_id,cityId:cityId})
+    //         if(userCitiesQuery === null){
+    //             cityCondition = "locked"
+    //             cityCurrentProgress = [];
+    //             finished = false
+    //             cityProgress = 0
+    //         }else{
+    //             cityCondition = "unlocked"
+    //             cityCurrentProgress = tutorialQuery.finishedQuiz ? tutorialQuery.finishedQuiz : [];
+    //             finished = userCitiesQuery.finished
+    //             cityProgress = (cityCurrentProgress.length / 4) * 100;
+    //         }
+
+            
+    //     }catch(error){
+    //         console.log(error)
+    //     }
+
+    //     userCityData.push({
+    //         cityId:cityId,
+    //         cityName:cityName,
+    //         cityCurrentProgress:cityCurrentProgress,
+    //         cityCondition:cityCondition,
+    //         cityProgress:cityProgress,
+    //         cityRegion:cityRegion,
+    //         finished: finished,
+    //         cityDescription:cityDescription
+    //     });
+    // }
+
+
     const _id = req.params.id;
     //Query Citites:
     const cities = await Cities.find({})
     const userCityData = []
     
-    const tutorialQuery = await UserCities.findOne({_id:_id, cityId:"TTR"})
+    const tutorialQuery = await UserQuizes.findOne({_id:_id, cityId:"TTR"})
 
     userCityData.push({
         cityId:"TTR",
         cityName:"Tutorial",
-        cityCurrentProgress:tutorialQuery.finishedQuiz ? tutorialQuery.finishedQuiz : [],
         cityCondition:"unlocked",
         cityRegion:"tutorial",
-        finished:tutorialQuery.finished,
-        cityProgress:(tutorialQuery.finishedQuiz.length / 4) * 100,
+        finished: tutorialQuery.currentProgress === 100 ? true : false,
+        cityProgress: tutorialQuery.currentProgress,
         cityDescription:"Welcome to Vietnam!"
     })
 
@@ -49,17 +105,16 @@ export const handleGetUserDataController = async (req,res)=>{
         let cityProgress = 0;
         let finished = false
         try{
-            const userCitiesQuery = await UserCities.findOne({_id:_id,cityId:cityId})
+            const userCitiesQuery = await UserQuizes.findOne({_id:_id,cityId:cityId})
             if(userCitiesQuery === null){
-                cityCondition = "locked"
+                cityCondition = "locked";
                 cityCurrentProgress = [];
-                finished = false
-                cityProgress = 0
+                finished = false;
+                cityProgress = 0;
             }else{
-                cityCondition = "unlocked"
-                cityCurrentProgress = tutorialQuery.finishedQuiz ? tutorialQuery.finishedQuiz : [];
-                finished = userCitiesQuery.finished
-                cityProgress = (cityCurrentProgress.length / 4) * 100;
+                cityCondition = "unlocked";
+                finished = tutorialQuery.currentProgress === 100 ? true : false;
+                cityProgress = userCitiesQuery.currentProgress;
             }
 
             
@@ -70,7 +125,6 @@ export const handleGetUserDataController = async (req,res)=>{
         userCityData.push({
             cityId:cityId,
             cityName:cityName,
-            cityCurrentProgress:cityCurrentProgress,
             cityCondition:cityCondition,
             cityProgress:cityProgress,
             cityRegion:cityRegion,
