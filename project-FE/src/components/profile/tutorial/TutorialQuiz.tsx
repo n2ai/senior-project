@@ -20,11 +20,14 @@ interface ITutorialQuiz{
     userQuizContents: userQuizContents
 }
 
+//Logic For Submit wil be:
+//Click the next button -> check if it is the correct answer -> send to backend to verify
+
 const TutorialQuiz:React.FC<ITutorialQuiz> = ({quizContents, userQuizContents}) =>{
 
     //Will Set Up the logic for this state controller later
-    const [currentProgress, setCurrentProgress] = useState<number>(0);
-    const [currentQuestion, setCurrentQuestion] = useState<number>(0);
+    const [currentProgress, setCurrentProgress] = useState<number>(userQuizContents.currentProgress);
+    const [currentQuestion, setCurrentQuestion] = useState<number>(userQuizContents.currentQuestion);
     const [questionList, setQuestionlist] = useState<IQuizQuestions[]>(quizContents);
     const [userAnswers, setUserAnswers] = useState<IUserAnswer[]>(userQuizContents.userAnswers);
 
