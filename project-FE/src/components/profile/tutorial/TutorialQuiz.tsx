@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { ProgressBar, Card } from "react-bootstrap";
 import { quizContents } from "../../../routes/ProfileCity";
 import { userQuizContents } from "../../../routes/ProfileCity";
+import { Modal   } from "react-bootstrap";
 
 interface IQuizQuestions  {
     question: string,
@@ -95,39 +96,46 @@ const TutorialQuiz:React.FC<ITutorialQuiz> = ({quizContents, userQuizContents}) 
 
 
     return(
-        <div className="w-full h-screen container-lg pt-4 flex flex-col items-center gap-10 pb-4">
-            <h1 className="font-bold text-3xl text-center">
-                Finish the Questions Below and Advance to the Next Levels
-            </h1>
-            
-            <div className="w-full">
-                <ProgressBar className="h-2" variant="black" now={currentProgress}></ProgressBar>
-            </div>
-            
-            {/**This will be the form section */}
-            
-            <div className="w-[500px] mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
-
-                <div>
-                    <h1 className="text-xl font-bold">
-                        {questionList[currentQuestion].question}
-                    </h1>
+        <>
+            <div className="w-full h-screen container-lg pt-4 flex flex-col items-center gap-10 pb-4">
+                <h1 className="font-bold text-3xl text-center">
+                    Finish the Questions Below and Advance to the Next Levels
+                </h1>
+                
+                <div className="w-full">
+                    <ProgressBar className="h-2" variant="black" now={currentProgress}></ProgressBar>
                 </div>
+                
+                {/**This will be the form section */}
+                
+                <div className="w-[500px] mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
 
-                <form className="w-full flex justify-center">
-                    <div className="flex w-full flex-col">
-                        {questionForm}
+                    <div>
+                        <h1 className="text-xl font-bold">
+                            {questionList[currentQuestion].question}
+                        </h1>
                     </div>
-                </form>
 
-                <div className="w-full flex justify-between mt-6">
-                    <button name="prev" type="button" onClick={(e)=>handleOnClickButton(e)} className={`bg-slate-400 h-[2.5rem] w-[8rem] rounded-lg text-white ${currentQuestion === 0 && "hidden right-0"}`}>Prev</button>
+                    <form className="w-full flex justify-center">
+                        <div className="flex w-full flex-col">
+                            {questionForm}
+                        </div>
+                    </form>
 
-                    <button name="next" type="button" onClick={(e)=>handleOnClickButton(e)} className="bg-red-400 h-[2.5rem] w-[8rem] rounded-lg text-white">Next</button>
+                    <div className="w-full flex justify-between mt-6">
+                        <button name="prev" type="button" onClick={(e)=>handleOnClickButton(e)} className={`bg-slate-400 h-[2.5rem] w-[8rem] rounded-lg text-white ${currentQuestion === 0 && "hidden right-0"}`}>Prev</button>
+
+                        <button name="next" type="button" onClick={(e)=>handleOnClickButton(e)} className="bg-red-400 h-[2.5rem] w-[8rem] rounded-lg text-white">Next</button>
+                    </div>
                 </div>
+                
             </div>
-            
-        </div>
+
+            {/**Modal Section */}
+            <Modal >
+
+            </Modal>
+        </>
     )
 }
 
