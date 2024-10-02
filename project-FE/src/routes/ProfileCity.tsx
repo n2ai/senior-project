@@ -46,7 +46,9 @@ const ProfileCity = ()=>{
         try{
             const response = await axios.get(`http://localhost:3000/userCity/${id}/${cityId}`);
             const responseData = await response.data;
-            setQuizContents(responseData.quizContents);
+            const quizContents = responseData.quizContents;
+            setQuizContents(quizContents);
+
             setUserQuizContents(responseData.userQuizContents);
 
         }catch(error){
