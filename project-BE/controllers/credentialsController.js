@@ -54,40 +54,41 @@ const handleRegister = async (data, res) => {
     const { fullName, email, password } = data;
 
     try {
+        // Check if the user already exists
         const existingUser = await Users.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ message: "Account already exists" });
         }
 
+        // Hash the password
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        // Make sure you pass `password` with the hashed value
+        // Create the new user
         const user = new Users({ fullName, email, password: hashedPassword });
         await user.save();
 
-        //
-        // const userCities = new UserCities({_id:user._id, cityId:"TTR",finishedQuiz:[], finished:false})
-        // await userCities.save()
+        // Create a UserQuizes document
+        const userQuizes = new UserQuizes({
+            _id:user._id.toString() + "TTR",
+            userId: user._id.toString(), // Use user's _id as a string
+            cityId: "TTR",
+            userAnswers: [
+                { questionName: "question0", questionAnswer: "" },
+                { questionName: "question1", questionAnswer: "" },
+                { questionName: "question2", questionAnswer: "" },
+                { questionName: "question3", questionAnswer: "" }
+            ],
+            currentProgress: 0,
+            currentQuestion: 0
+        });
 
-        //Make the Quiz for the tutorial
-        const userQuizes = new UserQuizes({_id:user._id, cityId:"TTR",userAnswers:[{
-            questionName:"question0",
-            questionAnswer:""
-        },{
-            questionName:"question1",
-            questionAnswer:""
-        },{
-            questionName:"question2",
-            questionAnswer:""
-        },{
-            questionName:"question3",
-            questionAnswer:""
-        }], currentProgress:0, currentQuestion: 0});
+        // Save the UserQuizes document
         await userQuizes.save();
 
         res.status(200).json({ message: "User Created" });
     } catch (error) {
+        console.error('Error:', error.message);
         res.status(500).json({ message: error.message });
     }
 };

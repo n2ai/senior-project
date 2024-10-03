@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { handleGetQuizContents } from "../controllers/userCityControllers.js";
+import { handleGetQuizContents, handlePostUserContents } from "../controllers/userCityControllers.js";
 const router = Router();
 
 router.get("/:id/:cityId", handleGetQuizContents);
-router.post("/:id/:cit")
+router.post("/:id/:cityId", handlePostUserContents);
 export default router;

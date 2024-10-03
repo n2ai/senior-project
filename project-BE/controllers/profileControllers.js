@@ -86,7 +86,7 @@ export const handleGetUserDataController = async (req,res)=>{
     const cities = await Cities.find({})
     const userCityData = []
     
-    const tutorialQuery = await UserQuizes.findOne({_id:_id, cityId:"TTR"})
+    const tutorialQuery = await UserQuizes.findOne({userId:_id, cityId:"TTR"})
 
     userCityData.push({
         cityId:"TTR",
@@ -105,7 +105,7 @@ export const handleGetUserDataController = async (req,res)=>{
         let cityProgress = 0;
         let finished = false
         try{
-            const userCitiesQuery = await UserQuizes.findOne({_id:_id,cityId:cityId})
+            const userCitiesQuery = await UserQuizes.findOne({userId:_id,cityId:cityId})
             if(userCitiesQuery === null){
                 cityCondition = "locked";
                 cityCurrentProgress = [];

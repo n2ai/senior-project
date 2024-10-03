@@ -6,6 +6,8 @@ import { quizContents } from "../../../routes/ProfileCity";
 import { userQuizContents } from "../../../routes/ProfileCity";
 import { Modal } from "react-bootstrap";
 import QuizModal from "../QuizModal";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 interface IQuizQuestions  {
     question: string,
@@ -41,6 +43,8 @@ const TutorialQuiz:React.FC<ITutorialQuiz> = ({quizContents, userQuizContents}) 
         return currentQuestion < 4 ? currentQuestion : 3
     }
 
+    const {id, cityId} = useParams();
+
     const handleOnChangeRadio = (e:React.ChangeEvent<HTMLInputElement>) =>{
         setUserAnswers((answers)=>{
             const updatedUserAnswers = [...answers]
@@ -49,8 +53,26 @@ const TutorialQuiz:React.FC<ITutorialQuiz> = ({quizContents, userQuizContents}) 
         })
     }
 
+    const handleSaveUserAnswers = async (currentQuestion:number, currentProgress:number) =>{
 
-    const checkTheAnswer = ()=>{
+        const saveData = {
+            userAnswers: userAnswers,
+            currentQuestion: currentQuestion,
+            currentProgress: currentProgress 
+        }
+
+        try{
+            const response = await axios.post(`http://localhost:3000/userCity/${id}/${cityId}`, saveData)
+            console.log(response.data)
+        }catch(error){
+            console.log(error)
+        }
+
+        alert(currentProgress);
+    }
+
+
+    const checkTheAnswer = async ()=>{
         const userAnswer = userAnswers[generateCurrentQuestion(currentQuestion)].questionAnswer;
         const correctAnswer = questionList[generateCurrentQuestion(currentQuestion)].correctAnswer;
 
@@ -58,14 +80,18 @@ const TutorialQuiz:React.FC<ITutorialQuiz> = ({quizContents, userQuizContents}) 
             setCorrectAnswer(true);
             setShowModal(true);
             if(currentQuestion < 4){
-                setCurrentQuestion(prev=>prev+1)
-                setCurrentProgress(prev=>prev+25)
+                const newCurrentQuestion = currentQuestion + 1;
+                const newCurrentProgress = currentProgress + 25;
+                handleSaveUserAnswers(newCurrentQuestion, newCurrentProgress);
+                setCurrentQuestion(prev=>prev+1);
+                setCurrentProgress(prev=>prev+25);
+                
             }
         }else{
             setCorrectAnswer(false);
-            setShowModal(true)
+            setShowModal(true);
+            handleSaveUserAnswers(currentQuestion, currentProgress);
         }
-
     }
 
     const handleOnClickButton = (e:React.MouseEvent<HTMLButtonElement>)=>{

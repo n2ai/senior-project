@@ -19,7 +19,7 @@ export type userQuizContents = {
     currentQuestion:number,
     userAnswers: {questionName:string, questionAnswer:string}[],
     //_id is the userId
-    _id:string
+    userId:string
 }
 
 const ProfileCity = ()=>{
