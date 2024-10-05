@@ -9,7 +9,7 @@ interface IProfileRegions{
 
 const ProfileRegions:React.FC<IProfileRegions> = ({setCurrentPage})=>{
     return(
-        <div className="w-full h-screen">
+        <div className="w-full h-full">
             <div className="flex-col gap-3">
                 <h1 className="text-3xl text-gray-700 font-bold">Welcome Back Hai </h1>
                 <p className="text-2xl text-gray-700">Choose the below area to start your journey !</p>

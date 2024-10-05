@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import ProfileRegions from "../components/profile/ProfileRegions";
 import ProfileRegionInfo from "../components/profile/ProfileRegionInfo";
+import backgroundImg from "../images/paperBg.jpg"
 export type userCityDataType  = {
     cityCondition:string,
     cityCurrentProgress:string [],
@@ -91,7 +92,8 @@ const Profile = ()=>{
 
     return (
         verification && dataIsLoaded ? (
-        <div className= "w-full h-full flex bg-[#FADADD]">
+        <div className= "w-full h-full flex"
+        style={{ backgroundImage: `url(${backgroundImg})` }}>
             
             <div className="pt-4 container-sm mx-auto w-full h-full" >
                 {pageFlowRendering()}

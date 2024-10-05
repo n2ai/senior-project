@@ -3,7 +3,7 @@ import { UserCities } from '../models/userCities.js';
 import { UserQuizes } from '../models/userQuizes.js';
 import mongoose from 'mongoose';
 import {createJWT} from '../middleware/JWTActions.js'
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 export const handleCredentials = async (req, res) => {
     const type = req.body.type;

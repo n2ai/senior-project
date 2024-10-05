@@ -6,9 +6,10 @@ import tutorialStageImg4 from "../../../images/tutorialStageImages/tutorialStage
 import TutorialCuisine from "./TutorialCuisine";
 import TutorialCulture from "./TutorialCulture";
 import TutorialPeople from "./tutorialPeople";
-import TutorialQuiz from "./TutorialQuiz";
+import QuizContents from "../QuizContents";
 import { quizContents } from "../../../routes/ProfileCity";
 import { userQuizContents } from "../../../routes/ProfileCity";
+import backgroundImg from "../../../images/paperBg.jpg";
 
 interface ITutorialLevel{
     quizContents:quizContents[],
@@ -27,7 +28,7 @@ const TutorialLevel:React.FC<ITutorialLevel> = ({quizContents, userQuizContents}
         }else if(currentStage === "people"){
             return <TutorialPeople></TutorialPeople>
         }else if(currentStage === "quiz"){
-            return <TutorialQuiz userQuizContents={userQuizContents} quizContents={quizContents}></TutorialQuiz>
+            return <QuizContents userQuizContents={userQuizContents} quizContents={quizContents}></QuizContents>
         }
     }
 
@@ -71,7 +72,8 @@ const TutorialLevel:React.FC<ITutorialLevel> = ({quizContents, userQuizContents}
     })
 
     return(
-        <div className="flex flex-col items-center w-full h-full">
+        <div className="flex flex-col items-center w-full h-full"
+        style={{ backgroundImage: `url(${backgroundImg})` }}>
             
 
             {/**Stage Choosing */}

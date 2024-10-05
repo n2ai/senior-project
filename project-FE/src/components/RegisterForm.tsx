@@ -135,7 +135,7 @@ const RegisterForm:React.FC<IRegisterFormProps> = ({setState})=>{
                 </div>
 
                 <div className="flex flex-col">
-                    <button type="submit" className="border rounded-full p-2 bg-red-400 font-bold text-white">Log In</button>
+                    <button type="submit" className="border rounded-full p-2 bg-red-400 font-bold text-white">Register</button>
                 </div>
             </form>
 
