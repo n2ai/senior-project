@@ -7,9 +7,10 @@ import { userQuizContents } from "../../../routes/ProfileCity";
 import backgroundImg from "../../../images/paperBg.jpg";
 import HanoiCusine from "./HanoiCuisine";
 import HanoiCulture from "./HanoiCulture";
-import HanoiPeople from "./HanoiPeople";
 import QuizContents from "../QuizContents";
+import HanoiPeople from "./hanoiPeople";
 import { useState } from "react";
+import StageArray from "../StageArray";
 
 interface IHanoiLevel{
     quizContents: quizContents[],
@@ -54,24 +55,12 @@ const HanoiLevel:React.FC<IHanoiLevel> = ({quizContents, userQuizContents})=>{
     }
     ]
 
-    const stageArray = stages.map((item, index)=>{
-        return(
-            <div onClick={()=>setCurrentStage(item.name)} key={index} style={{ backgroundImage: `url(${item.img})` }} 
-            className={` bg-center cursor-pointer bg-cover h-screen hover:w-1/2 transition-all duration-1000 ${currentStage == item.name ? "w-1/2" : "w-1/4"}`}>
-                <div className="flex flex-col items-center mt-5">
-                    <h1 className="text-5xl font-bold caligraphy text-black-500">{item.title}</h1>
-                    <p className="text-2xl font-bold">{item.subtitle}</p>
-                </div>
-            </div>
-        )
-    })
-
     return(
         <div className="flex flex-col items-center w-full h-full"
         style={{ backgroundImage: `url(${backgroundImg})` }}>
             
             <div className="group flex w-full h-full">
-                {stageArray}
+                <StageArray stages={stages} currentStage={currentStage} setCurrentStage={setCurrentStage} />
             </div>
             
             <div className="w-full">
