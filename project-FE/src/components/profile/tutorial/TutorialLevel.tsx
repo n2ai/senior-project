@@ -62,22 +62,13 @@ const TutorialLevel:React.FC<ITutorialLevel> = ({quizContents, userQuizContents}
         <div className="flex flex-col items-center w-full h-full"
         style={{ backgroundImage: `url(${backgroundImg})` }}>
             
-
-            {/**Stage Choosing */}
             <div className="group flex w-full h-full">
                 <StageArray stages={stages} currentStage={currentStage} setCurrentStage={setCurrentStage} ></StageArray>
             </div>
             
-            {/**Content */}
-            {/**h-screen for temporary */}
             <div className="w-full">
                 {stateRenderer()}
             </div>
-
-            {/* *Quiz
-            <div>
-
-            </div> */}
         </div>
     )
 }

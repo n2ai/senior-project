@@ -30,7 +30,7 @@ interface ITutorialQuiz{
 //Logic For Submit wil be:
 //Click the next button -> check if it is the correct answer -> send to backend to verify
 
-const TutorialQuiz:React.FC<ITutorialQuiz> = ({quizContents, userQuizContents}) =>{
+const QuizContents:React.FC<ITutorialQuiz> = ({quizContents, userQuizContents}) =>{
 
     //Will Set Up the logic for this state controller later
     const [currentProgress, setCurrentProgress] = useState<number>(userQuizContents.currentProgress);
@@ -169,4 +169,4 @@ const TutorialQuiz:React.FC<ITutorialQuiz> = ({quizContents, userQuizContents}) 
     )
 }
 
-export default TutorialQuiz;
+export default QuizContents;
