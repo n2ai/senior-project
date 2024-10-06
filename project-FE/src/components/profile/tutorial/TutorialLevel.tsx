@@ -10,6 +10,7 @@ import QuizContents from "../QuizContents";
 import { quizContents } from "../../../routes/ProfileCity";
 import { userQuizContents } from "../../../routes/ProfileCity";
 import backgroundImg from "../../../images/paperBg.jpg";
+import StageArray from "../StageArray";
 
 interface ITutorialLevel{
     quizContents:quizContents[],
@@ -57,20 +58,6 @@ const TutorialLevel:React.FC<ITutorialLevel> = ({quizContents, userQuizContents}
         }
     ]
 
-
-
-    const stageArray = stages.map((item, index)=>{
-            return(
-                <div onClick={()=>setCurrentStage(item.name)} key={index} style={{ backgroundImage: `url(${item.img})` }} 
-                className={` bg-center cursor-pointer bg-cover h-screen hover:w-1/2 transition-all duration-1000 ${currentStage == item.name ? "w-1/2" : "w-1/4"}`}>
-                    <div className="flex flex-col items-center mt-5">
-                        <h1 className="text-5xl font-bold caligraphy text-black-500">{item.title}</h1>
-                        <p className="text-2xl font-bold">{item.subtitle}</p>
-                    </div>
-                </div>
-            )
-    })
-
     return(
         <div className="flex flex-col items-center w-full h-full"
         style={{ backgroundImage: `url(${backgroundImg})` }}>
@@ -78,7 +65,7 @@ const TutorialLevel:React.FC<ITutorialLevel> = ({quizContents, userQuizContents}
 
             {/**Stage Choosing */}
             <div className="group flex w-full h-full">
-                {stageArray}
+                <StageArray stages={stages} currentStage={currentStage} setCurrentStage={setCurrentStage} ></StageArray>
             </div>
             
             {/**Content */}
