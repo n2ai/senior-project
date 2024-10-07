@@ -5,7 +5,7 @@ import LevelCard from "../LevelCard";
 
 interface IProfileRegionInfo{
     region: string,
-    cities: userCityDataType[]
+    cities: userCityDataType[],
     setCurrentPage: React.Dispatch<React.SetStateAction<string>>
 }
 

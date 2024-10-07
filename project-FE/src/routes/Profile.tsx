@@ -75,18 +75,40 @@ const Profile = ()=>{
         }else if(currentPage === "northern"){
 
             const northernCities = userCityData.filter(item=>item.cityRegion === "northern" || item.cityRegion === "tutorial" )
+            const updatedNorthernCities = [northernCities[0]]
+            for(const i of dataMap[0].regionCities){
+                for(const j of northernCities){
+                    if(i === j.cityId){
+                        updatedNorthernCities.push(j)
+                    }
+                }
+            }
 
-            return <ProfileRegionInfo setCurrentPage={setCurrentPage} region="northern" cities={northernCities} ></ProfileRegionInfo>
+            return <ProfileRegionInfo setCurrentPage={setCurrentPage} region="northern" cities={updatedNorthernCities} ></ProfileRegionInfo>
         }else if(currentPage === "central"){
             
             const centralCities = userCityData.filter(item=>item.cityRegion === "central" || item.cityRegion === "tutorial")
-
-            return <ProfileRegionInfo setCurrentPage={setCurrentPage} region="central" cities={centralCities}></ProfileRegionInfo>
+            const updatedCentralCities = [centralCities[0]]
+            for(const i of dataMap[1].regionCities){
+                for(const j of centralCities){
+                    if(i === j.cityId){
+                        updatedCentralCities.push(j)
+                    }
+                }
+            }
+            return <ProfileRegionInfo setCurrentPage={setCurrentPage} region="central" cities={updatedCentralCities}></ProfileRegionInfo>
         }else if(currentPage === "southern"){
 
             const southernCities = userCityData.filter(item=>item.cityRegion === "southern" || item.cityRegion === "tutorial")
-
-            return <ProfileRegionInfo setCurrentPage={setCurrentPage} region="southern" cities={southernCities}></ProfileRegionInfo>
+            const updatedSouthernCities = [southernCities[0]]
+            for(const i of dataMap[2].regionCities){
+                for(const j of southernCities){
+                    if(i === j.cityId){
+                        updatedSouthernCities.push(j)
+                    }
+                }
+            }
+            return <ProfileRegionInfo setCurrentPage={setCurrentPage} region="southern" cities={updatedSouthernCities}></ProfileRegionInfo>
         }
     }
 
@@ -98,6 +120,8 @@ const Profile = ()=>{
         }
         fetchData();
     },[])
+
+    console.log(dataMap)
 
     return (
         verification && dataIsLoaded ? (
