@@ -31,7 +31,8 @@ export const handleGetUserDataController = async (req,res)=>{
     const userCityData = []
     
     const tutorialQuery = await UserQuizes.findOne({userId:_id, cityId:"TTR"})
-
+    let dataMap = await Regions.find({})
+    
     userCityData.push({
         cityId:"TTR",
         cityName:"Tutorial",
@@ -76,5 +77,5 @@ export const handleGetUserDataController = async (req,res)=>{
             cityDescription:cityDescription
         });
     }
-    res.status(200).json({userCityData:userCityData})
+    res.status(200).json({userCityData:userCityData, dataMap:dataMap})
 };

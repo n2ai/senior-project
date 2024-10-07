@@ -18,13 +18,20 @@ export type userCityDataType  = {
     cityDescription:string
 }
 
+export type dataMap = {
+    _id: object,
+    regionId:string,
+    regionCities: string []
+}
+
 const Profile = ()=>{
 
     const {id} = useParams();
     const [cookies, setCookies] = useCookies(['accessToken']);
     const [verification, setVerification] = useState<boolean>(false);
     const [dataIsLoaded,setDataIsloaded] = useState<boolean>(false);
-    const [currentPage, setCurrentPage] = useState<string>("regions")
+    const [currentPage, setCurrentPage] = useState<string>("regions");
+    const [dataMap, setDataMap] = useState<dataMap []>([]);
     const [userCityData, setUserCityData] = useState<userCityDataType []>([
         {   cityCondition:"",
             cityCurrentProgress: [""],
@@ -52,9 +59,11 @@ const Profile = ()=>{
     const fetchUserCityData = async () =>{
         try{
             const response = await axios.get(`http://localhost:3000/profile/${id}`)
-            const data = response.data.userCityData;
-            setUserCityData(data);
-            setDataIsloaded(data);
+            const cityData = response.data.userCityData;
+            const dataMap = response.data.dataMap;
+            setDataMap(dataMap)
+            setUserCityData(cityData);
+            setDataIsloaded(true);
         }catch(error){
             console.log(error)
         }
