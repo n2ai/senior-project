@@ -3,6 +3,7 @@ import { Outlet, useNavigate, useParams } from "react-router-dom"
 import { useCookies } from "react-cookie";
 import TutorialLevel from "../components/profile/tutorial/TutorialLevel";
 import axios from "axios";
+import HanoiLevel from "../components/profile/hanoi/HanoiLevel";
 
 export type quizContents = {
     _id:string,
@@ -59,6 +60,8 @@ const ProfileCity = ()=>{
     const renderCity = ()=>{
         if (cityId === "TTR") {
             return <TutorialLevel userQuizContents={userQuizContents} quizContents={quizContents} />;
+        }else if (cityId === "HN"){
+            return <HanoiLevel userQuizContents={userQuizContents} quizContents={quizContents} ></HanoiLevel>
         }
     }
 
