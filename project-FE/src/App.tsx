@@ -6,6 +6,7 @@ import Profile from "./routes/Profile";
 import ProfileStageChoosing from "./components/profile/ProfileStageChoosing";
 import TutorialLevel from "./components/profile/tutorial/TutorialLevel";
 import ProfileCity from "./routes/ProfileCity";
+import ProfileCuisineSwiper from "./components/profile/ProfileCuisineSwiper";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/test",
-    element: <ProfileStageChoosing/>
+    element: <ProfileCuisineSwiper></ProfileCuisineSwiper>
   }
 ])
 
