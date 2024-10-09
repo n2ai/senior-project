@@ -23,10 +23,10 @@ const router = createBrowserRouter([
     element:<ProfileCity/>,
     
   },
-  {
-    path:"/test",
-    element: <ProfileCuisineSwiper></ProfileCuisineSwiper>
-  }
+  // {
+  //   path:"/test",
+  //   element: <ProfileCuisineSwiper></ProfileCuisineSwiper>
+  // }
 ])
 
 export default function App() {
