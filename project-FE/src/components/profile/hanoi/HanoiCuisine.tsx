@@ -19,26 +19,15 @@ const DescriptionContent:React.FC<IDescriptionContent> = ({currentSlide, content
     const renderDescription = ()=>{
         if(currentSlide === 0){
 
-            return(
+            return (
                 <>
-                    <div className="w-full h-full">
-                        <h1 className="2xl font-bold">{contents.title}</h1>
-                        <p className="xl">{contents.subtitle}</p>
-                    </div>
-
-
-                    <div></div>
-                </>
+                </>  
             )
+
         }
     }
 
-    return(
-
-        <div className="w-full h-full">
-
-        </div>
-    )
+    return renderDescription()
 }
 
 const HanoiCusine = ()=>{
@@ -75,15 +64,38 @@ const HanoiCusine = ()=>{
     ]
     return(
         <div className="w-full h-full container-lg pt-4 flex flex-col items-center gap-10 pb-4">
+
+            <div className="w-full gap-10 flex flex-col items-center">
+                <h1 className="font-bold text-3xl text-center">The Unique Taste of Hanoi’s Food: A Culinary Journey</h1>
+                <p className="indent-14 text-xl font-monospace">
+                    Hanoi, the capital city of Vietnam, is a treasure trove of culinary wonders. 
+                    Rich in history, culture, and tradition, its food is a reflection of the region’s spirit and way of life. Hanoi’s cuisine, known for its balance of flavors, represents a fusion of simplicity and complexity. Each dish tells a story, blending the fresh ingredients of northern Vietnam with subtle spices, herbs, and traditional cooking techniques that have been passed down through generations. 
+                    To experience Hanoi’s food is to savor a unique mix of flavors that delight the senses.
+                </p>
+
+                <h1 className="font-bold text-3xl text-center">The Essence of Hanoi’s Food</h1>
+                <p className="indent-14 text-xl font-monospace">
+                    Hanoi’s cuisine is a delicate balance of the five fundamental taste elements—salty, 
+                    sweet, sour, bitter, and umami. Unlike the spicy and bold flavors of central and 
+                    southern Vietnam, the food in Hanoi tends to be milder, allowing the ingredients’ natural 
+                    flavors to shine through. Simplicity and restraint are central to Hanoi’s culinary philosophy
+                    . The essence of the cuisine lies in its use of fresh, local ingredients and 
+                    subtle seasonings that are expertly layered to create depth and harmony.
+                </p>
+            </div>
+
             <ProfileCuisineSwiper setCurrentCard={setCurrentCard} swiperContents={swiperContents} ></ProfileCuisineSwiper>
 
-            <div className='text-center mt-4'>
+            <div className='text-center mt-4 flex flex-col gap-10'>
                 <div className="w-full h-full">
-                        <h1 className="2xl font-bold">{swiperContents[currentCard].title}</h1>
-                        <p className="xl">{swiperContents[currentCard].subtitle}</p>
+                    <h1 className="2xl font-bold">{swiperContents[currentCard].title}</h1>
+                    <p className="xl">{swiperContents[currentCard].subtitle}</p>
                 </div>
 
                 {/**Description go here */}
+                <div className="w-full h-full flex flex-col gap-10">
+
+                </div>
             </div>
         </div>
     )
