@@ -8,6 +8,7 @@ export type swiperContent = {
     imgUrl:string,
     title:string,
     subtitle:string,
+    description:string
 }
 
 interface IProfileCuisineSwiper{

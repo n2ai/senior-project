@@ -39,27 +39,75 @@ const HanoiCusine = ()=>{
 
             imgUrl:hanoiPho,
             title:"Phở Hà Nội",
-            subtitle:"Ha Noi Beef Pho"
+            subtitle:"Pho: A National Symbol of Hanoi",
+            description: `No discussion about Hanoi’s food is complete without mentioning pho, 
+            the city’s most famous dish. Pho is a simple yet extraordinary noodle soup, 
+            often made with beef or chicken, and a clear, fragrant broth. 
+            The taste of pho is a symphony of flavors: the broth, simmered for hours, 
+            is infused with star anise, ginger, and cinnamon, creating a warm and savory base. 
+            The rice noodles are tender but firm, while the thin slices of meat add richness. 
+            Fresh herbs like coriander and scallions provide an earthy freshness, and a squeeze of lime adds a bright, 
+            zesty contrast. Together, these elements create a perfect balance of savory, sweet, and slightly tangy notes, 
+            making pho a comforting yet complex dish that defines Hanoi.`
         },{
             imgUrl:hanoiBunCha,
             title:"Bún Chả Hà Nội",
-            subtitle:"Ha Noi Grilled Pork Vermicelli"
+            subtitle:"Bun Cha: The Charcoal-Grilled Delight",
+            description:`Another iconic Hanoi dish is bun cha, a meal that showcases the city’s mastery of 
+            grilled flavors. Bun cha consists of succulent pork patties and slices of pork belly grilled over 
+            charcoal, served with rice noodles, fresh herbs, and a dipping sauce made of fish sauce, vinegar, 
+            sugar, and lime juice. The grilled pork, slightly smoky and caramelized, contrasts beautifully with 
+            the cool, fresh herbs. The dipping sauce, a balance of sweet, sour, and savory, ties the dish together. 
+            Bun cha’s distinctive taste comes from the interplay 
+            between the grilled meat’s charred smokiness and the lightness of 
+            the fresh herbs and noodles.`
         },{
             imgUrl:hanoiChaRuoi,
             title:"Chả Rươi",
-            subtitle:"Sand Worm Omelette"
+            subtitle:"Cha Ruoi: A Seasonal Delicacy",
+            description:`For those seeking a true Hanoi specialty, cha ruoi is a dish that showcases the city’s 
+            appreciation for seasonal ingredients and bold flavors. Made from ruoi (ragworm), 
+            this dish is typically available only during the late autumn months, making it a rare treat. 
+            The preparation of cha ruoi involves mixing minced ragworm with eggs, minced pork, dill, tangerine zest, 
+            and various spices before being pan-fried to golden perfection. The taste of cha ruoi is rich and complex: 
+            the ragworm provides a slightly briny, oceanic flavor, while the eggs and pork give the dish a creamy, 
+            hearty texture. The dill adds a fresh, herbaceous note, and the tangerine zest imparts a light citrus aroma 
+            that lifts the dish. Served with a side of fish sauce for dipping, 
+            cha ruoi is an unforgettable combination of savory, herbal, and aromatic flavors.`
         },{
             imgUrl:hanoiBanhCuon,
             title:"Bánh Cuốn",
-            subtitle:"Vietnamese Rice Cake"
+            subtitle:"Banh Cuon: A Delicate Tradition",
+            description:`Banh cuon, another beloved dish, is a delicate, savory treat that demonstrates 
+            Hanoi’s commitment to fine textures and balance. These thin rice crepes are filled with minced pork 
+            and wood ear mushrooms, then topped with fried shallots and served with a side of dipping sauce. 
+            Banh cuon’s taste is light and subtle—the crepes are soft and tender, almost melting in the mouth, 
+            while the filling adds a slightly earthy, savory flavor. The dipping sauce, a mild fish sauce with a 
+            hint of sweetness, enhances the dish’s overall flavor without overpowering its delicate nature.`
         },{
             imgUrl:hanoiBunDau,
             title:"Bún Đậu Mắm Tôm",
-            subtitle:"Ha Noi Fried Tofu with Vermicelli"
+            subtitle:"Bun Dau Mam Tom: A Bold Flavor Adventure",
+            description: `Bun dau mam tom is another Hanoi specialty that delivers a powerful punch of flavor, 
+            perfect for adventurous eaters. This dish is a combination of fried tofu (dau), rice vermicelli (bun), 
+            and the infamous mam tom—fermented shrimp paste. The tofu is fried until crispy on the outside, with a soft, 
+            pillowy interior. The rice noodles are fresh and chewy, providing a neutral base for the strong flavors. 
+            However, it’s the mam tom that truly defines this dish. Pungent and salty, the fermented shrimp paste is 
+            mixed with lime juice and chili, creating an umami-rich dipping sauce with an intense depth of flavor. 
+            For those who enjoy bold, robust tastes, mam tom is a revelation, perfectly complementing the crispy tofu 
+            and noodles. Often served with fresh herbs like perilla and mint, and sometimes accompanied by boiled pork 
+            or fried spring rolls, bun 
+            dau mam tom is a dish that celebrates the beauty of contrasts—crisp and soft, mild and strong, earthy and fresh.`
         },{
             imgUrl:hanoiCom,
             title:"Cốm Làng Vòng",
-            subtitle:"Green Rice"
+            subtitle:"Com Lang Vong: A Taste of Tradition",
+            description:`Com Lang Vong is Hanoi’s cherished autumn delicacy, made from young green rice harvested and 
+            roasted to perfection. The soft, chewy grains carry a mild sweetness and a nutty aroma, often enhanced 
+            by being wrapped in fragrant lotus leaves. This seasonal treat offers a delicate balance of freshness and 
+            subtle flavor, making it both a symbol of Hanoi’s agricultural heritage and a timeless culinary treasure. 
+            Enjoyed on its own or paired with ripe bananas, 
+            com Lang Vong is a pure, elegant taste of tradition that embodies the spirit of the city’s rich culture.`
         }
     ]
     return(
@@ -86,16 +134,20 @@ const HanoiCusine = ()=>{
 
             <ProfileCuisineSwiper setCurrentCard={setCurrentCard} swiperContents={swiperContents} ></ProfileCuisineSwiper>
 
-            <div className='text-center mt-4 flex flex-col gap-10'>
-                <div className="w-full h-full">
-                    <h1 className="2xl font-bold">{swiperContents[currentCard].title}</h1>
-                    <p className="xl">{swiperContents[currentCard].subtitle}</p>
+            <div className='mt-4 flex flex-col gap-10'>
+                
+                <div className="w-full flex flex-col items-center gap-3">
+                    <h1 className="text-2xl font-bold text-center">{swiperContents[currentCard].title}</h1>
+                    <div className="text-center border border-black h-0 w-[30%]"></div>
+                    <p className="text-xl text-center">{swiperContents[currentCard].subtitle}</p>
                 </div>
+                
+                
 
                 {/**Description go here */}
-                <div className="w-full h-full flex flex-col gap-10">
-
-                </div>
+                <p className="indent-14 text-xl font-monospace">
+                    {swiperContents[currentCard].description}
+                </p>
             </div>
         </div>
     )
