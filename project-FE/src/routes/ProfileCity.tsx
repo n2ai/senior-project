@@ -4,6 +4,7 @@ import { useCookies } from "react-cookie";
 import TutorialLevel from "../components/profile/tutorial/TutorialLevel";
 import axios from "axios";
 import HanoiLevel from "../components/profile/hanoi/HanoiLevel";
+import DanangLevel from "../components/profile/danang/DanangLevel";
 
 export type quizContents = {
     _id:string,
@@ -62,6 +63,8 @@ const ProfileCity = ()=>{
             return <TutorialLevel userQuizContents={userQuizContents} quizContents={quizContents} />;
         }else if (cityId === "HN"){
             return <HanoiLevel userQuizContents={userQuizContents} quizContents={quizContents} ></HanoiLevel>
+        }else if(cityId === "DN"){
+            return <DanangLevel userQuizContents={userQuizContents} quizContents={quizContents} ></DanangLevel>
         }
     }
 

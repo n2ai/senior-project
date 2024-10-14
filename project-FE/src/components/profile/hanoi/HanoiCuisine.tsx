@@ -8,28 +8,6 @@ import hanoiChaRuoi from "../../../images/hanoiLevelImages/hanoicharuoi.jpg";
 import hanoiBunDau from "../../../images/hanoiLevelImages/hanoibundau.jpg";
 import hanoiCom from "../../../images/hanoiLevelImages/hanoicom.jpg";
 
-interface IDescriptionContent{
-    currentSlide : number,
-    contents: swiperContent
-}
-
-const DescriptionContent:React.FC<IDescriptionContent> = ({currentSlide, contents})=>{
-
-    
-    const renderDescription = ()=>{
-        if(currentSlide === 0){
-
-            return (
-                <>
-                </>  
-            )
-
-        }
-    }
-
-    return renderDescription()
-}
-
 const HanoiCusine = ()=>{
 
     const [currentCard, setCurrentCard] = useState<number>(0);
