@@ -1,3 +1,7 @@
+import danangImgUrl7 from "../../../images/danangLevelImages/thungdanang.jpg"
+import danangImgUrl8 from "../../../images/danangLevelImages/aviewofdanangcity.jpg"
+import danangImgUrl9 from "../../../images/danangLevelImages/onthedragonbridge.jpg"
+import danangImgUrl10 from "../../../images/danangLevelImages/aviewofdanangroad.jpg"
 const DanangPeople = ()=>{
     return(
         <div className="w-full h-full container-lg pt-4 flex flex-col items-center gap-10 pb-4">
@@ -17,6 +21,11 @@ const DanangPeople = ()=>{
                 cultural values, communal spirit, and adaptability to change
             </p>
 
+            <div className="flex flex-col items-center">    
+                <img src={danangImgUrl7} className="w-[1000px]">
+                </img>
+                <p className="italic">A View of Da Nang's Beach</p>
+            </div>
 
             <h1 className="font-bold text-3xl text-center">A Legacy of Resilience</h1>
 
@@ -31,6 +40,12 @@ const DanangPeople = ()=>{
                  resilient. Their ability to rebuild after the war and transform their city 
                  into a thriving tourist destination is a testament to their perseverance. This resilience is deeply ingrained in the city's collective consciousness, and it has shaped the way Da Nang people approach life with a practical, forward-thinking mindset.
             </p>
+
+            <div className="flex flex-col items-center">    
+                <img src={danangImgUrl8} className="w-[1000px]">
+                </img>
+                <p className="italic">A View of Da Nang City</p>
+            </div>
 
             <p className="indent-14 text-xl font-monospace">
                 The hard work and determination of Da Nang's residents can be 
@@ -54,6 +69,12 @@ const DanangPeople = ()=>{
                 is rooted in deep cultural traditions of generosity and community.
             </p>
 
+            <div className="flex flex-col items-center">    
+                <img src={danangImgUrl9} className="w-[1000px]">
+                </img>
+                <p className="italic">Dragon Bridge</p>
+            </div>
+
             <p className="indent-14 text-xl font-monospace"> 
                 Da Nang’s people often extend a warm greeting to tourists, 
                 proudly sharing stories about their city’s landmarks, food, 
@@ -72,6 +93,12 @@ const DanangPeople = ()=>{
                 community and solidarity. Whether it’s in rural areas or urban
                  neighborhoods, Da Nang residents often live in close-knit communities where they support one another. This communal spirit was especially evident during the COVID-19 pandemic when locals came together to provide mutual aid and support, ensuring that the most vulnerable members of society were cared for.
             </p>
+            
+            <div className="flex flex-col items-center">    
+                <img src={danangImgUrl10} className="w-[1000px]">
+                </img>
+                <p className="italic">A View of Da Nang</p>
+            </div>
 
             <p className="indent-14 text-xl font-monospace"> 
                 Solidarity is not just a product of challenging times but a 
@@ -81,11 +108,7 @@ const DanangPeople = ()=>{
                 serve as spaces where relationships are strengthened, and 
                 people actively engage in the well-being of one another.
             </p>
-            {/* <div className="flex flex-col items-center">    
-                <img src={danangImgUrl1} className="w-[1000px]">
-                </img>
-                <p className="italic">Han River's Bridge</p>
-            </div> */}
+            
         </div>
     )
 }
