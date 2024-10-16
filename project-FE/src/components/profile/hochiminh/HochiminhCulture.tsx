@@ -1,3 +1,9 @@
+import hcmImgUrl1 from "../../../images/hochiminhLevelImages/arielhcmnight.jpg";
+import hcmImgUrl2 from "../../../images/hochiminhLevelImages/hcmpostoffice.jpg";
+import hcmImgUrl3 from "../../../images/hochiminhLevelImages/giaiphongmiennam.jpg";
+import hcmImgUrl4 from "../../../images/hochiminhLevelImages/nhahanghoahcm.jpg"
+import hcmImgUrl5 from "../../../images/hochiminhLevelImages/hcmcityhall.jpg"
+
 const HochiminhCulture = ()=>{
     return(
         <div className="w-full h-full container-lg pt-4 flex flex-col items-center gap-10 pb-4">
@@ -15,6 +21,12 @@ const HochiminhCulture = ()=>{
                 testament to Vietnam’s cultural resilience and adaptability.
             </p>
 
+            <div className="flex flex-col items-center">
+                <img src={hcmImgUrl1} className="w-[1000px]">
+                </img>
+                <p className="italic">Ariel View of Ho Chi Minh City at Night</p>
+            </div>
+
             <h1 className="font-bold text-3xl text-center">Historical Influences on Saigon's Culture</h1>
             <p className="indent-14 text-xl font-monospace">
                 Saigon's culture is deeply influenced by its history, particularly 
@@ -24,6 +36,12 @@ const HochiminhCulture = ()=>{
                 critical port in the Mekong Delta, attracting merchants and settlers 
                 from various parts of Asia and Europe.
             </p>
+
+            <div className="flex flex-col items-center">
+                <img src={hcmImgUrl2} className="w-[1000px]">
+                </img>
+                <p className="italic">Ho Chi Minh City Post Office</p>
+            </div>
 
             <p className="indent-14 text-xl font-monospace">
                 The French colonial period (1862–1954) left an indelible 
@@ -53,6 +71,12 @@ const HochiminhCulture = ()=>{
                 with modern creativity.
             </p>
 
+            <div className="flex flex-col items-center">
+                <img src={hcmImgUrl3} className="w-[800px]">
+                </img>
+                <p className="italic">30-4-1975</p>
+            </div>
+
             <p className="indent-14 text-xl font-monospace">
                 The city’s multicultural spirit is also showcased through 
                 festivals like the Saigon Lantern Festival, tied to the 
@@ -67,6 +91,12 @@ const HochiminhCulture = ()=>{
                 influences, making Saigon a cultural hub of Vietnam.
             </p>
 
+            <div className="flex flex-col items-center">
+                <img src={hcmImgUrl4} className="w-[1000px]">
+                </img>
+                <p className="italic">Inside a Chinese Restaurant</p>
+            </div>
+
             <p className="indent-14 text-xl font-monospace">
                 Despite the modern skyscrapers and busy commercial centers, 
                 Saigon remains a place where tradition is respected. In 
@@ -76,11 +106,7 @@ const HochiminhCulture = ()=>{
                 the core of Saigon’s cultural identity.
             </p>
 
-            {/* <div className="flex flex-col items-center">
-                <img src={hanoiImgUrl1} className="w-[1000px]">
-                </img>
-                <p className="italic">A Corner of Hanoi Old Town</p>
-            </div> */}
+            
             
             <h1 className="font-bold text-3xl text-center">Architecture: A Blend of Old and New</h1>
             <p className="indent-14 text-xl font-monospace">
@@ -92,6 +118,12 @@ const HochiminhCulture = ()=>{
                 modern skyscrapers like the Bitexco Financial Tower, 
                 symbolizing the city’s rapid development.
             </p>
+
+            <div className="flex flex-col items-center">
+                <img src={hcmImgUrl5} className="w-[1000px]">
+                </img>
+                <p className="italic">Ho Chi Minh City Hall</p>
+            </div>
             
             <p className="indent-14 text-xl font-monospace">
                 French colonial architecture remains a prominent feature of
