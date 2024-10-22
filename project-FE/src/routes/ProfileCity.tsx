@@ -7,6 +7,7 @@ import HanoiLevel from "../components/profile/hanoi/HanoiLevel";
 import DanangLevel from "../components/profile/danang/DanangLevel";
 import HochiminhLevel from "../components/profile/hochiminh/HochiminhLevel";
 import HaiphongLevel from "../components/profile/haiphong/HaiphongLevel";
+import HoianLevel from "../components/profile/hoian/HoianLevel";
 
 export type quizContents = {
     _id:string,
@@ -71,6 +72,8 @@ const ProfileCity = ()=>{
             return <HochiminhLevel userQuizContents={userQuizContents} quizContents={quizContents}></HochiminhLevel>
         }else if(cityId === "HP"){
             return <HaiphongLevel userQuizContents={userQuizContents} quizContents={quizContents}></HaiphongLevel>
+        }else if(cityId === "HA"){
+            return <HoianLevel userQuizContents={userQuizContents} quizContents={quizContents}></HoianLevel>
         }
     }
 
