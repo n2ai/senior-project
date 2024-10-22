@@ -8,6 +8,9 @@ import saigonComTam from "../../../images/hochiminhLevelImages/comtamsaigon.jpg"
 import saigonGoiCuon from "../../../images/hochiminhLevelImages/goicuonsaigon.jpg";
 import saigonBanhXeo from "../../../images/hochiminhLevelImages/banhxeosaigon.jpg";
 import saigonCaPheSuaDa from "../../../images/hochiminhLevelImages/caphesuada.jpg";
+import saigonfoodstall1 from "../../../images/hochiminhLevelImages/saigonfoodstall1.jpg";
+import saigonfoodstall2 from "../../../images/hochiminhLevelImages/saigonfoodstall2.jpg";
+import saigonfoodstall3 from "../../../images/hochiminhLevelImages/saigonfoodstall3.jpg";
 
 const HochiminhCuisine = ()=>{
 
@@ -95,6 +98,12 @@ const HochiminhCuisine = ()=>{
                     Saigonese food is renowned for its diversity, bold flavors, and fresh ingredients, making it a destination for food lovers from around the world.
                 </p>
 
+                <div className="flex flex-col items-center">
+                    <img src={saigonfoodstall3} className="w-[1000px]">
+                    </img>
+                    <p className="italic">A Food Stall in Ho Chi Minh City</p>
+                </div>
+
                 <h1 className="font-bold text-3xl text-center">A Melting Pot of Influences</h1>
                 <p className="indent-14 text-xl font-monospace">
                     Saigon’s history as a trading port and a cultural crossroads 
@@ -108,6 +117,12 @@ const HochiminhCuisine = ()=>{
                     broth influenced by southern cooking styles.
                 </p>
 
+                <div className="flex flex-col items-center">
+                    <img src={saigonfoodstall2} className="w-[1000px]">
+                    </img>
+                    <p className="italic">A Food Stall in Ho Chi Minh City</p>
+                </div>
+
                 <h1 className="font-bold text-3xl text-center">Street Food Culture</h1>
                 <p className="indent-14 text-xl font-monospace">
                     Saigon’s vibrant street food scene is one of its most 
@@ -119,11 +134,19 @@ const HochiminhCuisine = ()=>{
                     locals and tourists. The accessibility and variety of s
                     treet food make it easy to explore Saigon’s culinary treasures on almost every corner.
                 </p>
+
+                <div className="flex flex-col items-center">
+                    <img src={saigonfoodstall1} className="w-[1000px]">
+                    </img>
+                    <p className="italic">A Food Stall in Ho Chi Minh City</p>
+                </div>
             </div>
 
+            <h1 className="font-bold text-3xl text-center">Food Gallery</h1>
             <ProfileCuisineSwiper setCurrentCard={setCurrentCard} swiperContents={swiperContents} ></ProfileCuisineSwiper>
 
             <div className='mt-4 flex flex-col gap-10'>
+                
                 
                 <div className="w-full flex flex-col items-center gap-3">
                     <h1 className="text-2xl font-bold text-center">{swiperContents[currentCard].title}</h1>
