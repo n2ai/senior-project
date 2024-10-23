@@ -1,3 +1,8 @@
+import cultureImg1 from "../../../images/hoianLevelImages/hoianculture1.jpg";
+import cultureImg2 from "../../../images/hoianLevelImages/hoianculture2.jpg";
+import cultureImg3 from "../../../images/hoianLevelImages/hoianculture3.jpg";
+import cultureImg4 from "../../../images/hoianLevelImages/hoianculture4.jpg";
+
 const HoianCulture = ()=>{
     return(
         <div className="w-full h-full container-lg pt-4 flex flex-col items-center gap-10 pb-4">
@@ -14,6 +19,12 @@ const HoianCulture = ()=>{
                 a living museum of culture and tradition.
             </p>
 
+            <div className="flex flex-col items-center">
+                <img src={cultureImg1} className="w-[1000px]">
+                </img>
+                <p className="italic">A Small Dock in Hoi An</p>
+            </div>
+
             <h1 className="font-bold text-3xl text-center">Historical Significance</h1>
             <p className="indent-14 text-xl font-monospace">
                 Hoi An’s cultural richness can be traced back to its days as a bustling 
@@ -23,6 +34,12 @@ const HoianCulture = ()=>{
                 This influx of foreign traders introduced new cultural elements to the city
                 , influencing its architecture, food, and customs.
             </p>
+
+            <div className="flex flex-col items-center">
+                <img src={cultureImg2} className="w-[1000px]">
+                </img>
+                <p className="italic">A Night in Hoi An</p>
+            </div>
 
             <p className="indent-14 text-xl font-monospace">
                 The Old Town of Hoi An is a UNESCO World Heritage Site and showcases a 
@@ -46,6 +63,12 @@ const HoianCulture = ()=>{
                 different cultures that left their mark on Hoi An.
             </p>
 
+            <div className="flex flex-col items-center">
+                <img src={cultureImg3} className="w-[1000px]">
+                </img>
+                <p className="italic">Street in Hoi An</p>
+            </div>
+
             <p className="indent-14 text-xl font-monospace">
                 The local government and international organizations have worked 
                 diligently to preserve Hoi An’s architectural heritage. Strict 
@@ -67,6 +90,12 @@ const HoianCulture = ()=>{
                 decorative but symbolize good fortune and happiness in Vietnamese 
                 culture.
             </p>
+
+            <div className="flex flex-col items-center">
+                <img src={cultureImg4} className="w-[1000px]">
+                </img>
+                <p className="italic">Paper Lanterns in Hoi An</p>
+            </div>
 
             <p className="indent-14 text-xl font-monospace">
                 The city also fosters a rich tradition of performance arts, including 

@@ -1,3 +1,10 @@
+import peopleImg1 from "../../../images/hoianLevelImages/hoianpeople1.jpg";
+import peopleImg2 from "../../../images/hoianLevelImages/hoianpeople2.jpg";
+import peopleImg3 from "../../../images/hoianLevelImages/hoianpeople3.jpg";
+import peopleImg4 from "../../../images/hoianLevelImages/hoianpeople4.jpg";
+import peopleImg5 from "../../../images/hoianLevelImages/hoianpeople5.jpg";
+import peopleImg6 from "../../../images/hoianLevelImages/hoianpeople6.jpg";
+
 const HoianPeople = ()=>{
     return(
         <div className="w-full h-full container-lg pt-4 flex flex-col items-center gap-10 pb-4">
@@ -12,6 +19,12 @@ const HoianPeople = ()=>{
                 a way of life that honors their heritage while adapting to modern changes. Whether it is their dedication to preserving cultural practices or their welcoming spirit toward visitors, the people of Hoi An are the true heart of the city.
             </p>
 
+            <div className="flex flex-col items-center">
+                <img src={peopleImg1} className="w-[800px]">
+                </img>
+                <p className="italic">A Street Vendor in Hoi An</p>
+            </div>
+
             <h1 className="font-bold text-3xl text-center">Historical Resilience and Cultural Pride</h1>
             <p className="indent-14 text-xl font-monospace">
                 The people of Hoi An have played a key role in maintaining the city’s 
@@ -22,6 +35,12 @@ const HoianPeople = ()=>{
                 various cultures. This openness to different ways of life became a 
                 hallmark of Hoi An’s residents, shaping their unique character.
             </p>
+
+            <div className="flex flex-col items-center">
+                <img src={peopleImg5} className="w-[800px]">
+                </img>
+                <p className="italic">A Street in Hoi An</p>
+            </div>
 
             <p className="indent-14 text-xl font-monospace">
                 Despite the changes brought by time, war, and modernization, the 
@@ -44,25 +63,11 @@ const HoianPeople = ()=>{
                 the techniques and knowledge are not lost.
             </p>
 
-            <p className="indent-14 text-xl font-monospace">
-                The silk industry, for example, has flourished in Hoi An for centuries, 
-                and local artisans are known for their exquisite craftsmanship in making 
-                silk lanterns, which are iconic symbols of the city. These lanterns are 
-                not only decorative but carry cultural significance, symbolizing 
-                prosperity and happiness. Similarly, Hoi An’s tailors are famed for their 
-                ability to create bespoke clothing quickly and with exceptional attention 
-                to detail, a skill that has been refined over decades.
-            </p>
-
-            <h1 className="font-bold text-3xl text-center">Skilled Artisans and Craftsmen</h1>
-            <p className="indent-14 text-xl font-monospace">
-                One of the defining characteristics of the people of Hoi An is their 
-                craftsmanship. The city is renowned for its skilled artisans who produce 
-                high-quality goods, particularly silk products, lanterns, pottery, and 
-                tailoring. Families that have been involved in these trades for 
-                generations continue to practice and teach these crafts, ensuring that 
-                the techniques and knowledge are not lost.
-            </p>
+            <div className="flex flex-col items-center">
+                <img src={peopleImg4} className="w-[800px]">
+                </img>
+                <p className="italic">Toys Maker in Hoi An</p>
+            </div>
 
             <p className="indent-14 text-xl font-monospace">
                 The silk industry, for example, has flourished in Hoi An for centuries, 
@@ -73,6 +78,7 @@ const HoianPeople = ()=>{
                 ability to create bespoke clothing quickly and with exceptional attention 
                 to detail, a skill that has been refined over decades.
             </p>
+
 
             <h1 className="font-bold text-3xl text-center">Warmth and Hospitality</h1>
             <p className="indent-14 text-xl font-monospace">
@@ -83,6 +89,12 @@ const HoianPeople = ()=>{
                 where relationships are valued, and visitors are treated as guests of 
                 honor.
             </p>
+
+            <div className="flex flex-col items-center">
+                <img src={peopleImg2} className="w-[800px]">
+                </img>
+                <p className="italic">A River Tour in Hoi An</p>
+            </div>
 
             <p className="indent-14 text-xl font-monospace">
                 This hospitality is especially evident during local festivals, such as 
@@ -95,6 +107,12 @@ const HoianPeople = ()=>{
                 connection between the residents and the people who come to admire their 
                 heritage.
             </p>
+
+            <div className="flex flex-col items-center">
+                <img src={peopleImg3} className="w-[800px]">
+                </img>
+                <p className="italic">Full Moon Festival</p>
+            </div>
 
             <p className="indent-14 text-xl font-monospace">
                 The local market vendors, many of whom have worked in the same stalls 
@@ -115,6 +133,12 @@ const HoianPeople = ()=>{
                 conservation, and the people of Hoi An are actively involved in these 
                 efforts.
             </p>
+
+            <div className="flex flex-col items-center">
+                <img src={peopleImg6} className="w-[800px]">
+                </img>
+                <p className="italic">Hoianese </p>
+            </div>
 
             <p className="indent-14 text-xl font-monospace">
                 In a city where new developments are carefully regulated to protect its 
