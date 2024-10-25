@@ -1,3 +1,8 @@
+import culture1 from "../../../images/langsonLevelImages/langsonCulture1.jpeg";
+import culture2 from "../../../images/langsonLevelImages/langsonCulture2.jpg";
+import culture3 from "../../../images/langsonLevelImages/langsonCulture3.jpg";
+import cultureTotem from "../../../images/langsonLevelImages/langsonCultureTotem.jpg";
+
 const LangsonCulture = ()=>{
     return(
         <div className="w-full h-full container-lg pt-4 flex flex-col items-center gap-10 pb-4">
@@ -12,6 +17,12 @@ const LangsonCulture = ()=>{
                 its residents, as well as in the vibrant festivals and traditional crafts 
                 that have been passed down through generations.
             </p>
+
+            <div className="flex flex-col items-center">
+                <img src={culture1} className="w-[700px]">
+                </img>
+                <p className="italic">A View of Lang Son</p>
+            </div>
 
             <p className="indent-14 text-xl font-monospace">
                 One of Lạng Sơn’s most distinctive cultural elements is its array of folk 
@@ -32,6 +43,12 @@ const LangsonCulture = ()=>{
                 communal ties while preserving the unique folklore of the region.
             </p>
 
+            <div className="flex flex-col items-center">
+                <img src={culture3} className="w-[700px]">
+                </img>
+                <p className="italic">People of Lang Son</p>
+            </div>
+
             <p className="indent-14 text-xl font-monospace">
                 Traditional crafts also play a significant role in Lạng Sơn’s cultural 
                 identity. The province is known for its intricate textiles, handmade 
@@ -42,6 +59,12 @@ const LangsonCulture = ()=>{
                 artistry of local artisans and learn about traditional production 
                 techniques.
             </p>
+
+            <div className="flex flex-col items-center">
+                <img src={cultureTotem} className="w-[500px]">
+                </img>
+                <p className="italic">A Totem in Phu Quoc</p>
+            </div>
 
             <p className="indent-14 text-xl font-monospace">
                 Lạng Sơn’s cultural heritage is a harmonious blend of history, 
@@ -55,15 +78,6 @@ const LangsonCulture = ()=>{
                 </img>
                 <p className="italic">A View of Phu Quoc</p>
             </div> */}
-
-            
-
-            {/* <div className="flex flex-col items-center">
-                <img src={hcmImgUrl1} className="w-[1000px]">
-                </img>
-                <p className="italic">Ariel View of Ho Chi Minh City at Night</p>
-            </div> */}
-
             
         </div>
     )

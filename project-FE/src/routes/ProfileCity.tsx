@@ -80,7 +80,7 @@ const ProfileCity = ()=>{
         }else if(cityId === "PQ"){
             return <PhuquocLevel userQuizContents={userQuizContents} quizContents={quizContents} ></PhuquocLevel>
         }else if(cityId === "LS"){
-            return <LangsonLevel userQuizContents={userQuizContents} quizContents={QuizContents}></LangsonLevel>
+            return <LangsonLevel userQuizContents={userQuizContents} quizContents={quizContents}></LangsonLevel>
         }
     }
 

@@ -1,62 +1,66 @@
+import people1 from "../../../images/langsonLevelImages/langsonPeople1.jpg";
+import people2 from "../../../images/langsonLevelImages/langsonPeople2.jpg";
+import people3 from "../../../images/langsonLevelImages/langsonPeople3.jpg";
+
 const LangsonPeople = ()=>{
     return(
         <div className="w-full h-full container-lg pt-4 flex flex-col items-center gap-10 pb-4">
             {/**Header */}
-            <h1 className="font-bold text-3xl text-center">Exploring the Cultural Heritage of Lạng Sơn</h1>
+            <h1 className="font-bold text-3xl text-center">The Heart of Lạng Sơn: Its People</h1>
             <p className="indent-14 text-xl font-monospace">
-                Lạng Sơn, located in Vietnam’s mountainous northeast, is 
-                a region rich in both natural beauty and cultural depth. Known for its 
-                diverse ethnic communities, the province is home to the Tay, Nung, Dao, 
-                and Kinh peoples, each contributing unique customs, festivals, and 
-                traditions. This cultural diversity is reflected in the everyday life of 
-                its residents, as well as in the vibrant festivals and traditional crafts 
-                that have been passed down through generations.
+                Lạng Sơn, a province in Vietnam's mountainous northeast, is defined not only by its breathtaking 
+                landscapes but also by the warmth, resilience, and cultural richness of its people. The province is home to 
+                various ethnic groups, predominantly the Tay, Nung, Dao, and Kinh, each bringing unique traditions, dialects, 
+                and ways of life that shape the identity of the region. Together, these communities create a cultural mosaic that 
+                highlights the beauty of diversity and communal harmony.
             </p>
 
-            <p className="indent-14 text-xl font-monospace">
-                One of Lạng Sơn’s most distinctive cultural elements is its array of folk 
-                festivals, which provide a meaningful window into the region’s history and values. 
-                The Lồng Tồng Festival, or "Festival to Welcome the New Year," is a celebrated 
-                event where the Tay and Nung people gather to pray for bountiful harvests and 
-                favorable weather. Featuring traditional music, dance, and games, this festival 
-                reflects the agricultural roots of the region and brings communities together in 
-                a display of unity and joy.
-            </p>
-
-            <p className="indent-14 text-xl font-monospace">
-                Another hallmark of Lạng Sơn’s culture is its traditional music and 
-                dance. Performances such as the “Then” singing—a type of spiritual folk 
-                music of the Tay and Nung—and the “Sli” love duet are both popular forms 
-                of expression in Lạng Sơn. These performances often recount stories of 
-                love, hardship, and devotion to the land, and they serve to strengthen 
-                communal ties while preserving the unique folklore of the region.
-            </p>
-
-            <p className="indent-14 text-xl font-monospace">
-                Traditional crafts also play a significant role in Lạng Sơn’s cultural 
-                identity. The province is known for its intricate textiles, handmade 
-                pottery, and silver jewelry, often crafted with designs inspired by 
-                nature. These crafts not only provide economic opportunities but also 
-                represent the artistic heritage of each ethnic group. In recent years, 
-                craft villages in Lạng Sơn have attracted visitors eager to witness the 
-                artistry of local artisans and learn about traditional production 
-                techniques.
-            </p>
-
-            <p className="indent-14 text-xl font-monospace">
-                Lạng Sơn’s cultural heritage is a harmonious blend of history, 
-                spirituality, and artistic expression. Through its festivals, music, 
-                and crafts, the region celebrates its diverse ethnic identities while 
-                fostering a strong sense of community and connection to its natural 
-                surroundings.
-            </p>
-            {/* <div className="flex flex-col items-center">
-                <img src={cultureImg1} className="w-[500px]">
+            <div className="flex flex-col items-center">
+                <img src={people1} className="w-[700px]">
                 </img>
-                <p className="italic">A View of Phu Quoc</p>
-            </div> */}
+                <p className="italic">People of Lang Son</p>
+            </div>
 
-            
+            <p className="indent-14 text-xl font-monospace">
+                The people of Lạng Sơn are deeply connected to their ancestral lands, with generations who have cultivated 
+                the province’s terraced fields and forests. Their daily lives are influenced by both the rugged terrain and 
+                the seasonal cycles, leading to a lifestyle that values hard work, adaptability, and respect for nature. Farming, 
+                for example, is a primary livelihood for many, and community members often work collectively, especially during 
+                harvest season, when groups come together to plant, harvest, and share in the fruits of their labor.
+            </p>
+
+            <h1 className="font-bold text-3xl text-center">A Rich Tapestry of Cultural Practices</h1>
+
+            <p className="indent-14 text-xl font-monospace">
+                Lạng Sơn’s people take immense pride in preserving their distinct customs and traditions. This 
+                is evident in the various festivals celebrated throughout the year, such as the Lồng Tồng festival of the 
+                Tay and Nung communities, which brings people together to pray for a prosperous year ahead. These festivals are 
+                vibrant events that feature traditional clothing, music, and dance, with every individual—from young children to 
+                elders—participating in the celebrations. Elders in the community are especially revered, often leading rituals and 
+                sharing ancestral wisdom with younger generations, keeping the culture alive and thriving.
+            </p>
+
+            <div className="flex flex-col items-center">
+                <img src={people2} className="w-[500px]">
+                </img>
+                <p className="italic">People of Lang Son</p>
+            </div>
+
+            <h1 className="font-bold text-3xl text-center">Hospitality and Warmth</h1>
+
+            <p className="indent-14 text-xl font-monospace">
+                Visitors to Lạng Sơn often comment on the exceptional hospitality of the local people. Guests are welcomed 
+                with open arms, whether in bustling town markets or quiet, remote villages. It is customary for hosts to offer 
+                guests traditional tea and a meal, symbolizing a deep-rooted spirit of generosity. The people of Lạng Sơn believe 
+                that sharing food and drink fosters bonds, even between strangers, and offers a meaningful way to express gratitude 
+                and respect.
+            </p>
+
+            <div className="flex flex-col items-center">
+                <img src={people3} className="w-[700px]">
+                </img>
+                <p className="italic">People of Lang Son</p>
+            </div>
 
             {/* <div className="flex flex-col items-center">
                 <img src={hcmImgUrl1} className="w-[1000px]">
