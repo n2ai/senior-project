@@ -56,30 +56,33 @@ export const handlePostUserContents = async (req,res)=>{
         if(currentProgress == 100){
 
             const unlockCitiesQuery = await UnlockCities.findOne({cityId:cityId});
-            const unlockableCities = unlockCitiesQuery.unlockCities;
+            if(unlockCitiesQuery){
+                const unlockableCities = unlockCitiesQuery.unlockCities;
             
-            for(let unlockedCity of unlockableCities){
-                const userQuiz = new UserQuizes({_id:userId + unlockedCity,userId:userId, cityId:unlockedCity, userAnswers:[
-                    {
-                        questionName:"question0",
-                        questionAnswer:""
-                    },{
-                        questionName:"question1",
-                        questionAnswer:""
-                    },{
-                        questionName:"question2",
-                        questionAnswer:""
-                    },{
-                        questionName:"question3",
-                        questionAnswer:""
-                    }
-                ], currentProgress:0, currentQuestion:0});
-
-                await userQuiz.save();
+                for(let unlockedCity of unlockableCities){
+                    const userQuiz = new UserQuizes({_id:userId + unlockedCity,userId:userId, cityId:unlockedCity, userAnswers:[
+                        {
+                            questionName:"question0",
+                            questionAnswer:""
+                        },{
+                            questionName:"question1",
+                            questionAnswer:""
+                        },{
+                            questionName:"question2",
+                            questionAnswer:""
+                        },{
+                            questionName:"question3",
+                            questionAnswer:""
+                        }
+                    ], currentProgress:0, currentQuestion:0});
+    
+                    await userQuiz.save();
+                }
             }
+            
         }
 
-        res.status(200).json({message:"Hello"})
+        res.status(200).json({message:"Good Request"})
         
     }catch(error){
         console.log(error);
