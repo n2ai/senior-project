@@ -11,7 +11,8 @@ import HoianLevel from "../components/profile/hoian/HoianLevel";
 import PhuquocLevel from "../components/profile/phuquoc/PhuquocLevel";
 import LangsonLevel from "../components/profile/langson/LangsonLevel";
 import QuizContents from "../components/profile/QuizContents";
-
+import NgheanLevel from "../components/profile/nghean/NgheanLevel";
+import BentreLevel from "../components/profile/bentre/BentreLevel";
 export type quizContents = {
     _id:string,
     cityId:string,
@@ -81,7 +82,11 @@ const ProfileCity = ()=>{
             return <PhuquocLevel userQuizContents={userQuizContents} quizContents={quizContents} ></PhuquocLevel>
         }else if(cityId === "LS"){
             return <LangsonLevel userQuizContents={userQuizContents} quizContents={quizContents}></LangsonLevel>
-        }
+        }else if(cityId === "NA"){
+            return <NgheanLevel userQuizContents={userQuizContents} quizContents={quizContents}></NgheanLevel>
+        }else if(cityId === "BT"){
+            return <BentreLevel userQuizContents={userQuizContents} quizContents={quizContents}></BentreLevel>
+        } 
     }
 
 
