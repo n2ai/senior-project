@@ -3,10 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./routes/Home"
 import Credentials from "./routes/Credentials";
 import Profile from "./routes/Profile";
-import ProfileStageChoosing from "./components/profile/ProfileStageChoosing";
-import TutorialLevel from "./components/profile/tutorial/TutorialLevel";
 import ProfileCity from "./routes/ProfileCity";
-import ProfileCuisineSwiper from "./components/profile/ProfileCuisineSwiper";
 import LoadingScreen from "./components/LoadingScreen";
 const router = createBrowserRouter([
   {

@@ -7,12 +7,11 @@ const Credentials = ()=>{
 
     const [credentialsState, setCredentialsState] = useState<string>("logIn");
     
-
     const displayForm = ()=>{
         if(credentialsState === "logIn"){
-            return <LoginForm setState={setCredentialsState}/> ? <LoginForm setState={setCredentialsState}/>  : null
+            return <LoginForm setState={setCredentialsState}/> 
         }else if(credentialsState === "register"){
-            return <RegisterForm setState={setCredentialsState} /> ? <RegisterForm setState={setCredentialsState} /> : null
+            return <RegisterForm setState={setCredentialsState} />
         }
     }
 
