@@ -7,6 +7,7 @@ import axios from "axios";
 import ProfileRegions from "../components/profile/ProfileRegions";
 import ProfileRegionInfo from "../components/profile/ProfileRegionInfo";
 import backgroundImg from "../images/paperBg.jpg"
+import LoadingScreen from "../components/LoadingScreen";
 export type userCityDataType  = {
     cityCondition:string,
     cityCurrentProgress:string [],
@@ -134,9 +135,7 @@ const Profile = ()=>{
 
         </div>)
         : (
-            <div>
-                loading...
-            </div>
+            <LoadingScreen></LoadingScreen>
         )
         
     )

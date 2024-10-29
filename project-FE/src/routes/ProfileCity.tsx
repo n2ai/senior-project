@@ -13,6 +13,7 @@ import LangsonLevel from "../components/profile/langson/LangsonLevel";
 import QuizContents from "../components/profile/QuizContents";
 import NgheanLevel from "../components/profile/nghean/NgheanLevel";
 import BentreLevel from "../components/profile/bentre/BentreLevel";
+import LoadingScreen from "../components/LoadingScreen";
 export type quizContents = {
     _id:string,
     cityId:string,
@@ -113,9 +114,8 @@ const ProfileCity = ()=>{
                 {renderCity()}
             </div>
         ):(
-            <div>
-                ...Loading
-            </div>
+            
+            <LoadingScreen></LoadingScreen>
         )
         
     )

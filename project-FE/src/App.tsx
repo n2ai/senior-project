@@ -7,6 +7,7 @@ import ProfileStageChoosing from "./components/profile/ProfileStageChoosing";
 import TutorialLevel from "./components/profile/tutorial/TutorialLevel";
 import ProfileCity from "./routes/ProfileCity";
 import ProfileCuisineSwiper from "./components/profile/ProfileCuisineSwiper";
+import LoadingScreen from "./components/LoadingScreen";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,10 +24,10 @@ const router = createBrowserRouter([
     element:<ProfileCity/>,
     
   },
-  // {
-  //   path:"/test",
-  //   element: <ProfileCuisineSwiper></ProfileCuisineSwiper>
-  // }
+  {
+    path:"/test",
+    element: <LoadingScreen></LoadingScreen>
+  }
 ])
 
 export default function App() {
