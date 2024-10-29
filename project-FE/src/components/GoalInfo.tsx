@@ -5,16 +5,18 @@ import InfoCard from "./InfoCard";
 const GoalInfo = ()=>{
 
     const goalInfoArray:{title:string,description:string, imgUrl:string}[] = [{
-        title:"Understand The Nation",
-        description:"This is history",
-        imgUrl:buildingImg
-    },{
-        title:"Meaning of Harmony",
-        description:"Meaning of Harmony",
-        imgUrl:flowersImg
-    },{
-        title:"A Peaceful Side of Vietnam",
-        description:"No War, Just Peace",
+        title: "Understand The Nation",
+        description: "Explore the rich history of Vietnam, from ancient traditions to the evolution of its national identity.",
+        imgUrl: buildingImg
+    },
+    {
+        title: "Meaning of Harmony",
+        description: "Discover the cultural balance in Vietnam, where nature and community thrive together in unity.",
+        imgUrl: flowersImg
+    },
+    {
+        title: "A Peaceful Side of Vietnam",
+        description: "Experience the tranquil side of Vietnam, where peace and beauty replace memories of conflict.",
         imgUrl: statueImg
     }]
 

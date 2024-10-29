@@ -5,19 +5,23 @@ import oldWomanImg from "../images/old-woman-5893415_1920.jpg"
 
 const GeneralInfo = ()=>{
 
-    const cardInfomation:{imgUrl:string, title:string, description:string}[] = [{
-        imgUrl:uhdImg,
-        title:"Senior Project",
-        description:"Senior Project"
-    },{
-        imgUrl:vietnamBWImg,
-        title:"My Story",
-        description:"My Story",
-    },{
-        imgUrl:oldWomanImg,
-        title:"To express my love",
-        description:"My Love"
-    }] 
+    const cardInfomation:{imgUrl:string, title:string, description:string}[] = [
+        {
+            imgUrl: uhdImg,
+            title: "Senior Project",
+            description: "A final-year project showcasing technical and creative skills through an immersive virtual experience."
+        },
+        {
+            imgUrl: vietnamBWImg,
+            title: "My Story",
+            description: "A personal journey through Vietnam"
+        },
+        {
+            imgUrl: oldWomanImg,
+            title: "To express my love",
+            description: "A tribute to the warmth and resilience of the people of Vietnam, capturing moments of love and tradition."
+        }
+    ] 
 
     const GeneralInfoCardArray = cardInfomation.map((item, index)=>{
         return(

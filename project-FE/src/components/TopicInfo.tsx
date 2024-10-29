@@ -9,16 +9,18 @@ const TopicInfo = ()=>{
     //Culture
 
     const topicInfoArray:{title:string,description:string,imgUrl:string}[] = [{
-        title:"People",
-        description:"This is people",
+        title: "People",
+        description: "Meet the diverse and resilient people of Vietnam, known for their warmth and hospitality.",
         imgUrl: thanhGiongImg
-    },{
-        title:"Cuisine",
-        description:"This is Cusine",
+    },
+    {
+        title: "Cuisine",
+        description: "Discover Vietnam's rich culinary heritage, celebrated for its unique flavors and fresh ingredients.",
         imgUrl: cookingImg
-    },{
-        title:"Culture",
-        description:"This is culture",
+    },
+    {
+        title: "Culture",
+        description: "Explore Vietnam's vibrant culture, steeped in traditions, festivals, and artistic expressions.",
         imgUrl: boatImg
     }]
 
