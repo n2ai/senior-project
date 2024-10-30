@@ -1,6 +1,5 @@
-import { Formik, useFormik } from "formik"
+import { useFormik } from "formik"
 import axios from "axios";
-import Button from 'react-bootstrap/Button';
 import Modal from  "react-bootstrap/Modal";
 import { useState } from "react";
 
@@ -135,7 +134,7 @@ const RegisterForm:React.FC<IRegisterFormProps> = ({setState})=>{
                 </div>
 
                 <div className="flex flex-col">
-                    <button type="submit" className="border rounded-full p-2 bg-red-400 font-bold text-white">Register</button>
+                    <button type="submit" className="rounded-full p-2 bg-red-400 font-bold text-white">Register</button>
                 </div>
             </form>
 

@@ -2,6 +2,7 @@ import mountainUrl from "../videos/59291-492700392_small.mp4"
 import LoginForm from "../components/LoginForm";
 import RegisterForm from "../components/RegisterForm";
 import {useState } from "react";
+import ForgotPasswordForm from "../components/ForgotPasswordForm";
 
 const Credentials = ()=>{
 
@@ -12,6 +13,8 @@ const Credentials = ()=>{
             return <LoginForm setState={setCredentialsState}/> 
         }else if(credentialsState === "register"){
             return <RegisterForm setState={setCredentialsState} />
+        }else if(credentialsState === "forgot"){
+            return <ForgotPasswordForm setState={setCredentialsState} />
         }
     }
 

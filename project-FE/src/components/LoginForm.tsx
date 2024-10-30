@@ -83,33 +83,37 @@ const LoginForm:React.FC<ILoginFormProps> = ({setState})=>{
     const onClickDoNotHaveAccount = ()=>{
         setState("register");
     };
+    
+    const onClickForgotPassword = ()=>{
+        setState("forgot");
+    };
 
     return(
         <>  
             <form onSubmit={formik.handleSubmit} className="flex flex-col gap-3 w-[80%] mt-5">
                 <h1 className="text-3xl font-bold">Log In</h1>
 
-                    <label className="flex flex-col">
-                        <span className="font-bold">Email</span>
-                        <input onChange={formik.handleChange} value={formik.values.email} name="email" className="border rounded-lg p-2" placeholder="Enter your email"></input>
+                <label className="flex flex-col">
+                    <span className="font-bold">Email</span>
+                    <input onChange={formik.handleChange} value={formik.values.email} name="email" className="border rounded-lg p-2" placeholder="Enter your email"></input>
                         {formik.errors.email ? <div className="text-red-400">{formik.errors.email}</div> : null}
-                    </label>
+                </label>
 
-                    <label className="flex flex-col">
-                        <span className="font-bold">Password</span>
-                        <input onChange={formik.handleChange} value={formik.values.password} type="password" name="password" className="border rounded-lg p-2" placeholder="Enter your password"></input>
+                <label className="flex flex-col">
+                    <span className="font-bold">Password</span>
+                    <input onChange={formik.handleChange} value={formik.values.password} type="password" name="password" className="border rounded-lg p-2" placeholder="Enter your password"></input>
                         {formik.errors.password ? <div className="text-red-400">{formik.errors.password}</div> : null}
-                    </label>
+                </label>
 
-                    <div className="flex flex-col">
-                        <a onClick={onClickDoNotHaveAccount} className="text-white cursor-pointer">Do not have an account?</a>
-                        <a href="/" className="text-white">Forgot Password?</a>
+                <div className="flex flex-col">
+                    <a onClick={onClickDoNotHaveAccount} className="text-white cursor-pointer">Do not have an account?</a>
+                    <a onClick={onClickForgotPassword} className="text-white cursor-pointer">Forgot Password?</a>
 
-                    </div>
+                </div>
 
-                    <div className="flex flex-col">
-                        <button type="submit" className="border rounded-full p-2 bg-red-400 font-bold text-white">Log In</button>
-                    </div>
+                <div className="flex flex-col">
+                    <button type="submit" className="rounded-full p-2 bg-red-400 font-bold text-white">Log In</button>
+                </div>
             </form>
 
             <Modal show={show} onHide={handleClose}>
