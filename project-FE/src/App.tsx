@@ -6,6 +6,7 @@ import Profile from "./routes/Profile";
 import ProfileCity from "./routes/ProfileCity";
 import LoadingScreen from "./components/LoadingScreen";
 import ForgotPasswordForm from "./components/ForgotPasswordForm";
+import ResetPasswordForm from "./components/ResetPasswordForm";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
   },
   {
     path:"/test",
-    element: <ForgotPasswordForm></ForgotPasswordForm>
+    // element: <ForgotPasswordForm></ForgotPasswordForm>
+  },
+  {
+    path:"/reset-password",
+    element: <ResetPasswordForm></ResetPasswordForm>
   }
 ])
 

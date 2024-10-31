@@ -3,7 +3,36 @@ import { ResetPasswordStorage } from '../models/resetPasswordStorage.js';
 import { UserQuizes } from '../models/userQuizes.js';
 import {createJWT} from '../middleware/JWTActions.js'
 import bcrypt from "bcryptjs";
-import emailjs from "emailjs-com";
+import nodemailer from "nodemailer";
+
+//Create the transporter
+const transporter = nodemailer.createTransport({
+    service:"gmail",
+    auth:{
+        user:"longhai2511@gmail.com",
+        pass:"evhgbqntwloqbcba"
+    }
+});
+
+//Function to send the password reset email
+const sendPasswordResetEmail = async (email, resetUrl) => {
+    try{
+        const mailOptions = {
+            from: 'longhai2511@gmail.com', // sender address
+            to: email, // user's email
+            subject: 'Password Reset Request',
+            html: `<p>You requested a password reset from VN Virtual Experience. 
+                    Click <a href="${resetUrl}">here</a> to reset 
+                    your password. This link will expire in 30 
+                    minutes.</p>`
+        };
+        await transporter.sendMail(mailOptions);
+        console.log('Password reset email sent successfully');
+
+    }catch(error){
+        console.error('Error sending password reset email:', error);
+    }
+}
 
 export const handleCredentials = async (req, res) => {
     const type = req.body.type;
@@ -104,34 +133,43 @@ const handleForgotPassword = async (data, res)=>{
 
         const userId = exisitingUser._id;
 
+        //1.5 Find if there is a token
+
+        
+
         //2 .Generate a reset token
-        const resetToken = Math.random().toString(36).splice(2)
+        const resetToken = Math.random().toString(36).slice(2)
 
         //3. Hash the reset token
         const salt = await bcrypt.genSalt(10);
         const hashedToken = await bcrypt.hash(resetToken, salt);
 
         //4. Save Token and Password Reset Expiration Time
-        const resetPassStorage = new ResetPasswordStorage({_id:userId,
-            passwordResetToken:hashedToken,
-            passwordResetExpires: Date.now() + 30 * 60 * 1000
-        });
 
-        await resetPassStorage.save();
+        const exisitingStorage = await ResetPasswordStorage.findOne({_id:userId});
+        if(exisitingStorage){
+            exisitingStorage.passwordResetToken = hashedToken;
+            exisitingStorage.passwordResetExpires = Date.now() + 30 * 60 * 1000;
+            await exisitingStorage.save()
+        }else{
+            const resetPassStorage = new ResetPasswordStorage({_id:userId,
+                passwordResetToken:hashedToken,
+                passwordResetExpires: Date.now() + 30 * 60 * 1000
+            });
+            await resetPassStorage.save();    
+        }
+        
 
         //5. Create a reset password link
         const resetUrl = `http://localhost:5173/reset-password?token=${resetToken}`
 
         //6. Configure EmailJS Data
-        const SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
-        const PUBLIC_KEY = process.env.EMAILJS_PUBLIC_ID;
-        const TEMPLATE_ID = process.env.RESET_PASSWORD_MAIL_TEMPLATE_ID;
 
-        const emailData = {
-            user_email:email,
-            reset_link:resetUrl,
-        }
+        await sendPasswordResetEmail(email, resetUrl);
 
-        await emailjs
+        res.status(200).json({message: "Password Reset Link to Your Email"})
+    }catch(error){
+        console.error("Error sending reset password",error);
+        res.status(500).json({error: "Failed to send password reset email"})
     }
 }

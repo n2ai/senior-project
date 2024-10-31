@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import axios from "axios";
-
+import { useState } from "react";
 type errorValidation = {
     email?:string,
 }
@@ -27,6 +27,33 @@ const validate = (values:validateValues)=>{
 
 const ForgotPasswordForm:React.FC<IForgotPasswordProps> = ({setState})=>{
 
+    //
+    const [resetState, setResetState] = useState<string>("normal")
+
+    const renderButtonState = (state:string)=>{
+        if(state === "normal"){
+            return "Reset Password"
+        }else if(state === "pending"){
+            return(
+                <div>
+                    <p>Pending...</p>
+                </div>
+            )
+        }else if(state === "success"){
+            return(
+                <div>
+                    <p>Sent!</p>
+                </div>
+            )
+        }else if(state === "error"){
+            return(
+                <div>
+                    <p>Failed to Request!</p>
+                </div>
+            )
+        }
+    }
+
     const formik = useFormik({
         initialValues:{
             email:'',
@@ -44,13 +71,14 @@ const ForgotPasswordForm:React.FC<IForgotPasswordProps> = ({setState})=>{
             }
             
             try{
+
+                setResetState("pending")  
                 const response = await axios.post("http://localhost:3000/credentials", sendData);
 
                 if(response.status === 200){
-                    const accessToken = response.data.data.accessToken;
-                    const userId = response.data.data._id;
-                    // setCookies('accessToken', accessToken, {path:'/'});
-                    // navigate(`/profile/${userId}`);
+                    setResetState("success")
+                }else{
+                    setResetState("error")
                 }
                 
             }catch(error){
@@ -74,7 +102,9 @@ const ForgotPasswordForm:React.FC<IForgotPasswordProps> = ({setState})=>{
                 </label>
 
                 <div className="flex flex-col">
-                    <button type="submit" className="rounded-full p-2 bg-red-400 font-bold text-white">Reset Password</button>
+                    <button type="submit" disabled={ resetState == "normal" ? false : true} className={`rounded-full p-2  ${resetState === "normal" ? "bg-red-400" : "bg-slate-400"} font-bold text-white`}>
+                        {renderButtonState(resetState)}
+                    </button>
                 </div>
 
                 <div className="flex flex-col">
