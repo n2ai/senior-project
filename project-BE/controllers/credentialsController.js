@@ -161,7 +161,7 @@ const handleForgotPassword = async (data, res)=>{
         
 
         //5. Create a reset password link
-        const resetUrl = `http://localhost:5173/reset-password?token=${resetToken}`
+        const resetUrl = `http://localhost:5173/reset-password?token=${resetToken}&userId=${userId}`;
 
         //6. Configure EmailJS Data
 

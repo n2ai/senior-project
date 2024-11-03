@@ -4,7 +4,8 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import credentialsRouter from "./routes/credentialsRoutes.js";  // Ensure .js extension for local file
 import profileRouter from "./routes/profileRoutes.js";
-import userCityRouter from "./routes/userCityRoutes.js"
+import userCityRouter from "./routes/userCityRoutes.js";
+import resetPasswordRouter from "./routes/resetPassword.js";
 import {connect} from "./database/database.js";  // Ensure .js extension for local file
 import dotenv from 'dotenv';
 
@@ -32,6 +33,7 @@ app.use(cors());
 app.use('/credentials', credentialsRouter);
 app.use('/profile', profileRouter);
 app.use('/userCity', userCityRouter);
+app.use('/reset-password', resetPasswordRouter);
 
 // Test route
 app.get('/', (req, res) => {
