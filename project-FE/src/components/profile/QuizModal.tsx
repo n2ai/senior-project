@@ -9,7 +9,6 @@ interface IQuizModal{
 
 const QuizModal:React.FC<IQuizModal> = ({correct, show, setClose})=>{
 
-
     return(
         <Modal show={show} centered onHide={()=>setClose(false)}>
             <Modal.Body className="flex items-center flex-col justify-center ">
