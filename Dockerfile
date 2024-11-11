@@ -12,6 +12,7 @@ RUN npm install
 
 # Step 3: Copy the frontend source files and build the app
 COPY project-FE/ ./
+RUN chmod -R 755 /app/project-FE/node_modules/.bin
 RUN npm run build
 
 # --- Backend ---
