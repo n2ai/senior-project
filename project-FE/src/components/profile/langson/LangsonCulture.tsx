@@ -1,7 +1,6 @@
-import culture1 from "../../../images/langsonLevelImages/langsonCulture1.jpeg";
-import culture2 from "../../../images/langsonLevelImages/langsonCulture2.jpg";
-import culture3 from "../../../images/langsonLevelImages/langsonCulture3.jpg";
-import cultureTotem from "../../../images/langsonLevelImages/langsonCultureTotem.jpg";
+import culture1 from "/images/langsonLevelImages/langsonCulture1.jpeg";
+import culture3 from "/images/langsonLevelImages/langsonCulture3.jpg";
+import cultureTotem from "/images/langsonLevelImages/langsonCultureTotem.jpg";
 
 const LangsonCulture = ()=>{
     return(

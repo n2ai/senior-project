@@ -1,9 +1,9 @@
-import danangImgUrl1 from "../../../images/danangLevelImages/causonghan1.jpg";
-import danangImgUrl2 from "../../../images/danangLevelImages/tuongphatquanam.jpg"
-import danangImgUrl3 from "../../../images/danangLevelImages/chuanamson.jpg";
-import danangImgUrl4 from "../../../images/danangLevelImages/lehoicaungu.jpg";
-import danangImgUrl5 from "../../../images/danangLevelImages/hatboidanang.jpg";
-import danangImgUrl6 from "../../../images/danangLevelImages/rooftopbarindanang.jpeg";
+import danangImgUrl1 from "/images/danangLevelImages/causonghan1.jpg";
+import danangImgUrl2 from "/images/danangLevelImages/tuongphatquanam.jpg"
+import danangImgUrl3 from "/images/danangLevelImages/chuanamson.jpg";
+import danangImgUrl4 from "/images/danangLevelImages/lehoicaungu.jpg";
+import danangImgUrl5 from "/images/danangLevelImages/hatboidanang.jpg";
+import danangImgUrl6 from "/images/danangLevelImages/rooftopbarindanang.jpeg";
 
 const DanangCulture = ()=>{
     return(

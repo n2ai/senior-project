@@ -1,6 +1,6 @@
-import oldWomanImg from "../images/ha-long-bay-2404431_1920.jpg";
+import oldWomanImg from "/images/ha-long-bay-2404431_1920.jpg";
 import { useState, ReactElement, useRef, FormEvent } from "react";
-import footerVideo from "../videos/14385-256955049_small.mp4";
+import footerVideo from "/videos/14385-256955049_small.mp4";
 import LetterComponent from "../components/LetterComponent";
 import emailJS from "@emailjs/browser"
 import { useNavigate } from "react-router-dom";

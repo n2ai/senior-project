@@ -5,12 +5,12 @@ import HochiminhCuisine from "./HochiminhCuisine";
 import HochiminhCulture from "./HochiminhCulture";
 import HochiminhPeople from "./HochiminhPeople";
 import QuizContents from "../QuizContents";
-import backgroundImg from "../../../images/paperBg.jpg";
+import backgroundImg from "/images/paperBg.jpg";
 import StageArray from "../StageArray";
-import cultureImg from "../../../images/hochiminhStageImages/hochiminhCulture.jpg";
-import cuisineImg from "../../../images/hochiminhStageImages/hochiminhCuisine.jpg";
-import peopleImg from "../../../images/hochiminhStageImages/hochiminhPeople.jpg";
-import quizImg from "../../../images/hochiminhStageImages/hochiminhQuiz.jpg"
+import cultureImg from "/images/hochiminhStageImages/hochiminhCulture.jpg";
+import cuisineImg from "/images/hochiminhStageImages/hochiminhCuisine.jpg";
+import peopleImg from "/images/hochiminhStageImages/hochiminhPeople.jpg";
+import quizImg from "/images/hochiminhStageImages/hochiminhQuiz.jpg"
 
 interface IHochiminhLevel{
     quizContents: quizContents[],

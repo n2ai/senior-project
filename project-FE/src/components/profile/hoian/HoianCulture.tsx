@@ -1,7 +1,7 @@
-import cultureImg1 from "../../../images/hoianLevelImages/hoianculture1.jpg";
-import cultureImg2 from "../../../images/hoianLevelImages/hoianculture2.jpg";
-import cultureImg3 from "../../../images/hoianLevelImages/hoianculture3.jpg";
-import cultureImg4 from "../../../images/hoianLevelImages/hoianculture4.jpg";
+import cultureImg1 from "/images/hoianLevelImages/hoianculture1.jpg";
+import cultureImg2 from "/images/hoianLevelImages/hoianculture2.jpg";
+import cultureImg3 from "/images/hoianLevelImages/hoianculture3.jpg";
+import cultureImg4 from "/images/hoianLevelImages/hoianculture4.jpg";
 
 const HoianCulture = ()=>{
     return(

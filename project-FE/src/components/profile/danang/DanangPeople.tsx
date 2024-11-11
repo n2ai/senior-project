@@ -1,7 +1,7 @@
-import danangImgUrl7 from "../../../images/danangLevelImages/thungdanang.jpg"
-import danangImgUrl8 from "../../../images/danangLevelImages/aviewofdanangcity.jpg"
-import danangImgUrl9 from "../../../images/danangLevelImages/onthedragonbridge.jpg"
-import danangImgUrl10 from "../../../images/danangLevelImages/aviewofdanangroad.jpg"
+import danangImgUrl7 from "/images/danangLevelImages/thungdanang.jpg"
+import danangImgUrl8 from "/images/danangLevelImages/aviewofdanangcity.jpg"
+import danangImgUrl9 from "/images/danangLevelImages/onthedragonbridge.jpg"
+import danangImgUrl10 from "/images/danangLevelImages/aviewofdanangroad.jpg"
 const DanangPeople = ()=>{
     return(
         <div className="w-full h-full container-lg pt-4 flex flex-col items-center gap-10 pb-4">

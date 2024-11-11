@@ -1,12 +1,12 @@
 import ProfileCuisineSwiper from "../ProfileCuisineSwiper";
 import { useState } from "react";
 import { swiperContent } from "../ProfileCuisineSwiper";
-import banhDaCua from "../../../images/haiphongLevelImages/banhdacua.jpg";
-import nemCuaBe from "../../../images/haiphongLevelImages/nemcuabe.jpg";
-import banhMiQue from "../../../images/haiphongLevelImages/banhmique.jpg";
-import lauCuaDong from "../../../images/haiphongLevelImages/laucuadong.jpg";
-import cheBotLoc from "../../../images/haiphongLevelImages/chebotloc.jpg";
-import oc from "../../../images/haiphongLevelImages/oc.jpg";
+import banhDaCua from "/images/haiphongLevelImages/banhdacua.jpg";
+import nemCuaBe from "/images/haiphongLevelImages/nemcuabe.jpg";
+import banhMiQue from "/images/haiphongLevelImages/banhmique.jpg";
+import lauCuaDong from "/images/haiphongLevelImages/laucuadong.jpg";
+import cheBotLoc from "/images/haiphongLevelImages/chebotloc.jpg";
+import oc from "/images/haiphongLevelImages/oc.jpg";
 
 const HaiphongCuisine = () => {
 

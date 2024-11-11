@@ -1,9 +1,7 @@
-import hanoiImgUrl7 from "../../../images/hanoiLevelImages/hanoiPeople1.jpg";
-import hanoiImgUrl8 from "../../../images/hanoiLevelImages/hanoiPeople2.jpg";
-import hanoiImgUrl9 from "../../../images/hanoiLevelImages/hanoiPeople3.jpg";
-import hanoiImgUrl10 from "../../../images/hanoiLevelImages/hanoiPeople4.jpg"
-import hanoiHUSTUrl from "../../../images/hanoiLevelImages/hanoiHUST.jpg"
-import hanoiTranhDongHo from "../../../images/hanoiLevelImages/hanoiDongHoTranh.jpg"
+import hanoiImgUrl7 from "/images/hanoiLevelImages/hanoiPeople1.jpg";
+import hanoiImgUrl8 from "/images/hanoiLevelImages/hanoiPeople2.jpg";
+import hanoiHUSTUrl from "/images/hanoiLevelImages/hanoiHUST.jpg"
+import hanoiTranhDongHo from "/images/hanoiLevelImages/hanoiDongHoTranh.jpg"
 
 const HanoiPeople = ()=>{
     return(

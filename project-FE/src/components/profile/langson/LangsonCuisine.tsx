@@ -1,14 +1,14 @@
 import ProfileCuisineSwiper from "../ProfileCuisineSwiper";
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import { swiperContent } from "../ProfileCuisineSwiper";
-import khauNhuc from "../../../images/langsonLevelImages/khaunhuc.jpg";
-import phoChua from "../../../images/langsonLevelImages/phoChua.jpg";
-import vitQuay from "../../../images/langsonLevelImages/vitquay.jpg";
-import banhCuon from "../../../images/langsonLevelImages/banhcuonlangson.jpg";
-import lonQuay from "../../../images/langsonLevelImages/lonquaylangson.jpg";
-import langsonFoodStall1 from "../../../images/langsonLevelImages/langsonfoodstall1.jpg";
-import langsonFoodStall2 from "../../../images/langsonLevelImages/langsonfoodstall2.jpg";
-import langsonFoodStall3 from "../../../images/langsonLevelImages/langsonfoodstall3.jpg";
+import khauNhuc from "/images/langsonLevelImages/khaunhuc.jpg";
+import phoChua from "/images/langsonLevelImages/phoChua.jpg";
+import vitQuay from "/images/langsonLevelImages/vitquay.jpg";
+import banhCuon from "/images/langsonLevelImages/banhcuonlangson.jpg";
+import lonQuay from "/images/langsonLevelImages/lonquaylangson.jpg";
+import langsonFoodStall1 from "/images/langsonLevelImages/langsonfoodstall1.jpg";
+import langsonFoodStall2 from "/images/langsonLevelImages/langsonfoodstall2.jpg";
+import langsonFoodStall3 from "/images/langsonLevelImages/langsonfoodstall3.jpg";
 
 const LangSonCuisine = () => {
 

@@ -1,15 +1,15 @@
 import { useState } from "react";
-import tutorialStageImg1 from "../../../images/tutorialStageImages/tutorialStageImg1.jpg";
-import tutorialStageImg2 from "../../../images/tutorialStageImages/tutorialStageImg2.jpg";
-import tutorialStageImg3 from "../../../images/tutorialStageImages/tutorialStageImg3.jpg";
-import tutorialStageImg4 from "../../../images/tutorialStageImages/tutorialStageImg4.jpg";
+import tutorialStageImg1 from "/images/tutorialStageImages/tutorialStageImg1.jpg";
+import tutorialStageImg2 from "/images/tutorialStageImages/tutorialStageImg2.jpg";
+import tutorialStageImg3 from "/images/tutorialStageImages/tutorialStageImg3.jpg";
+import tutorialStageImg4 from "/images/tutorialStageImages/tutorialStageImg4.jpg";
 import TutorialCuisine from "./TutorialCuisine";
 import TutorialCulture from "./TutorialCulture";
-import TutorialPeople from "./tutorialPeople";
+import TutorialPeople from "./TutorialPeople";
 import QuizContents from "../QuizContents";
 import { quizContents } from "../../../routes/ProfileCity";
 import { userQuizContents } from "../../../routes/ProfileCity";
-import backgroundImg from "../../../images/paperBg.jpg";
+import backgroundImg from "/images/paperBg.jpg";
 import StageArray from "../StageArray";
 
 interface ITutorialLevel{

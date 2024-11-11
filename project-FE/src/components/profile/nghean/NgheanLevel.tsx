@@ -2,15 +2,15 @@ import { useState } from "react";
 import { quizContents } from "../../../routes/ProfileCity";
 import { userQuizContents } from "../../../routes/ProfileCity";
 import QuizContents from "../QuizContents";
-import backgroundImg from "../../../images/paperBg.jpg";
+import backgroundImg from "/images/paperBg.jpg";
 import StageArray from "../StageArray";
 import NgheanCuisine from "./NgheanCuisine";
 import NgheanCulture from "./NgheanCulture";
 import NgheanPeople from "./NgheanPeople";
-import cuisineImg from "../../../images/ngheanStageImages/ngheanCuisine.jpg";
-import cultureImg from "../../../images/ngheanStageImages/ngheanCulture.jpg";
-import peopleImg from "../../../images/ngheanStageImages/ngheanPeople.jpg";
-import quizImg from "../../../images/ngheanStageImages/ngheanQuiz.jpg";
+import cuisineImg from "/images/ngheanStageImages/ngheanCuisine.jpg";
+import cultureImg from "/images/ngheanStageImages/ngheanCulture.jpg";
+import peopleImg from "/images/ngheanStageImages/ngheanPeople.jpg";
+import quizImg from "/images/ngheanStageImages/ngheanQuiz.jpg";
 
 
 interface INgheanLevel{

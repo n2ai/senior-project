@@ -5,12 +5,12 @@ import { userQuizContents } from "../../../routes/ProfileCity";
 import DanangCulture from "./DanangCulture";
 import DanangCuisine from "./DanangCuisine";
 import DanangPeople from "./DanangPeople";
-import cultureImg from "../../../images/danangStageImages/danangStageImg1.jpg";
-import cuisineImg from "../../../images/danangStageImages/danangStageImg2.jpg";
-import peopleImg from "../../../images/danangStageImages/danangStageImg3.jpg";
-import quizImg from "../../../images/danangStageImages/danangStageImg4.jpg";
+import cultureImg from "/images/danangStageImages/danangStageImg1.jpg";
+import cuisineImg from "/images/danangStageImages/danangStageImg2.jpg";
+import peopleImg from "/images/danangStageImages/danangStageImg3.jpg";
+import quizImg from "/images/danangStageImages/danangStageImg4.jpg";
 import StageArray from "../StageArray";
-import backgroundImg from "../../../images/paperBg.jpg";
+import backgroundImg from "/images/paperBg.jpg";
 
 
 interface IDanangLevel{

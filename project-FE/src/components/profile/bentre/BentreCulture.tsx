@@ -1,7 +1,6 @@
-import culture1 from "../../../images/bentreLevelImages/bentreCulture1.jpg";
-import culture2 from "../../../images/bentreLevelImages/bentreCulture2.jpg";
-import culture3 from "../../../images/bentreLevelImages/bentreCulture3.jpg";
-import culture4 from "../../../images/bentreLevelImages/bentreCulture4.jpg";
+import culture1 from "/images/bentreLevelImages/bentreCulture1.jpg";
+import culture2 from "/images/bentreLevelImages/bentreCulture2.jpg";
+import culture3 from "/images/bentreLevelImages/bentreCulture3.jpg";
 
 const BentreCulture = () => {
     return(

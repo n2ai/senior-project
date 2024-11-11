@@ -1,4 +1,4 @@
-import video from "../videos/resetPasswordVideo.mp4"
+import video from "/videos/resetPasswordVideo.mp4"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useFormik } from "formik";
@@ -79,13 +79,11 @@ const ResetPasswordForm = ()=>{
         }
 
         try {
-            const response = await axios.post("http://localhost:3000/reset-password/verifyToken", verifyData);
+            await axios.post("http://localhost:3000/reset-password/verifyToken", verifyData);
             
             setVerifyToken(true);
             
         } catch (error) {
-            // Use error.response if it's an HTTP error or log the error for more details
-            alert(error.response?.data?.error || "An error occurred");
             navigate("/")
             console.error(error);
         }

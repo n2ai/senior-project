@@ -1,11 +1,11 @@
 import ProfileCuisineSwiper from "../ProfileCuisineSwiper";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { swiperContent } from "../ProfileCuisineSwiper";
-import eelSoup from "../../../images/ngheanLevelImages/eelSoup.jpg";
-import banhKhoai from "../../../images/ngheanLevelImages/banhKhoai.jpg";
-import banhDuc from "../../../images/ngheanLevelImages/banhDuc.jpg";
-import nhotXanh from "../../../images/ngheanLevelImages/nhotXanh.jpg";
-import keoCuDo from "../../../images/ngheanLevelImages/keoCuDo.jpg";
+import eelSoup from "/images/ngheanLevelImages/eelSoup.jpg";
+import banhKhoai from "/images/ngheanLevelImages/banhKhoai.jpg";
+import banhDuc from "/images/ngheanLevelImages/banhDuc.jpg";
+import nhotXanh from "/images/ngheanLevelImages/nhotXanh.jpg";
+import keoCuDo from "/images/ngheanLevelImages/keoCuDo.jpg";
 
 
 const NgheAnCuisine = () => {

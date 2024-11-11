@@ -1,7 +1,7 @@
 import InfoCard from "./InfoCard";
-import thanhGiongImg from "../images/flying-horse-4579073_1920.png";
-import cookingImg from "../images/cooking-6760877_1920.jpg";
-import boatImg from "../images/boat-8270209_1920.jpg"
+import thanhGiongImg from "/images/flying-horse-4579073_1920.png";
+import cookingImg from "/images/cooking-6760877_1920.jpg";
+import boatImg from "/images/boat-8270209_1920.jpg"
 
 const TopicInfo = ()=>{
     //Cuisine

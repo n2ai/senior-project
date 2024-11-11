@@ -1,9 +1,7 @@
-import cultureImg1 from "../../../images/phuquocLevelImages/phuquocCulture1.jpeg";
-import cultureImg2 from "../../../images/phuquocLevelImages/phuquocCulture2.jpg";
-import cultureImg3 from "../../../images/phuquocLevelImages/phuquocCulture3.jpeg";
-import cultureImg4 from "../../../images/phuquocLevelImages/phuquocCulture4.jpg";
-import cultureImg5 from "../../../images/phuquocLevelImages/phuquocCulture5.jpg";
-import nuocmam from "../../../images/phuquocLevelImages/nuocmamphuquoc.jpg";
+import cultureImg1 from "/images/phuquocLevelImages/phuquocCulture1.jpeg";
+import cultureImg2 from "/images/phuquocLevelImages/phuquocCulture2.jpg";
+import cultureImg3 from "/images/phuquocLevelImages/phuquocCulture3.jpeg";
+import nuocmam from "/images/phuquocLevelImages/nuocmamphuquoc.jpg";
 
 const PhuquocCulture = ()=>{
     return(

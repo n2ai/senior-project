@@ -1,7 +1,7 @@
 import InfoCard from "./InfoCard";
-import uhdImg from "../images/uhd.jpeg"
-import vietnamBWImg from "../images/vietnamBW.jpg"
-import oldWomanImg from "../images/old-woman-5893415_1920.jpg"
+import uhdImg from "/images/uhd.jpeg"
+import vietnamBWImg from "/images/vietnamBW.jpg"
+import oldWomanImg from "/images/old-woman-5893415_1920.jpg"
 
 const GeneralInfo = ()=>{
 

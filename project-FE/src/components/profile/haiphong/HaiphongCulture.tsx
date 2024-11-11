@@ -1,7 +1,7 @@
-import haiphongImgUrl1 from "../../../images/haiphongLevelImages/tphaiphong1.jpg";
-import haiphongImgUrl2 from "../../../images/haiphongLevelImages/buudienhaiphong.jpg";
-import haiphongImgUrl3 from "../../../images/haiphongLevelImages/Le-Hoi-Choi-Trau-2.jpg";
-import haiphongImgUrl4 from "../../../images/haiphongLevelImages/Quan Ho at its best.jpg";
+import haiphongImgUrl1 from "/images/haiphongLevelImages/tphaiphong1.jpg";
+import haiphongImgUrl2 from "/images/haiphongLevelImages/buudienhaiphong.jpg";
+import haiphongImgUrl3 from "/images/haiphongLevelImages/Le-Hoi-Choi-Trau-2.jpg";
+import haiphongImgUrl4 from "/images/haiphongLevelImages/Quan Ho at its best.jpg";
 
 const HaiphongCulture = ()=>{
     return(

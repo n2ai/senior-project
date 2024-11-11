@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { userCityDataType } from "../../routes/Profile";
-import hanoiImgUrl from "../../images/hanoi-3609871_1920.jpg"
 import LevelCard from "../LevelCard";
 
 interface IProfileRegionInfo{
@@ -11,7 +9,6 @@ interface IProfileRegionInfo{
 
 const ProfileRegionInfo:React.FC<IProfileRegionInfo> = ({region, cities, setCurrentPage})=>{
 
-    const [dataIsLoaded, setDataIsloaded] = useState<boolean>(false);
     const cloudinaryName = import.meta.env.VITE_CLOUDINARY_NAME;
 
     const citiesRows = cities.map((city,index)=>{

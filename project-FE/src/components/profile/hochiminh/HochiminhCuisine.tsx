@@ -1,16 +1,16 @@
 import ProfileCuisineSwiper from "../ProfileCuisineSwiper";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { swiperContent } from "../ProfileCuisineSwiper";
-import saigonPho from "../../../images/hochiminhLevelImages/phosaigon.jpg";
-import saigonHuTieu from "../../../images/hochiminhLevelImages/hutieusaigon.jpg";
-import saigonBanhMi from "../../../images/hochiminhLevelImages/banhmisaigon.jpg";
-import saigonComTam from "../../../images/hochiminhLevelImages/comtamsaigon.jpg";
-import saigonGoiCuon from "../../../images/hochiminhLevelImages/goicuonsaigon.jpg";
-import saigonBanhXeo from "../../../images/hochiminhLevelImages/banhxeosaigon.jpg";
-import saigonCaPheSuaDa from "../../../images/hochiminhLevelImages/caphesuada.jpg";
-import saigonfoodstall1 from "../../../images/hochiminhLevelImages/saigonfoodstall1.jpg";
-import saigonfoodstall2 from "../../../images/hochiminhLevelImages/saigonfoodstall2.jpg";
-import saigonfoodstall3 from "../../../images/hochiminhLevelImages/saigonfoodstall3.jpg";
+import saigonPho from "/images/hochiminhLevelImages/phosaigon.jpg";
+import saigonHuTieu from "/images/hochiminhLevelImages/hutieusaigon.jpg";
+import saigonBanhMi from "/images/hochiminhLevelImages/banhmisaigon.jpg";
+import saigonComTam from "/images/hochiminhLevelImages/comtamsaigon.jpg";
+import saigonGoiCuon from "/images/hochiminhLevelImages/goicuonsaigon.jpg";
+import saigonBanhXeo from "/images/hochiminhLevelImages/banhxeosaigon.jpg";
+import saigonCaPheSuaDa from "/images/hochiminhLevelImages/caphesuada.jpg";
+import saigonfoodstall1 from "/images/hochiminhLevelImages/saigonfoodstall1.jpg";
+import saigonfoodstall2 from "/images/hochiminhLevelImages/saigonfoodstall2.jpg";
+import saigonfoodstall3 from "/images/hochiminhLevelImages/saigonfoodstall3.jpg";
 
 const HochiminhCuisine = ()=>{
 

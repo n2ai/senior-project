@@ -1,5 +1,5 @@
-import people1 from "../../../images/bentreLevelImages/bentrePeople1.jpg";
-import people2 from "../../../images/bentreLevelImages/bentrePeople2.jpg";
+import people1 from "/images/bentreLevelImages/bentrePeople1.jpg";
+import people2 from "/images/bentreLevelImages/bentrePeople2.jpg";
 
 const BentrePeople = () =>{
     return(

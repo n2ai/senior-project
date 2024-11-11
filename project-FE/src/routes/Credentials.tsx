@@ -1,4 +1,4 @@
-import mountainUrl from "../videos/59291-492700392_small.mp4"
+import mountainUrl from "/videos/59291-492700392_small.mp4"
 import LoginForm from "../components/LoginForm";
 import RegisterForm from "../components/RegisterForm";
 import {useState } from "react";

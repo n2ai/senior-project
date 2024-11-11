@@ -2,15 +2,15 @@ import { useState } from "react";
 import { quizContents } from "../../../routes/ProfileCity";
 import { userQuizContents } from "../../../routes/ProfileCity";
 import QuizContents from "../QuizContents";
-import backgroundImg from "../../../images/paperBg.jpg";
+import backgroundImg from "/images/paperBg.jpg";
 import PhuquocCulture from "./PhuquocCulture";
 import PhuquocPeople from "./PhuquocPeople";
 import PhuquocCuisine from "./PhuquocCuisine";
 import StageArray from "../StageArray";
-import cultureImg from "../../../images/phuquocStageImages/phuquocStage1.jpg";
-import cuisineImg from "../../../images/phuquocStageImages/phuquocStage2.jpg";
-import peopleImg from "../../../images/phuquocStageImages/phuquocStage3.jpg";
-import quizImg from "../../../images/phuquocStageImages/phuquocStage4.jpg";
+import cultureImg from "/images/phuquocStageImages/phuquocStage1.jpg";
+import cuisineImg from "/images/phuquocStageImages/phuquocStage2.jpg";
+import peopleImg from "/images/phuquocStageImages/phuquocStage3.jpg";
+import quizImg from "/images/phuquocStageImages/phuquocStage4.jpg";
 
 interface IPhuquocLevel{
     quizContents: quizContents[],

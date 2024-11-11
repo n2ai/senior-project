@@ -1,18 +1,16 @@
-import cultureImgUrl from "../../images/hanoiStageImages/pexels-alwaysontheroad-2977432.jpg";
-import cuisineImgUrl from "../../images/hanoiStageImages/pho-ha-noi-banner.jpg";
-import peopleImgUrl from "../../images/hanoiStageImages/pexels-huy-phan-316220-1437618.jpg";
-import quizImgUrl from "../../images/hanoiStageImages/pexels-boser-dam-1598322793-28494588.jpg";
+import cultureImgUrl from "/images/hanoiStageImages/pexels-alwaysontheroad-2977432.jpg";
+import cuisineImgUrl from "/images/hanoiStageImages/pho-ha-noi-banner.jpg";
+import peopleImgUrl from "/images/hanoiStageImages/pexels-huy-phan-316220-1437618.jpg";
+import quizImgUrl from "/images/hanoiStageImages/pexels-boser-dam-1598322793-28494588.jpg";
 
 /**Test import contents */
-import TutorialPeople from "./tutorial/tutorialPeople";
-import TutorialCulture from "./tutorial/TutorialCulture"
 import TutorialCuisine from "./tutorial/TutorialCuisine";
 interface IProfileStageChoosing{
     title?:string,
     subtitle?:string
 }
 
-const ProfileStageChoosing:React.FC<IProfileStageChoosing> = ({title, subtitle}) =>{
+const ProfileStageChoosing:React.FC<IProfileStageChoosing> = () =>{
 
     const stages = [
         {

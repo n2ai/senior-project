@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import ProfileRegions from "../components/profile/ProfileRegions";
 import ProfileRegionInfo from "../components/profile/ProfileRegionInfo";
-import backgroundImg from "../images/paperBg.jpg"
+import backgroundImg from "/images/paperBg.jpg"
 import LoadingScreen from "../components/LoadingScreen";
 export type userCityDataType  = {
     cityCondition:string,
@@ -28,7 +28,7 @@ export type dataMap = {
 const Profile = ()=>{
 
     const {id} = useParams();
-    const [cookies, setCookies] = useCookies(['accessToken']);
+    const [cookies] = useCookies(['accessToken']);
     const [verification, setVerification] = useState<boolean>(false);
     const [dataIsLoaded,setDataIsloaded] = useState<boolean>(false);
     const [currentPage, setCurrentPage] = useState<string>("regions");

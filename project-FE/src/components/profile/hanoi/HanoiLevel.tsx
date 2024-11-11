@@ -1,10 +1,10 @@
-import cultureImg from "../../../images/hanoiStageImages/pexels-alwaysontheroad-2977432.jpg";
-import cuisineImg from "../../../images/hanoiStageImages/pho-ha-noi-banner.jpg";
-import peopleImg from "../../../images/hanoiStageImages/pexels-huy-phan-316220-1437618.jpg";
-import quizImg from "../../../images/hanoiStageImages/pexels-boser-dam-1598322793-28494588.jpg";
+import cultureImg from "/images/hanoiStageImages/pexels-alwaysontheroad-2977432.jpg";
+import cuisineImg from "/images/hanoiStageImages/pho-ha-noi-banner.jpg";
+import peopleImg from "/images/hanoiStageImages/pexels-huy-phan-316220-1437618.jpg";
+import quizImg from "/images/hanoiStageImages/pexels-boser-dam-1598322793-28494588.jpg";
 import { quizContents } from "../../../routes/ProfileCity";
 import { userQuizContents } from "../../../routes/ProfileCity";
-import backgroundImg from "../../../images/paperBg.jpg";
+import backgroundImg from "/images/paperBg.jpg";
 import HanoiCusine from "./HanoiCuisine";
 import HanoiCulture from "./HanoiCulture";
 import QuizContents from "../QuizContents";

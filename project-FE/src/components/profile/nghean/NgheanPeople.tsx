@@ -1,6 +1,6 @@
-import people1 from "../../../images/ngheanLevelImages/ngheanPeople1.jpg";
-import people2 from "../../../images/ngheanLevelImages/ngheanPeople2.jpg";
-import hcm from "../../../images/ngheanLevelImages/hochiminhpic.jpg";
+import people1 from "/images/ngheanLevelImages/ngheanPeople1.jpg";
+import people2 from "/images/ngheanLevelImages/ngheanPeople2.jpg";
+import hcm from "/images/ngheanLevelImages/hochiminhpic.jpg";
 
 
 const NgheanPeople = ()=>{

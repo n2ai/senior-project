@@ -1,5 +1,5 @@
-import tutorialImgUrl2 from "../../../images/tutorialLevelImages/tutorialImg2.jpg"
-import tutorialImgUrl3 from "../../../images/tutorialLevelImages/tutorialImg3.jpg"
+import tutorialImgUrl2 from "/images/tutorialLevelImages/tutorialImg2.jpg"
+import tutorialImgUrl3 from "/images/tutorialLevelImages/tutorialImg3.jpg"
 
 const TutorialCulture = ()=>{
     return(

@@ -1,9 +1,9 @@
-import peopleImg1 from "../../../images/hoianLevelImages/hoianpeople1.jpg";
-import peopleImg2 from "../../../images/hoianLevelImages/hoianpeople2.jpg";
-import peopleImg3 from "../../../images/hoianLevelImages/hoianpeople3.jpg";
-import peopleImg4 from "../../../images/hoianLevelImages/hoianpeople4.jpg";
-import peopleImg5 from "../../../images/hoianLevelImages/hoianpeople5.jpg";
-import peopleImg6 from "../../../images/hoianLevelImages/hoianpeople6.jpg";
+import peopleImg1 from "/images/hoianLevelImages/hoianpeople1.jpg";
+import peopleImg2 from "/images/hoianLevelImages/hoianpeople2.jpg";
+import peopleImg3 from "/images/hoianLevelImages/hoianpeople3.jpg";
+import peopleImg4 from "/images/hoianLevelImages/hoianpeople4.jpg";
+import peopleImg5 from "/images/hoianLevelImages/hoianpeople5.jpg";
+import peopleImg6 from "/images/hoianLevelImages/hoianpeople6.jpg";
 
 const HoianPeople = ()=>{
     return(

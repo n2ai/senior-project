@@ -1,9 +1,9 @@
 interface IProfileHeader{
     fullName:string,
-    levels:number | number
+    levels?:number | number
 }
 
-const ProfileHeader:React.FC<IProfileHeader> = ({fullName, levels})=>{
+const ProfileHeader:React.FC<IProfileHeader> = ({fullName})=>{
     return(
         <div className="w-full mb-3 rounded-lg">
             <div className="font-bold text-3xl text-red-400">

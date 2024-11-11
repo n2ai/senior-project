@@ -3,14 +3,14 @@ import { quizContents } from "../../../routes/ProfileCity";
 import { userQuizContents } from "../../../routes/ProfileCity";
 import StageArray from "../StageArray";
 import { useState } from "react";
-import backgroundImg from "../../../images/paperBg.jpg";
+import backgroundImg from "/images/paperBg.jpg";
 import HaiphongCulture from "./HaiphongCulture";
 import HaiphongPeople from "./HaiphongPeople";
 import HaiphongCuisine from "./HaiphongCuisine";
-import cultureImgHaiPhong from "../../../images/haiphongStageImages/haiphongStageImg1.jpg";
-import cuisineImgHaiPhong from "../../../images/haiphongStageImages/haiphongStageImg2.jpg";
-import peopleImgHaiPhong from "../../../images/haiphongStageImages/haiphongStageImg3.jpg";
-import quizImgHaiPhong from "../../../images/haiphongStageImages/haiphongStageImg4.jpg";
+import cultureImgHaiPhong from "/images/haiphongStageImages/haiphongStageImg1.jpg";
+import cuisineImgHaiPhong from "/images/haiphongStageImages/haiphongStageImg2.jpg";
+import peopleImgHaiPhong from "/images/haiphongStageImages/haiphongStageImg3.jpg";
+import quizImgHaiPhong from "/images/haiphongStageImages/haiphongStageImg4.jpg";
 
 interface IHaiphongLevel{
     quizContents: quizContents[],

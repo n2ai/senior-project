@@ -1,8 +1,8 @@
-import hcmImgUrl1 from "../../../images/hochiminhLevelImages/arielhcmnight.jpg";
-import hcmImgUrl2 from "../../../images/hochiminhLevelImages/hcmpostoffice.jpg";
-import hcmImgUrl3 from "../../../images/hochiminhLevelImages/giaiphongmiennam.jpg";
-import hcmImgUrl4 from "../../../images/hochiminhLevelImages/nhahanghoahcm.jpg"
-import hcmImgUrl5 from "../../../images/hochiminhLevelImages/hcmcityhall.jpg"
+import hcmImgUrl1 from "/images/hochiminhLevelImages/arielhcmnight.jpg";
+import hcmImgUrl2 from "/images/hochiminhLevelImages/hcmpostoffice.jpg";
+import hcmImgUrl3 from "/images/hochiminhLevelImages/giaiphongmiennam.jpg";
+import hcmImgUrl4 from "/images/hochiminhLevelImages/nhahanghoahcm.jpg"
+import hcmImgUrl5 from "/images/hochiminhLevelImages/hcmcityhall.jpg"
 
 const HochiminhCulture = ()=>{
     return(

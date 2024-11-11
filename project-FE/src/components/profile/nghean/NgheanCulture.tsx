@@ -1,6 +1,6 @@
-import culture1 from "../../../images/ngheanLevelImages/ngheanCulture1.jpg";
-import culture2 from "../../../images/ngheanLevelImages/ngheanCulture2.jpg";
-import culture3 from "../../../images/ngheanLevelImages/ngheanCulture3.jpg";
+import culture1 from "/images/ngheanLevelImages/ngheanCulture1.jpg";
+import culture2 from "/images/ngheanLevelImages/ngheanCulture2.jpg";
+import culture3 from "/images/ngheanLevelImages/ngheanCulture3.jpg";
 
 
 const NgheanCulture = ()=>{

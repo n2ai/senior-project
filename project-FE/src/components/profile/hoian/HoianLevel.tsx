@@ -5,11 +5,11 @@ import HoianCuisine from "./HoianCuisine";
 import HoianPeople from "./HoianPeople";
 import HoianCulture from "./HoianCulture";
 import QuizContents from "../QuizContents";
-import backgroundImg from "../../../images/paperBg.jpg";
-import cultureImg from "../../../images/hoianStageImages/hoianculture.jpg";
-import peopleImg from "../../../images/hoianStageImages/hoianpeople.jpg";
-import cuisineImg from "../../../images/hoianStageImages/hoiancuisine.jpg";
-import quizImg from "../../../images/hoianStageImages/hoianquiz.jpg";
+import backgroundImg from "/images/paperBg.jpg";
+import cultureImg from "/images/hoianStageImages/hoianculture.jpg";
+import peopleImg from "/images/hoianStageImages/hoianpeople.jpg";
+import cuisineImg from "/images/hoianStageImages/hoiancuisine.jpg";
+import quizImg from "/images/hoianStageImages/hoianquiz.jpg";
 import StageArray from "../StageArray";
 
 interface IHoianLevel{

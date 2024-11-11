@@ -1,6 +1,6 @@
-import buildingImg from "../images/building-7466555_1920.jpg";
-import flowersImg from "../images/flowers-4384227_1920.jpg";
-import statueImg from "../images/statue-5135429_1920.jpg";
+import buildingImg from "/images/building-7466555_1920.jpg";
+import flowersImg from "/images/flowers-4384227_1920.jpg";
+import statueImg from "/images/statue-5135429_1920.jpg";
 import InfoCard from "./InfoCard";
 const GoalInfo = ()=>{
 

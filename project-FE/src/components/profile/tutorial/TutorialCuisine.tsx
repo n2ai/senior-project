@@ -1,4 +1,4 @@
-import tutorialImgUrl4 from "../../../images/tutorialLevelImages/tutorialImg4.jpg"
+import tutorialImgUrl4 from "/images/tutorialLevelImages/tutorialImg4.jpg"
 
 const TutorialCuisine = ()=>{
     return(

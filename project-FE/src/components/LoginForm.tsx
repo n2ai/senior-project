@@ -36,7 +36,7 @@ const LoginForm:React.FC<ILoginFormProps> = ({setState})=>{
 
     const [show, setShow] = useState<boolean>(false);
     const [modalContent, setModalContent] = useState<string>("");
-    const [cookies, setCookies] = useCookies(['accessToken']);
+    const [, setCookies] = useCookies(['accessToken']);
     const navigate = useNavigate();
     const handleClose = ()=>{
         setShow(false);

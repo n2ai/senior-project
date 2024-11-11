@@ -1,9 +1,7 @@
-import { Navigation, Pagination, Scrollbar, A11y,EffectCards } from 'swiper/modules';
+import { EffectCards } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
-import { useState } from 'react';
-
 export type swiperContent = {
     imgUrl:string,
     title:string,

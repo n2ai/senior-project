@@ -76,9 +76,7 @@ const RegisterForm:React.FC<IRegisterFormProps> = ({setState})=>{
             }
 
             try{
-                const response = await axios.post("http://localhost:3000/credentials", sendData);
-
-                const responseData = response.data;
+                await axios.post("http://localhost:3000/credentials", sendData);
 
                 // const message = responseData.message;
 

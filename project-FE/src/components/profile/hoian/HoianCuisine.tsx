@@ -1,15 +1,15 @@
 import ProfileCuisineSwiper from "../ProfileCuisineSwiper";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { swiperContent } from "../ProfileCuisineSwiper";
-import caoLau from "../../../images/hoianLevelImages/caolau.jpg";
-import hoanhThanh from "../../../images/hoianLevelImages/hoanhthanh.jpg";
-import banhBaoBanhVac from "../../../images/hoianLevelImages/banhbaobanhvac.jpg";
-import banhXeoHoiAn from "../../../images/hoianLevelImages/banhxeohoian.jpg";
-import miQuang from "../../../images/hoianLevelImages/miquanghoian.jpg";
-import comGa from "../../../images/hoianLevelImages/comgahoian.jpg";
-import hoianfoodstall1 from "../../../images/hoianLevelImages/hoianfoodstall1.jpg";
-import hoianfoodstall2 from "../../../images/hoianLevelImages/hoianfoodstall2.jpg";
-import hoianfoodstall3 from "../../../images/hoianLevelImages/hoianfoodstall3.jpg";
+import caoLau from "/images/hoianLevelImages/caolau.jpg";
+import hoanhThanh from "/images/hoianLevelImages/hoanhthanh.jpg";
+import banhBaoBanhVac from "/images/hoianLevelImages/banhbaobanhvac.jpg";
+import banhXeoHoiAn from "/images/hoianLevelImages/banhxeohoian.jpg";
+import miQuang from "/images/hoianLevelImages/miquanghoian.jpg";
+import comGa from "/images/hoianLevelImages/comgahoian.jpg";
+import hoianfoodstall1 from "/images/hoianLevelImages/hoianfoodstall1.jpg";
+import hoianfoodstall2 from "/images/hoianLevelImages/hoianfoodstall2.jpg";
+import hoianfoodstall3 from "/images/hoianLevelImages/hoianfoodstall3.jpg";
 
 const HoiAnCuisine = () => {
 

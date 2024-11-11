@@ -1,15 +1,15 @@
 import ProfileCuisineSwiper from "../ProfileCuisineSwiper";
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import { swiperContent } from "../ProfileCuisineSwiper";
-import bunQuay from "../../../images/phuQuocLevelImages/bunquay.jpg";
-import kenNoodleSoup from "../../../images/phuQuocLevelImages/kennoodlesoup.jpg";
-import grilledSeafood from "../../../images/phuQuocLevelImages/grilledseafood.jpg";
-import fishSauce from "../../../images/phuQuocLevelImages/fishsauce.jpg";
-import seaUrchin from "../../../images/phuQuocLevelImages/seaurchin.jpg";
-import pepperFarm from "../../../images/phuQuocLevelImages/pepperfarm.jpg";
-import phuQuocFoodStall1 from "../../../images/phuQuocLevelImages/phuquocfoodstall1.jpg";
-import phuQuocFoodStall2 from "../../../images/phuQuocLevelImages/phuquocfoodstall2.jpg";
-import phuQuocFoodStall3 from "../../../images/phuQuocLevelImages/phuquocfoodstall3.jpg";
+const bunQuay = "/images/phuQuocLevelImages/bunquay.jpg";
+const kenNoodleSoup = "/images/phuQuocLevelImages/kennoodlesoup.jpg";
+const grilledSeafood = "/images/phuQuocLevelImages/grilledseafood.jpg";
+const fishSauce = "/images/phuQuocLevelImages/fishsauce.jpg";
+const seaUrchin = "/images/phuQuocLevelImages/seaurchin.jpg";
+const pepperFarm = "/images/phuQuocLevelImages/pepperfarm.jpg";
+const phuQuocFoodStall1 = "/images/phuQuocLevelImages/phuquocfoodstall1.jpg";
+const phuQuocFoodStall2 = "/images/phuQuocLevelImages/phuquocfoodstall2.jpg";
+const phuQuocFoodStall3 = "/images/phuQuocLevelImages/phuquocfoodstall3.jpg";
 
 const PhuQuocCuisine = () => {
 

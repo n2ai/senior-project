@@ -1,12 +1,12 @@
 import ProfileCuisineSwiper from "../ProfileCuisineSwiper";
 import { useState } from "react";
 import { swiperContent } from "../ProfileCuisineSwiper";
-import miQuang from "../../../images/danangLevelImages/miquang.jpg";
-import banhTrangThitHeo from "../../../images/danangLevelImages/banhtrangthitheo.jpg";
-import banhXeo from "../../../images/danangLevelImages/banhxeodanang.jpg";
-import chaCa from "../../../images/danangLevelImages/chacadanang.jpg";
-import banhDap from "../../../images/danangLevelImages/banhdap.jpg";
-import bunMamNem from "../../../images/danangLevelImages/bunmamnem.jpg";
+import miQuang from "/images/danangLevelImages/miquang.jpg";
+import banhTrangThitHeo from "/images/danangLevelImages/banhtrangthitheo.jpg";
+import banhXeo from "/images/danangLevelImages/banhxeodanang.jpg";
+import chaCa from "/images/danangLevelImages/chacadanang.jpg";
+import banhDap from "/images/danangLevelImages/banhdap.jpg";
+import bunMamNem from "/images/danangLevelImages/bunmamnem.jpg";
 
 const DanangCuisine = ()=>{
 

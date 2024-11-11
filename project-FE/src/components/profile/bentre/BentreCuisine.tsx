@@ -1,12 +1,12 @@
 import ProfileCuisineSwiper from "../ProfileCuisineSwiper";
 import { useState } from "react";
 import { swiperContent } from "../ProfileCuisineSwiper";
-import coconutCandy from "../../../images/bentreLevelImages/coconutcandy.jpg";
-import banhXeo from "../../../images/bentreLevelImages/banhxeo.jpg";
-import huTieuBenTre from "../../../images/bentreLevelImages/hutieu.jpg";
-import tomCangNuoc from "../../../images/bentreLevelImages/tomcangnuoc.jpg";
-import banhCanhBotLoc from "../../../images/bentreLevelImages/banhcanhbotloc.jpg";
-import chuoiNuong from "../../../images/bentreLevelImages/chuoinuong.jpg";
+import coconutCandy from "/images/bentreLevelImages/coconutcandy.jpg";
+import banhXeo from "/images/bentreLevelImages/banhxeo.jpg";
+import huTieuBenTre from "/images/bentreLevelImages/hutieu.jpg";
+import tomCangNuoc from "/images/bentreLevelImages/tomcangnuoc.jpg";
+import banhCanhBotLoc from "/images/bentreLevelImages/banhcanhbotloc.jpg";
+import chuoiNuong from "/images/bentreLevelImages/chuoinuong.jpg";
 
 const BenTreCuisine = () => {
     const [currentCard, setCurrentCard] = useState<number>(0);

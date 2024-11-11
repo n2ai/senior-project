@@ -1,8 +1,8 @@
-import hcmImgUrl6 from "../../../images/hochiminhLevelImages/hcmcafe1.jpg";
-import hcmImgUrl7 from "../../../images/hochiminhLevelImages/bombingthehcmtrail.jpg"
-import hcmImgUrl8 from "../../../images/hochiminhLevelImages/hcmstreetatnight.jpg";
-import hcmImgUrl9 from "../../../images/hochiminhLevelImages/hcmbuildings.jpg";
-import hcmImgUrl10 from "../../../images/hochiminhLevelImages/buivienhcm.jpg";
+import hcmImgUrl6 from "/images/hochiminhLevelImages/hcmcafe1.jpg";
+import hcmImgUrl7 from "/images/hochiminhLevelImages/bombingthehcmtrail.jpg"
+import hcmImgUrl8 from "/images/hochiminhLevelImages/hcmstreetatnight.jpg";
+import hcmImgUrl9 from "/images/hochiminhLevelImages/hcmbuildings.jpg";
+import hcmImgUrl10 from "/images/hochiminhLevelImages/buivienhcm.jpg";
 
 const HochiminhPeople = ()=>{
     return(

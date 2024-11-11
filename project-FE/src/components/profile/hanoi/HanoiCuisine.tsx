@@ -1,12 +1,12 @@
 import ProfileCuisineSwiper from "../ProfileCuisineSwiper";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { swiperContent } from "../ProfileCuisineSwiper";
-import hanoiBanhCuon from "../../../images/hanoiLevelImages/hanoibanhcuon.jpeg";
-import hanoiPho from "../../../images/hanoiLevelImages/phohanoi.jpeg";
-import hanoiBunCha from "../../../images/hanoiLevelImages/hanoiBuncha.jpg";
-import hanoiChaRuoi from "../../../images/hanoiLevelImages/hanoicharuoi.jpg";
-import hanoiBunDau from "../../../images/hanoiLevelImages/hanoibundau.jpg";
-import hanoiCom from "../../../images/hanoiLevelImages/hanoicom.jpg";
+import hanoiBanhCuon from "/images/hanoiLevelImages/hanoibanhcuon.jpeg";
+import hanoiPho from "/images/hanoiLevelImages/phohanoi.jpeg";
+import hanoiBunCha from "/images/hanoiLevelImages/hanoiBuncha.jpg";
+import hanoiChaRuoi from "/images/hanoiLevelImages/hanoicharuoi.jpg";
+import hanoiBunDau from "/images/hanoiLevelImages/hanoibundau.jpg";
+import hanoiCom from "/images/hanoiLevelImages/hanoicom.jpg";
 
 const HanoiCusine = ()=>{
 

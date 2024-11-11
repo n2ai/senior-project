@@ -2,15 +2,15 @@ import { useState } from "react";
 import { quizContents } from "../../../routes/ProfileCity";
 import { userQuizContents } from "../../../routes/ProfileCity";
 import QuizContents from "../QuizContents";
-import backgroundImg from "../../../images/paperBg.jpg";
+import backgroundImg from "/images/paperBg.jpg";
 import StageArray from "../StageArray";
 import LangsonCulture from "./LangsonCulture";
 import LangsonCuisine from "./LangsonCuisine";
 import LangsonPeople from "./LangsonPeople";
-import cuisineImg from "../../../images/langsonStageImages/langsonCuisine.jpg";
-import cultureImg from "../../../images/langsonStageImages/langsonCulture.jpg";
-import peopleImg from "../../../images/langsonStageImages/langsonPeople.jpg";
-import quizImg from "../../../images/langsonStageImages/langsonQuiz.jpg";
+import cuisineImg from "/images/langsonStageImages/langsonCuisine.jpg";
+import cultureImg from "/images/langsonStageImages/langsonCulture.jpg";
+import peopleImg from "/images/langsonStageImages/langsonPeople.jpg";
+import quizImg from "/images/langsonStageImages/langsonQuiz.jpg";
 
 interface ILangsonLevel{
     quizContents: quizContents[],

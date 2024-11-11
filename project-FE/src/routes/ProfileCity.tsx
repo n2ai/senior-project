@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Outlet, useNavigate, useParams } from "react-router-dom"
+import {useNavigate, useParams } from "react-router-dom"
 import { useCookies } from "react-cookie";
 import TutorialLevel from "../components/profile/tutorial/TutorialLevel";
 import axios from "axios";
@@ -10,7 +10,6 @@ import HaiphongLevel from "../components/profile/haiphong/HaiphongLevel";
 import HoianLevel from "../components/profile/hoian/HoianLevel";
 import PhuquocLevel from "../components/profile/phuquoc/PhuquocLevel";
 import LangsonLevel from "../components/profile/langson/LangsonLevel";
-import QuizContents from "../components/profile/QuizContents";
 import NgheanLevel from "../components/profile/nghean/NgheanLevel";
 import BentreLevel from "../components/profile/bentre/BentreLevel";
 import LoadingScreen from "../components/LoadingScreen";
@@ -34,10 +33,19 @@ export type userQuizContents = {
 
 const ProfileCity = ()=>{
     const {id, cityId} = useParams();
-    const [cookies, setCookies] = useCookies(['accessToken']);
+    const [cookies,] = useCookies(['accessToken']);
     const [isVerified, setIsVerified] = useState<boolean>(false);
     const [quizContents, setQuizContents] = useState<quizContents[]>([]);
-    const [userQuizContents, setUserQuizContents] = useState<userQuizContents>([]);
+    const [userQuizContents, setUserQuizContents] = useState<userQuizContents>({
+        cityId: "danang",
+        currentProgress: 50, // 50% completed
+        currentQuestion: 5, // Question 5 out of 10
+        userAnswers: [
+          { questionName: "What's the capital of Vietnam?", questionAnswer: "Hanoi" },
+          { questionName: "Which river flows through Ho Chi Minh City?", questionAnswer: "Saigon River" }
+        ],
+        userId: "user12345"
+    });
     const navigate = useNavigate();
 
     const accessToken = cookies.accessToken;

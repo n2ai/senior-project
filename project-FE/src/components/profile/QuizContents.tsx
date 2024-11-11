@@ -1,10 +1,9 @@
 /**THIS COMPONENT CAN BE REUSED FOR FUTURE QUIZ SECTION */
 
-import { useState, useRef } from "react";
-import { ProgressBar, Card } from "react-bootstrap";
+import { useState } from "react";
+import { ProgressBar } from "react-bootstrap";
 import { quizContents } from "../../routes/ProfileCity";
 import { userQuizContents } from "../../routes/ProfileCity";
-import { Modal } from "react-bootstrap";
 import QuizModal from "./QuizModal";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -35,7 +34,7 @@ const QuizContents:React.FC<ITutorialQuiz> = ({quizContents, userQuizContents}) 
     //Will Set Up the logic for this state controller later
     const [currentProgress, setCurrentProgress] = useState<number>(userQuizContents.currentProgress);
     const [currentQuestion, setCurrentQuestion] = useState<number>(userQuizContents.currentQuestion);
-    const [questionList, setQuestionlist] = useState<IQuizQuestions[]>(quizContents);
+    const [questionList] = useState<IQuizQuestions[]>(quizContents);
     const [userAnswers, setUserAnswers] = useState<IUserAnswer[]>(userQuizContents.userAnswers);
     const [showModal, setShowModal] = useState<boolean>(false);
     const [correctAnswer, setCorrectAnswer] = useState<boolean>(false);

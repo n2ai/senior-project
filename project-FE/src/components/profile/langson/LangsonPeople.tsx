@@ -1,6 +1,6 @@
-import people1 from "../../../images/langsonLevelImages/langsonPeople1.jpg";
-import people2 from "../../../images/langsonLevelImages/langsonPeople2.jpg";
-import people3 from "../../../images/langsonLevelImages/langsonPeople3.jpg";
+import people1 from "/images/langsonLevelImages/langsonPeople1.jpg";
+import people2 from "/images/langsonLevelImages/langsonPeople2.jpg";
+import people3 from "/images/langsonLevelImages/langsonPeople3.jpg";
 
 const LangsonPeople = ()=>{
     return(

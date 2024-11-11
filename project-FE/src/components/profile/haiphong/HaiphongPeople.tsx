@@ -1,6 +1,6 @@
-import haiphongImgUrl5 from "../../../images/haiphongLevelImages/lehoihoaphuong.jpg";
-import haiphongImgUrl6 from "../../../images/haiphongLevelImages/canghaiphong.jpg";
-import haiphongImgUrl7 from "../../../images/haiphongLevelImages/hoaphuong.jpg";
+import haiphongImgUrl5 from "/images/haiphongLevelImages/lehoihoaphuong.jpg";
+import haiphongImgUrl6 from "/images/haiphongLevelImages/canghaiphong.jpg";
+import haiphongImgUrl7 from "/images/haiphongLevelImages/hoaphuong.jpg";
 
 const HaiphongPeople = ()=>{
     return(

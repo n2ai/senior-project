@@ -1,7 +1,7 @@
-import peopleImg1 from "../../../images/phuquocLevelImages/phuquocPeople1.jpg";
-import peopleImg2 from "../../../images/phuquocLevelImages/phuquocPeople2.jpg";
-import peopleImg3 from "../../../images/phuquocLevelImages/phuquocPeople3.jpg";
-import peopleImg4 from "../../../images/phuquocLevelImages/phuquocPeople4.jpg";
+import peopleImg1 from "/images/phuquocLevelImages/phuquocPeople1.jpg";
+import peopleImg2 from "/images/phuquocLevelImages/phuquocPeople2.jpg";
+import peopleImg3 from "/images/phuquocLevelImages/phuquocPeople3.jpg";
+import peopleImg4 from "/images/phuquocLevelImages/phuquocPeople4.jpg";
 
 
 const PhuquocPeople = ()=>{

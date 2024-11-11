@@ -7,11 +7,11 @@ interface ILevelCard{
     unlock:boolean,
     imgUrl:string,
     region?:string,
-    cityName:string,
+    cityName?:string,
     cityId?:string
 }
 
-const LevelCard:React.FC<ILevelCard> = ({title, cityName , progress, unlock, imgUrl, cityId})=>{
+const LevelCard:React.FC<ILevelCard> = ({title, progress, unlock, imgUrl, cityId})=>{
     const {id} = useParams();
     const navigate = useNavigate();
 
