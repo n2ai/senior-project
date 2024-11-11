@@ -2,6 +2,9 @@
 # Step 1: Use a Node image to build the frontend
 FROM node:18 AS frontend-build
 
+# Step 1.5: Install TypeScript and Git (necessary for build process)
+RUN npm install -g typescript git
+
 # Step 2: Set the working directory for the frontend and copy frontend package files
 WORKDIR /app/project-FE
 COPY project-FE/package*.json ./
