@@ -8,7 +8,7 @@ import backgroundImg from "/images/paperBg.jpg";
 import HanoiCusine from "./HanoiCuisine";
 import HanoiCulture from "./HanoiCulture";
 import QuizContents from "../QuizContents";
-import HanoiPeople from "./HanoiPeople";
+import HanoiPeople from "./HanoiPeople.tsx";
 import { useState } from "react";
 import StageArray from "../StageArray";
 
